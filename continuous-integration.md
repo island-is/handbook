@@ -49,4 +49,5 @@ GitHub Actions
 - Easy customization of which parts of the CI process to run depending on branching patterns and pull requests
 - Good integration of code health with the pull request process
 - As an enterprise customer, we have a large number of "compute"-minutes that come as a part of the package we are buying
+- Supports parallelisation of the process which can be pretty important in the context of monorepo
 - Support using own runners which can be helpful to maximize speed, minimize costs and increase security.
