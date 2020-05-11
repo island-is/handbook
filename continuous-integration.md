@@ -35,6 +35,8 @@ We need to maintain the quality of the codebase, minimize the time between intro
 
 ## Considered Options
 
+We only considered hosted solutions at this time to minimize the number of systems we need to maintain.
+
 - GitHub Actions
 - Circle CI
 - AWS CodeBuild
@@ -47,4 +49,4 @@ GitHub Actions
 - Easy customization of which parts of the CI process to run depending on branching patterns and pull requests
 - Good integration of code health with the pull request process
 - As an enterprise customer, we have a large number of "compute"-minutes that come as a part of the package we are buying
-- Support using own runners which can be helpful to minimize security, speed and costs.
+- Support using own runners which can be helpful to maximize speed, minimize costs and increase security.
