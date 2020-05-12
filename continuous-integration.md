@@ -8,6 +8,21 @@
 
 We need to maintain the quality of the codebase, minimize the time between introducing quality degradation and discovering it and make sure we have deployable artefacts at all times.
 
+### Terms
+
+- `code integration` - this is a process that checks the integrity/quality of the code - static code analysis, code formatting, compilation, running automated tests, etc. The process is usually in the form of one or more scripts and uses tools local to the repository with minimum external dependencies.
+- `artefact building` - this is a process that packages artefacts, labels them and optionally publishes them to a central artefact repository so that they can be used by the deployment process. This process makes sense to be executed only after `code integration` process finishes successfully.
+- `continuous integration` - the practice of running the `code integration process` triggered by events such as
+
+  - pushing new revisions of the code to the code repository
+  - opening a Pull Request
+  - fixed schedule
+  - etc.
+
+  We also run the `artefact building` process after a successful `code integration` process to have artefacts ready for deployment at all times.
+
+- `continuous integration platform` (CI platform from here on) - it is a platform (self-hosted or SaaS) that provides integrations to make it easy to run your `continuous integration` and publish the results
+
 ## Decision Drivers (Policy)
 
 - The code integration process needs to be independent from CI platform integration
@@ -33,9 +48,9 @@ We need to maintain the quality of the codebase, minimize the time between intro
   - Drawbacks:
     - Devs that use non-Linux OS might need to install additional software and customizations
 
-## Considered Options
+## CI Platform Considered Options
 
-We only considered hosted solutions at this time to minimize the number of systems we need to maintain.
+We only considered hosted solutions at this time to minimize the number of systems we need to maintain. Migrating to a different platform should not be a big or risky endevoar. They are merely convenient integrations with the code repository, cache hosting and notifications.
 
 - GitHub Actions
 - Circle CI
@@ -45,9 +60,9 @@ We only considered hosted solutions at this time to minimize the number of syste
 
 GitHub Actions
 
-- Number 1 CI platform at the time of this writing
+- Number 1 CI platform on GitHub at the time of this writing
 - Easy customization of which parts of the CI process to run depending on branching patterns and pull requests
 - Good integration of code health with the pull request process
-- As an enterprise customer, we have a large number of "compute"-minutes that come as a part of the package we are buying
+- As a GitHub open-source project, we have an unlimited number of "compute"-minutes that come as a part of the package
 - Supports parallelisation of the process which can be pretty important in the context of monorepo
 - Support using own runners which can be helpful to maximize speed, minimize costs and increase security.
