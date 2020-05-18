@@ -43,7 +43,7 @@ In the context of a [monorepo](./monorepo.md) we need to do this efficiently in 
     - Needs expertise in Dockerfile and Docker in general
 - We only build the code affected by the change but re-tag all unchanged code artefacts
   - Benefits
-    - Be able to release a consistent version of all necessary services. All Docker images for all services in the monorepo should have the same Docker image tag available for a commit hash
+    - Be able to release a consistent version of all necessary services. The Docker images for all services in the monorepo should have the same Docker image tag available for a commit hash
     - Supports the monorepo benefits and ideology
   - Drawbacks
     - Can be tricky, especially for artefacts that are not Docker images(currently we do not plan to have those)
