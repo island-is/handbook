@@ -60,8 +60,29 @@ In the context of a [monorepo](./monorepo.md) we need to do this efficiently in 
 We only considered hosted solutions at this time to minimize the number of systems we need to maintain. Migrating to a different platform should not be a big or risky endeavour. They are merely convenient integrations with the code repository, cache hosting and notifications.
 
 - GitHub Actions
+  - Benefits
+    - Well integrated with our code which is in GitHub
+    - Due to the integration we do not need to provide
+    - Well documented
+    - Supports self-hosted runners
+    - Well priced (free, not sure if there is a limit)
+  - Drawbacks
+    - Relatively new
 - Circle CI
+  - Benefits
+    - Mature
+    - Well-known
+    - Supports self-hosted runners
+    - Not sure if parallelization is supported on open-source projects
+  - Drawbacks
+    - It will cost us (they have a free tier but with a limit which seems we will likely reach)
 - AWS CodeBuild
+  - Benefits
+    - Scalable builds
+    - Best security model when part of our AWS account structure
+    - Reasonably priced?
+  - Drawbacks
+    - UI is kind of bad
 
 ## Decision Outcome
 
