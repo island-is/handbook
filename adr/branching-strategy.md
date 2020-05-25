@@ -26,15 +26,15 @@ Chosen option: "OneFlow" because it provides a single eternal branch with well s
 
 We'll implement OneFlow with these details:
 
-* Release branches are set up the Monday after each sprint.
+* Release branches are set up the Monday after each sprint. This is sometimes called release trains, where features line up for different release trains.
 * Release and quality managers from each team are responsible for reviewing and approving releases.
 * Releases apply to all apps in the monorepo.
 * Releases are versioned like this: `1.{sprint}.<hotfix>`. So version 1.32.2 is the release after sprint 32, with two hot fixes applied.
 * Feature branches are merged using "Squash and merge", so they can be easily reverted.
-* Feature branches should be short-lived. Features that are not ready to go live should instead be disabled with feature flags.
+* Feature branches should be short-lived. Features that are not ready to go live should be disabled with feature flags.
 * If a project needs to deploy updates outside of the sprint rhythm, they should use hotfix branches.
 
-Later we may embrace GitHub Flow, with continuous deployment into production, but only when we get enough confidence in our monorepo CI/automatic testing setup.
+Later we may embrace GitHub Flow, with continuous deployment into production, but only when we have enough confidence in the health of the monorepo, eg with intensive testing.
 
 ### Continuous deployment
 
@@ -50,6 +50,7 @@ In addition to these, we also want CD for feature branches, but this has additio
 ## Links
 
 * [4 branching workflows for Git](https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf)
+* [Branching patterns - Martin Fowler](https://martinfowler.com/articles/branching-patterns.html)
 
 [Git Flow]: https://nvie.com/posts/a-successful-git-branching-model/
 [GitHub Flow]: https://guides.github.com/introduction/flow/
