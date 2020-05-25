@@ -1,8 +1,8 @@
 # Continuous Integration
 
-- Status: draft
+- Status: accepted
 - Deciders: devs, devops
-- Date: 11.05.2020
+- Date: 25.05.2020
 
 ## Context and Problem Statement
 
