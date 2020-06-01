@@ -1,4 +1,4 @@
-# Branching/release strategy
+# Branching and release strategy
 
 * Status: proposed
 * Deciders: devs, devops
@@ -16,9 +16,16 @@ How do we want to organise work in branches and how should changes be released? 
 
 ## Considered Options
 
+Branching strategies:
+
 * [Git Flow]
 * [GitHub Flow]
 * [OneFlow]
+
+Release strategies:
+
+* [Continuous delivery]
+* [Release trains]
 
 ## Decision Outcome
 
@@ -47,6 +54,45 @@ prod        | latest release tag    | Prod               | Finished
 
 In addition to these, we also want CD for feature branches, but this has additional requirements/complications so it's out of scope for now.
 
+## Pros and Cons of Branching Options
+
+### Git Flow
+
+* Good, when there needs to be multiple versions in production.
+* Good, because it enforces an easy to comprehend naming convention for branches.
+* Good, because it has good support in popular git tools.
+* Bad, because the git history becomes unreadable.
+* Bad, because the master/develop split is redundant.
+
+### GitHub Flow
+
+* Good, because it fits well with Continuous Delivery and Continuous Integration.
+* Good, a simpler alternative to Git Flow.
+* Good, when we need to maintain a single version in production.
+* Bad, because production code can become unstable most easily.
+* Bad, if we need release plans.
+
+### One Flow
+
+* Good, because it has a clean git history (with squash-and-merge).
+* Good, because it has a structured release process without multiple long running branches.
+* Good, because it has good parts from GitHub Flow (simple history with one branch + feature branches) and Git Flow (releases and hot fixes).
+* Bad, because it makes continuous integration more difficult.
+
+## Pros and Cons of Release Options
+
+### Continous Delivery
+
+* Good, because it is simpler and leaner, allowing changes to be deployed quicker.
+* Bad, because it can easily break something in production if our CI isn't good enough.
+
+### Release trains
+
+* Good, because it has more structured releases, which helps with planning and QA.
+* Good, because it can be synchronised to organisational schedule.
+* Good, because it gives us a process to verify and test each release.
+* Bad, because it is fairly rigid and complicated to implement organisation-wide.
+
 ## Links
 
 * [4 branching workflows for Git](https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf)
@@ -55,3 +101,5 @@ In addition to these, we also want CD for feature branches, but this has additio
 [Git Flow]: https://nvie.com/posts/a-successful-git-branching-model/
 [GitHub Flow]: https://guides.github.com/introduction/flow/
 [OneFlow]: https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow
+[Continuous delivery]: https://martinfowler.com/bliki/ContinuousDelivery.html
+[Release trains]: https://martinfowler.com/articles/branching-patterns.html#release-train
