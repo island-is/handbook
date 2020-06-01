@@ -43,7 +43,9 @@ We'll implement OneFlow with these details:
   * If the feature touches many parts of the codebase, it can be useful to merge changes more often but hide the feature in production with feature flags.
 * If a project needs to deploy updates outside of the sprint rhythm, they should use hotfix branches.
 
-Later we may embrace GitHub Flow, with continuous deployment into production, but only when we have enough confidence in the health of the monorepo, eg with intensive testing.
+### Future strategy
+
+With time, we expect to build up better testing capabilities which gives us more confidence in the health of our monorepo. Then we can move quicker, with a simpler GitHub Flow branching strategy and continuous delivery into production.
 
 ### Hosting environments
 
