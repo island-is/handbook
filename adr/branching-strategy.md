@@ -36,7 +36,7 @@ We'll implement OneFlow with these details:
 * Release branches are set up the Monday after each sprint. This is sometimes called release trains, where features line up for different release trains.
 * Release and quality managers from each team are responsible for reviewing and approving releases.
 * Releases apply to all apps in the monorepo.
-* Releases are versioned like this: `1.{sprint}.<hotfix>`. So version 1.32.2 is the release after sprint 32, with two hot fixes applied.
+* Releases are versioned like this: `{cycle}.{sprint}.{hotfix}`. So version 3.1.2 is the release after cycle 3, sprint 1 with two hot fixes applied.
 * Feature branches are merged using "Squash and merge", so they can be easily reverted.
 * Feature branches should be short-lived. Features that are not ready to go live should be disabled with feature flags.
 * If a project needs to deploy updates outside of the sprint rhythm, they should use hotfix branches.
