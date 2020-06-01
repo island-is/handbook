@@ -1,4 +1,4 @@
-# Use NX.
+# Use NX
 
 ## Context and Problem Statement
 

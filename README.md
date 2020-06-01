@@ -15,7 +15,7 @@ into the project, as well as document project architecture and decisions.
 - [Teamwork](./teamwork.md)
 - [Monorepo](./monorepo.md)
 - [Code standards](./code-standards.md)
-- [Architecture Decision Record](./adr)
+- [Architecture Decision Record](./docs/adr)
 - [Glossary](./glossary.md)
 
 [Digital Iceland]: http://www.reddit.com
