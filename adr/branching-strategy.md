@@ -12,6 +12,7 @@ How do we want to organise work in branches and how should changes be released? 
 
 * We need to have confidence in our releases.
 * We want more structured releases while we're still getting our footing in a shared monorepo.
+* We need simplicity and clear [takt time] so different teams can plan for what is going out the door from them.
 * It should work well with our agile work environment.
 
 ## Considered Options
@@ -110,3 +111,4 @@ We'll probably start with dev, staging, pre-prod and prod environments, since fe
 [OneFlow]: https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow
 [Continuous delivery]: https://martinfowler.com/bliki/ContinuousDelivery.html
 [Release trains]: https://martinfowler.com/articles/branching-patterns.html#release-train
+[takt time]: https://kanbanize.com/continuous-flow/takt-time
