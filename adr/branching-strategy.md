@@ -38,21 +38,26 @@ We'll implement OneFlow with these details:
 * Releases apply to all apps in the monorepo.
 * Releases are versioned like this: `{cycle}.{sprint}.{hotfix}`. So version 3.1.2 is the release after cycle 3, sprint 1 with two hot fixes applied.
 * Feature branches are merged using "Squash and merge", so they can be easily reverted.
-* Feature branches should be short-lived. Features that are not ready to go live should be disabled with feature flags.
+* There are two ways to build larger features.
+  * If the feature is isolated and not likely to cause conflicts, they can stay on long-living feature branches until they are ready to be released.
+  * If the feature touches many parts of the codebase, it can be useful to merge changes more often but hide the feature in production with feature flags.
 * If a project needs to deploy updates outside of the sprint rhythm, they should use hotfix branches.
 
 Later we may embrace GitHub Flow, with continuous deployment into production, but only when we have enough confidence in the health of the monorepo, eg with intensive testing.
 
-### Continuous deployment
+### Hosting environments
 
-Environment | CD                    | Databases/services | Features
+We'll set up continuous delivery to different hosting environments:
+
+Environment | Git source            | Databases/services | Features
 ------------|-----------------------|--------------------|----------
+sandbox     | feature branch        | Test               | All
 dev         | master                | Test               | All
 staging     | master                | Prod               | All
 pre-prod    | release/hotfix branch | Prod               | Finished
 prod        | latest release tag    | Prod               | Finished
 
-In addition to these, we also want CD for feature branches, but this has additional requirements/complications so it's out of scope for now.
+We'll probably start with dev, staging, pre-prod and prod environments, since feature branch deployments are more dynamic and difficult to manage.
 
 ## Pros and Cons of Branching Options
 
