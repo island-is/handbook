@@ -9,6 +9,7 @@ This log lists the architectural decisions for island.is.
 - [ADR-0002](0002-continuous-integration.md) - Continuous Integration
 - [ADR-0003](0003-css.md) - CSS
 - [ADR-0004](0004-branching-and-release-strategy.md) - Branching and release strategy
+- [ADR-0005](0005-error-tracking-and-monitoring.md) - Error tracking and monitoring tool
 
 <!-- adrlogstop -->
 
