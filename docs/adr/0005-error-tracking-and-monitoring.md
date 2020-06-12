@@ -1,6 +1,6 @@
 # Error tracking and monitoring
 
-* Status: proposed
+* Status: accepted
 * Deciders: devs, devops
 * Date: 12.06.2020
 
