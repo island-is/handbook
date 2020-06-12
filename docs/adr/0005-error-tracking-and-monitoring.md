@@ -24,6 +24,7 @@ Chosen option: `Sentry`, because it ranks higher in a community survey regarding
 
 * Good, because it offers a Slack integration for faster feedback.
 * Good, because it offers a Github integration to link to possible commits and PRs.
+* Good, because it offers bot front-side/server-side/serverless error tracking.
 * OK, because it was ranked the **#5** as the best Javascript (client-side) error logging service in a community survey.
 * Bad, because it's expensive. (**$199/mo** for **450k events** and **15 collaborators**)
 * Bad, because it's pricing includes a fixed set of collaborators.
@@ -32,6 +33,7 @@ Chosen option: `Sentry`, because it ranks higher in a community survey regarding
 
 * Good, because it offers a Slack integration for faster feedback.
 * Good, because it offers a Github integration to link to possible commits and PRs.
+* Good, because it offers bot front-side/server-side/serverless error tracking.
 * Good, because it was ranked the **#1** as the best Javascript (client-side) error logging service in a community survey.
 * Good, because it's cheaper than most error logging services out there (half the price of Bugsnag).
 * Good, because it offers the possibility of being completely free with a self-hosted solution (since Sentry is open-source).
