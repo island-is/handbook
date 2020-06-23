@@ -8,9 +8,9 @@
 
 It is the offical policy of the Digital Iceland and stated in the Techical Direction that it is to be implemented as free and open source. Open source software by definition is open to anyone to use, modify, distribute and study. These permissions are enforced an open source license. There are a number of well-known and widely used open source licenses available and we need to choose a license that best fits the goals of digital iceland.
 
-* Development for Digital Iceland will be open and free with minimum complications for development for all involved.
-* Reuse and transparency will be promoted.
-* There are two main types of open source licences:  more permissive licences that confer broad freedoms and minimal obligations (e.g., the MIT, BSD and the Apache 2.0 licences); and sharealike licences that require licensing adaptations with the same licence if they distribute them (e.g., the GNU GPL).
+There are two main types of open source licences:  more permissive licences that confer broad freedoms and minimal obligations (e.g., the MIT, BSD and the Apache 2.0 licences); and sharealike licences that require licensing adaptations with the same licence if they distribute them (e.g., the GNU GPL).
+
+Development for Digital Iceland will be open and free with minimum complications for development for all involved. Reuse and transparency will be promoted.
 
 ## Decision Drivers
 
@@ -61,7 +61,7 @@ The MIT license was chosen, for the following reasons:
 * [Stjórnarráðið - Umfjöllun um opinn hugbúnað](https://www.stjornarradid.is/verkefni/upplysingasamfelagid/stafraent-frelsi/opinn-hugbunadur)
 * [Ríkisendurskoðun - Frjáls og opinn hugbúnaðr](https://rikisendurskodun.is/wp-content/uploads/2016/01/Frjals_og_opinn_hugbunadur_01.pdf)
 
-[Apache] <https://www.apache.org/licenses/LICENSE-2.0>
-[BSD] <https://opensource.org/licenses/bsd-license.php>
-[GNU GPL] <https://www.gnu.org/licenses/gpl-3.0.html>
-[MIT] <https://opensource.org/licenses/mit-license.php>
+[Apache]: <https://www.apache.org/licenses/LICENSE-2.0>
+[BSD]: <https://opensource.org/licenses/bsd-license.php>
+[GNU GPL]: <https://www.gnu.org/licenses/gpl-3.0.html>
+[MIT]: <https://opensource.org/licenses/mit-license.php>
