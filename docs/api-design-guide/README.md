@@ -1,19 +1,27 @@
+# API Design Guide
 This is the home of the API Design Guide published by Digital Iceland 
-as a guide for itself and other related parties to follow best practices
-for API development.
+as a best practice guide for API development.
 
-Table of Contents:
-- [Introduction](./introduction.md)
-- Design Principles
+## Content
+- [Introduction](#introduction)
+- [Design Principles](./design-principles/README.md)
   - [Once-Only](./design-principles/once-only.md)
   - [Resource Oriented Design](./design-principles/resource-oriented-design.md)
   - [Naming Conventions](./design-principles/naming-conventions.md)
   - [Data Definitions](./design-principles/data-definitions.md)
   - [Technology Standards](./design-principles/tech-standards.md)
 - Implementing your API
-  - [Methods](./implementing/methods.md)
-  - [Errors](./implementing/errors.md)
-  - [Security](./implementing/security.md)
-  - [Testing](./implementing/testing.md)
-  - [Documentation](./implementing/documentation.md)
-  - [Versioning](./implementing/versioning.md)
+  - [Methods](./implementation/methods.md)
+  - [Errors](./implementation/errors.md)
+  - [Security](./implementation/security.md)
+  - [Testing](./implementation/testing.md)
+  - [Documentation](./implementation/documentation.md)
+  - [Versioning](./implementation/versioning.md)
+- Operating your API
+  - [Environments](./operation/environments.md)
+  - [Monitoring](./operation/monitoring.md)
+  - [Service Level Agreement](./operation/sla.md)
+- [Example Service](./example.md)
+
+
+## Introduction
