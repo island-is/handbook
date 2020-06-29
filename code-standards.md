@@ -58,20 +58,21 @@ const typeDefs = gql`
 
 ## Naming conventions
 
-Services
-Use PascalCase for services
+### Services
+Use ```PascalCase``` for services.
 
-Functions and variables
-Use ```camelCase``` for variable
+### Functions and variables
+Use ```camelCase``` for functions and variables.
+> Reason: Conventional JavaScript.
 
-Models
-PascalCase
+### Models
+Use ```PascalCase``` for models.
 
-Properties and methods
-camelCase
+### Properties and methods
+Use ```camelCase``` for properties and methods.
 
-Global variables
-UPPERCASE
+### Global variables
+Use ```UPPERCASE``` for global variables
 
 [Prettier]: https://prettier.io/
 [ESLint]: https://eslint.org/
