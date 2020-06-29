@@ -56,6 +56,20 @@ const typeDefs = gql`
 `
 ```
 
+## Naming conventions
+
+Services
+PascalCase
+
+Functions
+camelCase
+
+Models
+PascalCase
+
+Properties
+camelCase
+
 [Prettier]: https://prettier.io/
 [ESLint]: https://eslint.org/
 [Glossary]: glossary.md
