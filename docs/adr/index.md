@@ -12,6 +12,7 @@ This log lists the architectural decisions for island.is.
 - [ADR-0005](0005-error-tracking-and-monitoring.md) - Error tracking and monitoring
 - [ADR-0006](0006-what-api-management-tool-to-consider.md) - What API Management tool to consider
 - [ADR-0008](0008-use-oauth-and-openid-connect.md) - Use OAuth 2.0 and OpenID Connect as protocols for Authentication and Authorization
+- [ADR-0009](0009-naming-files-and-directories.md) - Naming strategies for files and directories
 
 <!-- adrlogstop -->
 
