@@ -1,8 +1,8 @@
 # Unified naming strategy for files and directories
 
-* Status: [proposed]
-* Deciders: [devs]
-* Date: [2020-07-03]
+* Status: accepted
+* Deciders: devs
+* Date: 2020-07-03
 
 ## Context and Problem Statement
  

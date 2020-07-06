@@ -1,5 +1,5 @@
 # Viskuausan Static Site Generator
-* Status: proposed
+* Status: accepted
 * Deciders: devs
 * Date: 2020-06-29
 

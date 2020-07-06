@@ -1,7 +1,7 @@
 # What API Management tool to consider
 
-* Status: proposed
-* Deciders: TBD
+* Status: accepted
+* Deciders: devs
 * Date: 2020-06-11
 
 Technical Story: Design of Api Gateway / API Portal

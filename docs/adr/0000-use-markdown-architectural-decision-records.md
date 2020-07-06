@@ -1,5 +1,9 @@
 # Use Markdown Architectural Decision Records
 
+- Status: accepted
+- Deciders: devs, devops
+- Date: 01.06.2020
+
 ## Context and Problem Statement
 
 We want to record architectural decisions made in this project.
