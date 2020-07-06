@@ -13,6 +13,7 @@ This log lists the architectural decisions for island.is.
 - [ADR-0006](0006-what-api-management-tool-to-consider.md) - What API Management tool to consider
 - [ADR-0007](0007-viskuausan-static-site-generator.md) - Viskuausan Static Site Generator
 - [ADR-0008](0008-use-oauth-and-openid-connect.md) - Use OAuth 2.0 and OpenID Connect as protocols for Authentication and Authorization
+- [ADR-0009](0009-naming-files-and-directories.md) - Naming strategies for files and directories
 
 <!-- adrlogstop -->
 
