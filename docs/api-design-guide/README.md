@@ -1,8 +1,10 @@
 # API Design Guide
-This is the home of the API Design Guide published by Digital Iceland 
+
+This is the home of the API Design Guide published by Stafrænt Ísland
 as a best practice guide for API development.
 
 ## Content
+
 - [Introduction](#introduction)
 - [Design Principles](./design-principles/README.md)
   - [Once-Only](./design-principles/once-only.md)
@@ -22,6 +24,5 @@ as a best practice guide for API development.
   - [Monitoring](./operation/monitoring.md)
   - [Service Level Agreement](./operation/sla.md)
 - [Example Service](./example.md)
-
 
 ## Introduction
