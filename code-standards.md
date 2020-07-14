@@ -55,7 +55,3 @@ const typeDefs = gql`
   }
 `
 ```
-
-[Prettier]: https://prettier.io/
-[ESLint]: https://eslint.org/
-[Glossary]: glossary.md

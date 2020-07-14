@@ -1,6 +1,6 @@
 # Use OAuth 2.0 and OpenID Connect as protocols for Authentication and Authorization
 
-- Status: proposed
+- Status: accepted
 - Date: 2020-06-02
 
 ## Context and Problem Statement

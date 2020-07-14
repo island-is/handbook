@@ -1,5 +1,9 @@
 # Use NX
 
+- Status: accepted
+- Deciders: devs
+- Date: 03.05.2020
+
 ## Context and Problem Statement
 
 We want a monorepo tool to help us to scale development up for multiple projects and teams. It should not be too much in the way, but help us manage code, dependencies and CI/CD.

@@ -1,6 +1,6 @@
 # Branching and release strategy
 
-* Status: proposed
+* Status: accepted
 * Deciders: devs, devops
 * Date: 2020-05-24
 
