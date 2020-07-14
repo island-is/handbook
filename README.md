@@ -15,6 +15,7 @@ into the project, as well as document project architecture and decisions.
 - [Teamwork](./teamwork.md)
 - [Monorepo](./monorepo.md)
 - [Code standards](./code-standards.md)
+- [Design guide](./docs/api-design-guide/README.md)
 - [Code reviews](./code-reviews.md)
 - [Architecture Decision Record](./docs/adr/index.md)
 - [Glossary](./glossary.md)
