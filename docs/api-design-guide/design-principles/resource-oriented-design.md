@@ -2,22 +2,12 @@
 
 The data (resource) should control the design of the service. As the data is 
 the key player and the service is centered around making the data accessible.
-
 API structure should follow Resource Oriented Design, which should facilitate 
 simpler and more coherent web service interfaces, which should be easy to use
 and maintain.
 
 
 ## Design flow
-
-Start designing APIs is to identify the resources your service provides. For example, 
-a basic photo album service may feature the following two types of resources: 
-users and photos. Note that one resource type may be the parent of another; 
-for example, one user may have multiple photos.
-
-Resource name consists of the resource’s type, its identifier, the resource name 
-of its parent and the name of the API service. The type is known as 
-the Collection ID, and the identifier is known as the Resource ID.
 
 The fundamental idea is that the basic, well-understood, and well-known technologies 
 of the current web (HTTP, URI and XML) should be used according to their design
@@ -31,7 +21,7 @@ The Resource-Oriented Architecture (ROA) consists of four concepts:
  - Resources
  - Their names (URIs)
  - Their representations
- - The links between them and four properties:
+ - The links between them and the four properties:
    - Addressability
    - Statelessness
    - Connectedness
@@ -62,7 +52,7 @@ Resource name consists of the resource’s type, its identifier, the resource na
 its parent and the name of the API service. The type is known as the **Collection ID**, 
 and the identifier is known as the **Resource ID**. Resource IDs are usually random 
 strings assigned by the API service, though it is also OK to accept custom 
-resource IDs from clients. **Collection ID's must be must be the plural form of 
+resource IDs from clients. **Collection ID's must be the plural form of 
 the noun used for the resource** and **Resource ID's should be immutable**.
 
 Below are two examples of valid resource names:
@@ -167,6 +157,7 @@ For [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) See
 #### References
 - [Google: Resource Oriented Design](https://cloud.google.com/apis/design/resources)
 - [Ratros Y: Designing APIs](https://medium.com/@ratrosy/designing-apis-4eed43409f93)
+- [Arnulf Christl: Towards a Resource Oriented Future](http://arnulf.us/Towards_a_Resource_Oriented_Future)
 
 
 
