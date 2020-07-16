@@ -1,4 +1,5 @@
 # Resource Oriented Design
+**Under Construction**
 
 The data (resource) should control the design of the service. As the data is 
 the key player and the service is centered around making the data accessible.
@@ -18,14 +19,14 @@ the web.
 
 The Resource-Oriented Architecture (ROA) consists of four concepts:
 
- - Resources
- - Their names (URIs)
- - Their representations
+ - Resources.
+ - Their names (URIs).
+ - Their representations.
  - The links between them and the four properties:
-   - Addressability
-   - Statelessness
-   - Connectedness
-   - A uniform interface
+   - Addressability.
+   - Statelessness.
+   - Connectedness.
+   - A uniform interface.
 
 
 

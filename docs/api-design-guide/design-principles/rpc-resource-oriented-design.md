@@ -1,4 +1,5 @@
   # RPC - Resource-oriented design
+**Under Construction**
 
 Resource-oriented design is a pattern for specifying [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) APIs, based on
 several high-level design principles (most of which are common to recent public
@@ -20,9 +21,9 @@ also defining its own patterns where appropriate.
 
 When designing an API, consider the following (roughly in logical order):
 
-- The resources (nouns) the API will provide
-- The relationships and hierarchies between those resources
-- The schema of each resource
+- The resources (nouns) the API will provide.
+- The relationships and hierarchies between those resources.
+- The schema of each resource.
 - The methods (verbs) each resource provides, relying as much as possible on
   the standard verbs.
 
