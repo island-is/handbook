@@ -1,88 +1,78 @@
 # Resource Oriented Design
-TODO
-* Describe how the data (resource) should control the design of the service.
-  As the data is the key player and the service is centered around 
-  making the data accessable.
 
+The data (resource) should control the design of the service. As the data is 
+the key player and the service is centered around making the data accessable.
 
-  # Resource-oriented design
+## Design flow
 
-Resource-oriented design is a pattern for specifying [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) APIs, based on
-several high-level design principles (most of which are common to recent public
-HTTP APIs):
+The Design Guide suggests taking the following steps when designing resource- 
+oriented APIs (more details are covered in specific sections below):
 
-- The fundamental building blocks of an API are individually-named _resources_
-  (nouns) and the relationships and hierarchy that exist between them.
-- A small number of standard _methods_ (verbs) provide the semantics for most
-  common operations. However, custom methods are available in situations where
-  the standard methods do not fit.
-- Stateless protocol: Each interaction between the client and the server is
-  independent, and both the client and server have clear roles.
+  - Determine what types of resources an API provides.
+  - Determine the relationships between resources.
+  - Decide the resource name schemes based on types and relationships.
+  - Decide the resource schemas.
+  - Attach minimum set of methods to resources.
 
-Readers might notice similarities between these principles and some principles
-of [REST](https://en.wikipedia.org/wiki/Representational_state_transfer); resource-oriented design borrows many principles from REST, while
-also defining its own patterns where appropriate.
+## Resources
+A resource-oriented API is generally modeled as a resource hierarchy, where 
+each node is either a simple resource or a collection resource. For convenience, 
+they are often called a resource and a collection, respectively.
 
-## Guidance
+  - A collection contains a list of resources of the same type. For example, 
+    a user has a collection of photos.
+  - A resource has some state and zero or more sub-resources. Each sub-resource 
+    can be either a simple resource or a collection resource.
 
-When designing an API, consider the following (roughly in logical order):
+Resource name consists of the resource’s type, its identifier, the resource name of its parent and the name of the API service. The type is known as the Collection ID, and the identifier is known as the Resource ID. Resource IDs are usually random strings assigned by the API service, though it is also OK to accept custom resource IDs from clients. 
+**Collection ID's must be plural** and **Resource ID's should be immutable**.
 
-- The resources (nouns) the API will provide
-- The relationships and hierarchies between those resources
-- The schema of each resource
-- The methods (verbs) each resource provides, relying as much as possible on
-  the standard verbs.
+Below are two examples of valid resource names:
 
-### Resources
+A user
+```
+       //my-service.island.is / users / 1
+                  |               |     |
+                  |               |      \
+                  |               |       Resource ID
+                  |                \  
+                  |                 Collection ID 
+                   \                   (type)
+                    API service name
+```
 
-A resource-oriented API **should** generally be modeled as a resource
-hierarchy, where each node is either a simple resource or a collection of
-resources.
+A photo
+```
+       //my-service.island.is / users / 1 / photos / 1
+                  |               |           |      |
+                  |               |           |       \
+                  |               |           |        Resource ID 
+                  |               |           |          (type)   
+                  |               |            \  
+                  |               |              Collection ID
+                  |               |                 (type)
+                  |                \     
+                   \                Resource name of parent resource
+                    API service name
+       
+```
 
-A _collection_ contains resources of _the same type_. For example, a publisher
-has the collection of books that it publishes. A resource usually has fields,
-and resources may have any number of sub-resources (usually collections).
+## Fields
+A resource may have one or more fields, and resources of the same type share the same collection of fields. For example, a resource of type users may have field `name`, `display_name`, `email` associated with it. Note that one of these fields must be its resource name, a string that uniquely identifies the resource in the service; usually field name is reserved for this purpose.
 
-**Note:** While there is some conceptual alignment between storage systems and
-APIs, a service with a resource-oriented API is not necessarily a database, and
-has enormous flexibility in how it interprets resources and methods. API
-designers **should not** expect that their API will be reflective of their
-database schema. In fact, having an API that is identical to the underlying
-database schema is actually an anti-pattern, as it tightly couples the surface
-to the underlying system.
+There are three types of fields:
+| Type     | Description                                                                                                       |
+|----------|-------------------------------------------------------------------------------------------------------------------|
+| Required | Required fields must be populated by clients.                                                                     |
+| Optional | Optional fields can be populated by clients. If left empty, they will be automatically filled by the server.      |
+| Reserved | Reserved fields are only populated by server. API services should ignore user-provided values in reserved fields. |
 
-### Methods
-
-Resource-oriented APIs emphasize resources (data model) over the methods
-performed on those resources (functionality). A typical resource-oriented API
-exposes a large number of resources with a small number of methods on each
-resource. The methods can be either the standard methods ([Get](https://google.aip.dev/131), [List](https://google.aip.dev/132),
-[Create](https://google.aip.dev/133), [Update](https://google.aip.dev/134), [Delete](https://google.aip.dev/134)), or [custom methods](https://google.aip.dev/136).
-
-**Note:** A custom method in resource-oriented design does _not_ entail
-defining a new or custom HTTP verb. Custom methods use traditional HTTP verbs
-(usually `POST`) and define the custom verb in the URI.
-
-APIs **should** prefer standard methods over custom methods; the purpose of
-custom methods is to define functionality that does not cleanly map to any of
-the standard methods. Custom methods offer the same design freedom as
-traditional RPC APIs, which can be used to implement common programming
-patterns, such as database transactions, import and export, or data analysis.
-
-### Stateless protocol
-
-As with most public APIs available today, resource-oriented APIs **must**
-operate over a stateless protocol: The fundamental behavior of any individual
-request is independent of other requests made by the caller.
-
-In an API with a stateless protocol, the server has the responsibility for
-persisting data, which may be shared between multiple clients, while clients
-have sole responsibility and authority for maintaining the application state.
-
----
+## RPC
+For RPC See [RPC - Resource-oriented design](./rpc-resource-oriented-design.md)
 
 #### References
-- [google api: Resource-oriented design](https://google.aip.dev/121)
+- [Google: Resource-oriented design](https://google.aip.dev/121)
+- [Ratros Y: Designing APIs](https://medium.com/@ratrosy/designing-apis-4eed43409f93)
 
 
 
