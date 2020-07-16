@@ -1,9 +1,43 @@
 # Resource Oriented Design
 
 The data (resource) should control the design of the service. As the data is 
-the key player and the service is centered around making the data accessable.
+the key player and the service is centered around making the data accessible.
+
+API structure should follow Resource Oriented Design, which should facilitate 
+simpler and more coherent web service interfaces, which should be easy to use
+and maintain.
+
 
 ## Design flow
+
+Start designing APIs is to identify the resources your service provides. For example, 
+a basic photo album service may feature the following two types of resources: 
+users and photos. Note that one resource type may be the parent of another; 
+for example, one user may have multiple photos.
+
+Resource name consists of the resource’s type, its identifier, the resource name 
+of its parent and the name of the API service. The type is known as 
+the Collection ID, and the identifier is known as the Resource ID.
+
+The fundamental idea is that the basic, well-understood, and well-known technologies 
+of the current web (HTTP, URI and XML) should be used according to their design
+principles. This facilitates the design of Web Services that have simple and 
+coherent interfaces, and which are easy to use and maintain. Such web services 
+will also be easier to optimize for working with the existing infrastructure of 
+the web.
+
+The Resource-Oriented Architecture (ROA) consists of four concepts:
+
+ - Resources
+ - Their names (URIs)
+ - Their representations
+ - The links between them and four properties:
+   - Addressability
+   - Statelessness
+   - Connectedness
+   - A uniform interface
+
+
 
 The Design Guide suggests taking the following steps when designing resource- 
 oriented APIs.
@@ -25,8 +59,8 @@ they are often called a resource and a collection, respectively.
     can be either a simple resource or a collection resource.
 
 Resource name consists of the resource’s type, its identifier, the resource name of
-its parent and the name of the API service. The type is known as the Collection ID, 
-and the identifier is known as the Resource ID. Resource IDs are usually random 
+its parent and the name of the API service. The type is known as the **Collection ID**, 
+and the identifier is known as the **Resource ID**. Resource IDs are usually random 
 strings assigned by the API service, though it is also OK to accept custom 
 resource IDs from clients. **Collection ID's must be must be the plural form of 
 the noun used for the resource** and **Resource ID's should be immutable**.
@@ -120,7 +154,7 @@ The following table specifies the mappings between standard- and custom methods 
 | `DELETE` | `DELETE`                   |
 | `Custom` | `POST` (usually)           |
 
-To map a custom method, pick the HTTP verb closest to the nature of your custom method. Note that when developers call the custom method, its method name must be attached to the end of the resource name so as to help the API service distinguish between standard methods and custom methods. Google Cloud Functions, for example, supports a custom method, `generateDownloadUrl`, for downloading the source code of a Cloud Function, and the method is mapped to the HTTP verb `POST`; to call this method on Cloud Function hello-world, one must pass an HTTP `POST` request to
+To map a custom method, pick the HTTP verb closest to the nature of your custom method. Note that when developers call the custom method, its method name must be attached to the end of the resource name so as to help the API service distinguish between standard methods and custom methods. Google Cloud Functions, for example, supports a custom method, `generateDownloadUrl`, for downloading the source code of a Cloud Function, and the method is mapped to the HTTP verb `POST`; to call this method on Cloud Function hello-world, one must pass an HTTP `POST` request to:
 ```
 https://cloudfunctions.googleapis.com/v1/hello-world:generateDownloadUrl
 ```
