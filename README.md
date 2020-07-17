@@ -1,6 +1,6 @@
 # Digital Iceland Handbook
 
-This GitHub organisation is the center of development for digital government
+This GitHub organization is the center of development for digital government
 services on `island.is`. It is managed by the [Digital Iceland] department
 inside the [Ministry of Finance and Economic Affairs].
 
