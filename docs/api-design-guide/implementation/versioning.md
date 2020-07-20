@@ -34,10 +34,10 @@ In all URLs with no exceptions, APIs must expose the **major** version number, w
 Additionally, the `https://my-service.island.is/v1/info` url should provide the property `version` with the MAJOR.MINOR.PATCH version number as a string value in the returned resource representation.
 
 ### Considerations when incrementing version numbers
-If an API introduces a breaking change, such as removing or renaming a field, it must increment its API `major` version number to ensure that existing user code does not suddenly break, but incrementing the `major` version should be avoided whenever possible to avoid increasing maintenance and cost of running many versions of the same service.  Consider adding
-**content versioning**(see below) to methods before deciding to make breaking changes. 
+If an API introduces a breaking change, such as removing or renaming a field, it must increment its API `major` version number to ensure that existing user code does not suddenly break, but incrementing the `major` version should be avoided whenever possible to avoid increasing maintenance and cost of running many versions of the same service.  Consider using
+**Content negotiation**(see below) to methods, before deciding to make breaking changes. 
 
-### Content versioning (content negotiation)
+### Content negotiation
 Versioning a single resource representation here described as content can be used to minimize the need for a `major` incrementation of a API version.
 
 Versioning through content negotiation can be used to minimize the need for a breaking change of services, allowing existing clients to use the old content while new or targeted clients can access the new version of the content.  This can be done by allowing the new or targeted clients to add a `; version=2` string to the header of the request.  Further more when a new `major` version is released the new content version should in most cases become the default content version.
