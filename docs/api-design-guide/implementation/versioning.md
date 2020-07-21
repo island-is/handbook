@@ -63,8 +63,8 @@ When there are more than one running instances of an API, the old versions need 
 
 Please follow these guidelines when decommissioning APIs.
 
-#### Advertise to clients when a specific API version will be discontinued
-You should notify clients who use your service that the old version will stop working at a specified date.  You should give them a link to a new version of the service and provide them with information about all breaking changes between versions.
+#### Notify clients when a specific API version will be discontinued
+You should notify clients, who use your service, that the old version will stop working at a specified date.  You should give them a link to a new version of the service and provide them with information about all breaking changes between versions.
 
 The specified date must not be less than 6 months from the time you notify your last client.  Exception from this rule can be made when you see via your logs that no calls to this API version are made anymore. 
 

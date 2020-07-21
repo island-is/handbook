@@ -65,7 +65,7 @@ Generally project code is owned by the teams working on the project while shared
 Using [Protected Branch] and [Code Owner] features in GitHub, we can enforce code ownership on a file and folder level. Each pull request automatically notifies and requests reviews from the teams responsible for the changed code. These pull requests can not be merged unless they are reviewed by the respective parties.
 
 [Technical Direction]: ./technical-direction.md
-[Architectural Decisions]: ./adr
+[Architectural Decisions]: ./docs/adr
 [Disciplines]: ./teamwork.md#disciplines
 [Protected Branch]: https://help.github.com/en/github/administering-a-repository/about-protected-branches
 [Code Owner]: https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
