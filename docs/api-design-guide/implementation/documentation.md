@@ -27,11 +27,14 @@ figure out, which programming languages are mostly used by the API consumers and
 A tool like [Swagger](http://swagger.io/) could help with these examples, but it's automatic generation is not always enough.  A good practice would be to provide a table for describing 
 elements or properties.
 
-#### Table example
+If a requests or responses support multiple representations, such as HTTP, XML, and JSON a good practice would be to give example for at least these three.
+
+#### Here is a example of a table describing elements requests or responses
 | Name     | Type    | Description                           | Remarks                     |
 | :---     | :---    | :----------                           | :-------                    |
 | name     | String  | Name of the person                    | Max length is 32 characters |
-| age      | Number  | How many years has the person lived   | A child can be of 0 age but age will never be negative    |
+| age      | Number  | How many years has the person lived   | A child can be of 0 age but age will never be negative |
+| address  | String  | The name of the place where the person lives | Max length is 36 characters |
 
 ## Consider using open source API specification
 It is recommended using tools like [Swagger](http://swagger.io/), to help with the documentation.  Using such tools, will help API developers with maintaining and keeping the documentation up to date.  API consumers will also benefit with structured and readable documentation.
