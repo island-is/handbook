@@ -1,7 +1,8 @@
   # RPC - Resource-oriented design
 **Under Construction**
 
-Resource-oriented design is a pattern for specifying [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) APIs, based on
+Resource-oriented design is a pattern for specifying 
+[RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) APIs, based on
 several high-level design principles (most of which are common to recent public
 HTTP APIs):
 
@@ -14,8 +15,9 @@ HTTP APIs):
   independent, and both the client and server have clear roles.
 
 Readers might notice similarities between these principles and some principles
-of [REST](https://en.wikipedia.org/wiki/Representational_state_transfer); resource-oriented design borrows many principles from REST, while
-also defining its own patterns where appropriate.
+of [REST](https://en.wikipedia.org/wiki/Representational_state_transfer); 
+resource-oriented design borrows many principles from REST, while also defining 
+its own patterns where appropriate.
 
 ## Guidance
 
@@ -50,7 +52,8 @@ to the underlying system.
 Resource-oriented APIs emphasize resources (data model) over the methods
 performed on those resources (functionality). A typical resource-oriented API
 exposes a large number of resources with a small number of methods on each
-resource. The methods can be either the standard methods (Get, List, Create, Update, Delete) or custom methods.
+resource. The methods can be either the standard methods (Get, List, Create, 
+Update, Delete) or custom methods.
 
 | Method   | HTTP Request Method (Verb) |
 |----------|----------------------------|
