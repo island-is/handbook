@@ -27,12 +27,10 @@ or [NextJS + Remark](https://github.com/vercel/next.js/tree/canary/examples/blog
 to make your markdown documents searchable and more accessible.
 
 When documenting with markdown try to keep text lines no longer than 80 
-characters. In the editor VS Code f. example you could add 
-`"editor.rulers": [80]` to your preferences -> settings.
-
-## Specify limitations
-If usage of the API is limited in any way, please describe the limitations.
-That is if 
+characters for easier reading when markdown  documents are read from text 
+editors.  Editors often support showing you the 80 line character limit.  For
+example, in VS Code, you can add `"editor.rulers": [80]` to your 
+preferences -> settings to make it show this limit.
 
 ## Write examples
 The quickest way for a consumer to learn from documentation is from example 
