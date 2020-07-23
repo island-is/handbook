@@ -101,7 +101,7 @@ resource in the service; usually field name is reserved for this purpose.
 There are three types of fields:
 
 | Type     | Description                                                                                                       |
-|----------|-------------------------------------------------------------------------------------------------------------------|
+|:---------|:------------------------------------------------------------------------------------------------------------------|
 | Required | Required fields must be populated by clients.                                                                     |
 | Optional | Optional fields can be populated by clients. If left empty, they will be automatically filled by the server.      |
 | Reserved | Reserved fields are only populated by server. API services should ignore user-provided values in reserved fields. |
