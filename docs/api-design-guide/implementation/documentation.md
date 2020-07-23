@@ -47,7 +47,7 @@ If a requests or responses support multiple representations, such as
 HTTP, XML, and JSON a good practice would be to show example for at 
 least these three.
 
-#### Here is a example of a table describing elements requests or responses
+#### Here is a example of a table describing elements in a request or a response
 | Name     | Type    | Description                           | Remarks                     |
 | :---     | :---    | :----------                           | :-------                    |
 | name     | String  | Name of the person                    | Max length is 32 characters |
@@ -69,6 +69,8 @@ more for the API developer, not the API consumer.
 
 
 ## APIs must provide a information object about the service
+**TODO**: Where should this section be located, in which md?
+
 For API management all APIs should implement a GET `/info` method which should
 provide a API information object.   The API Catalog (Viskuausan) uses this
 method when listing available services at island.is.
