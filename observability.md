@@ -12,7 +12,7 @@ We need to ensure that the applications stay available and performant once they 
 
 ## What is observability
 
-Here is a [sample chapter from the book Distributed Systems Observability by Cindy Sridharan](https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/ch04.html) that talks about the three pillars of observability - logs, metrics and traces. We are starting with these basics and we are planning to add more - stack-trace collection, deployment events, etc.
+Here is a [sample chapter from the book Distributed Systems Observability by Cindy Sridharan](https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/ch04.html) that talks about the three pillars of observability - logs, metrics and traces. We are starting with these basics and we are planning to add more - stack-trace collecting, deployment events, etc.
 
 ## Setup
 
@@ -27,3 +27,15 @@ Tracing - TBD.
 To search through the logs we use [Kibana](https://kibana.shared.devland.is). It is a powerful way to search logs across different apps running in different environments.
 
 Grafana - TBD.
+
+## Application recent change history
+
+Ops need to have access to the recent history of significant changes for each application. That can provide important clues, helpful for the resolution of an issue.
+
+## Define the boundaries of expected behaviour
+
+When it comes to metrics we need to baseline the correct behaviour. That usually take a few days, maybe even weeks. Together, the Ops and Dev team can decide the allowed deviation from the baseline behaviour.
+
+## Contact information for dev team emergency contact
+
+In case Ops cannot resolve the issue in a timely manner with the available tools and information, they will seek for assistance from the development team that has worked on the application issue. The process of handling an issue is described in [Handling production issues](./handling-production-issues.md)
