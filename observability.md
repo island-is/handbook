@@ -19,9 +19,10 @@ Here is a [sample chapter from the book Distributed Systems Observability by Cin
 
 All AWS services that we use send their logs to AWS CloudWatch. This is in addition to the copy of the logs stored in the AWS Logs account. Additionally we have an AWS ElasticSearch instance running in our Shared AWS account where we store _all_ logs from _all_ applications running in _all_ our Kubernetes clusters. We have deployed FluentD in the Kubernetes clusters which takes care of delivering automatically all logs to central ElasticSearch.
 
-- [island-is/infrastructure#52]
-
 For storing and querying metrics we use [Prometheus](https://prometheus.io) which is also deployed in each Kubernetes cluster and collects metrics from all applications running there. AWS services send their metrics to AWS CloudWatch.
+
 Tracing - TBD.
 
-To search through the logs we use [Kibana](https://kibana.shared.devland.is). It is a powerful way to search in logs across different apps running in different environments.
+To search through the logs we use [Kibana](https://kibana.shared.devland.is). It is a powerful way to search logs across different apps running in different environments.
+
+Grafana - TBD.
