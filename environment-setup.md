@@ -1,14 +1,25 @@
 # Environment setup
 
 1. Data center
-2. Kubernetes
-3. Databases
-4. Queues
-5. Applications
+1. Kubernetes
+1. Databases
+1. Queues
+1. Applications
 
 ## Data center
 
+### General info
+
 We are currently running our operation in AWS exclusively. We utilize the [fully managed Kubernetes service](https://aws.amazon.com/eks/) as well as other database and messaging services that AWS provides.
+
+We use the `eu-west-1` region (Ireland) for two reasons
+
+- EU regulations regarding data co-location
+- Network latency to Iceland
+
+We provision all AWS resources in three Availability Zones so that failure in one of them does not impact our operations. This is also true for the Kubernetes cluster as well.
+
+### Structure
 
 ![Typical request handling](./images/acount_structure.png)
 
@@ -22,7 +33,7 @@ A few notes about the diagram:
 - Shared services account - here we run the infrastructure that is common or needs access to the user-facing accounts(Production/Test/Dev/etc.).
 - Transit account - used to control routing of network traffic between the different AWS accounts. Additionally we can add routing to VPN connections. VPN connections might come in handy if we need to connect our cloud setup with on-premise data centers.
 - Security account - used for forensics and auditing.
-- Production/Test/Dev/etc. accounts - used for deploying our applications
+- Production/Test/Dev/etc. accounts - used for deploying our applications. These are what we call our "environments" - "Dev environment", "Prod environment", etc. Here we provision the bulk of our workloads - Kubernetes, databases, queues, etc. Those are not shared between accounts.
 
 ## Kubernetes
 
@@ -39,7 +50,7 @@ A few notes here:
 
 ## Databases
 
-We use fully managed AWS database services. Although AWS offers a wide variaty of databases we limit ourselves to a small subset of those where we have deeper expertise in managing and troubleshooting.
+We use fully managed AWS database services. Although AWS offers a wide variety of databases we limit ourselves to a small subset of those where we have deeper expertise in managing and troubleshooting.
 
 We use the following databases as of this writing:
 
@@ -59,7 +70,7 @@ We use the term `application` only for service stacks that we deploy to our Kube
 Each application needs to be classified in each of these dimensions:
 
 - importance
-  - `critical` - this application provides an essential service. It is design decisions need to be reviewed by DevOps team at the inception of the application. It cannot use proprietary tech.
+  - `critical` - this application provides an essential service. Its design decisions must be reviewed by the DevOps team at the inception of the application. It cannot use proprietary tech.
   - `non-critical` - optional service that might take some time to bring on-line in case of a disaster or moving to on-premise
 - SLA
   - `personal` - services for individuals. 9-5 and MTTR 5 hours?
