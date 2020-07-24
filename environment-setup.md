@@ -59,8 +59,8 @@ We use the term `application` only for service stacks that we deploy to our Kube
 Each application nees to be classified in each of these dimensions:
 
 - importance
-  1. `critical` - this application provides an essential service. It is design decisions need to be reviewed by Ops team at inception of the application. It cannot use propriatary tech.
-  2. `non-critical` - optional service that might take some time to bring on-line in case of disaster or moving to on-premise
+  - `critical` - this application provides an essential service. It is design decisions need to be reviewed by Ops team at inception of the application. It cannot use propriatary tech.
+  - `non-critical` - optional service that might take some time to bring on-line in case of disaster or moving to on-premise
 - SLA
   - `personal` - services for individuals. 9-5 and MTTR 5 hours?
   - `business` - services for businesses. 9-5 and MTTR 2 hours?
