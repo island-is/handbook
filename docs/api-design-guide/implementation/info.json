@@ -1,0 +1,26 @@
+{
+    "version"              : "1.0.2",
+    "title"                : "Awesome service",
+    "description"          : "Provides access to the awesome database allowing you to query and submit methods on, how to better the world.",
+    "access"               : ["trustedPriority,trustedEssential"],
+    "type"                 : "rest", 
+    "data"                 : ["official","personal"],
+    "price"                : ["usage","custom"]  ,
+    "Links"                : {
+        "responsibleParty" : "https://my-service/responsible",
+        "bugReport"        : "https://github.com/island.is/my-service/issues/new?assignees=&labels=&template=bug_report.md",
+        "featureRequest"   : "https://github.com/island.is/my-service/issues/new?assignees=&labels=&template=feature_request.md"  
+    },
+    "contact": {
+        "name": "Johann spuck",
+        "email": "spuck@moa.com",
+        "phone": "864-5470"
+      },
+    "responceTime"         : 200,
+                         
+    "upTime"               : {
+        "weekdays"         : [1,2,3,4,5],
+        "from"             : "2020-04-23T17:09:00.000Z",
+        "to"               : "2020-04-23T17:17:00.000Z"
+    }
+}
