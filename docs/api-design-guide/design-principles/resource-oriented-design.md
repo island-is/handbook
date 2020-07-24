@@ -1,11 +1,9 @@
 # Resource Oriented Design
-**Under Construction**
-
-The data (resource) should control the design of the service. As the data is 
-the key player and the service is centered around making the data accessible.
 API structure should follow Resource Oriented Design, which should facilitate 
 simpler and more coherent web service interfaces, which should be easy to use
-and maintain.
+and maintain.  The data (resource) should control the design of the service. As the data is 
+the key player and the service is centered around making the data accessible.
+
 
 
 ## Design flow
@@ -36,7 +34,7 @@ oriented APIs.
   - Determine the relationships between resources.
   - Decide the resource name schemes based on types and relationships.
   - Decide the resource schemas.
-  - Attach minimum set of methods to resources.
+  - Attach minimum set of [methods] to resources, as much as possible use the standard methods(verbs).
 
 ## Resources
 A resource-oriented API is generally modeled as a resource hierarchy, where 
@@ -109,64 +107,6 @@ There are three types of fields:
 It is up to developers themselves to determine the types of fields. There is an 
 exception though: the `name` field **should always be a reserved field**.
 
-
-## Methods
-Methods are operations a client can take on resources. Most API services 
-support the following 5 operations: `LIST`, `GET`, `CREATE`, `UPDATE`, and
-`DELETE` on all resources, also known as the **standard methods**. Create
-**custom methods** to provide a means to express arbitrary actions that are 
-difficult to model using only the **standard methods**. Note, _APIs should
-prefer **standard methods** over **custom methods**_ when possible.
-
-
-A photo album service, for example, may provide the following methods:
-
-| Method                          | Resource                                                                           |
-| :------------------------------ | :----------------------------------------------------------------------------------|
-| `CREATE` (Creates a user)       | `//my-service.island.is/users/` (a collection of `User` resources)                 |
-| `GET` (Gets a user)             | `//my-service.island.is/users/my-user` (a single `User` resource)                  |
-| `UPDATE` (Updates a user)       | `//my-service.island.is/users/my-user` (a single `User` resource)                  |
-| `LIST` (Lists photos of a user) | `//my-service.island.is/users/my-user/photo` (a collection of `Photo` resources)   |
-| `DELETE` (Deletes a photo)      | `//my-service.island.is/users/my-user/photos/my-photo` (a single `Photo` resource) |
-
-
-For obvious reasons, operation `CREATE` and `LIST` always work on a resource
-collection, and `GET`, `UPDATE` and `DELETE` a single resource. Note, 
-**You should never define a method with no associated resource**.
-
-### Methods in HTTP RESTful API services
-In HTTP RESTful API services, each method must be mapped to an HTTP verb 
-([HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)). 
-
-The following table specifies the mappings between standard- and custom methods
-and HTTP verbs:
-
-| Method   | HTTP Request Method (Verb) |
-| :------- | :------------------------- |
-| `LIST`   | `GET`                      |
-| `GET`    | `GET`                      |
-| `CREATE` | `POST`                     |
-| `UPDATE` | `PATCH`                    |
-| `DELETE` | `DELETE`                   |
-| `Custom` | `POST` (usually)           |
-
-To map a custom method, pick the HTTP verb closest to the nature of your custom
-method. Note that when developers call the custom method, its method name must 
-be attached to the end of the resource name so as to help the API service 
-distinguish between standard methods and custom methods. Google Cloud Functions,
-for example, supports a custom method, `generateDownloadUrl`, for downloading
-the source code of a Cloud Function, and the method is mapped to the 
-HTTP verb `POST`; to call this method on Cloud Function hello-world, 
-one must pass an HTTP `POST` request to:
-```
-https://cloudfunctions.googleapis.com/v1/hello-world:generateDownloadUrl
-```
-
-
-## Remote procedure calls (RPC)
-For [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) See 
-[RPC - Resource-oriented design](./rpc-resource-oriented-design.md)
-
 #### References
 - [Google: Resource Oriented Design](https://cloud.google.com/apis/design/resources)
 - [Ratros Y: Designing APIs](https://medium.com/@ratrosy/designing-apis-4eed43409f93)
@@ -174,3 +114,4 @@ For [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) See
 
 
 
+[methods]: ../implementation/methods.md
