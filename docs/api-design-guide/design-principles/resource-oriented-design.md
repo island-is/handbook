@@ -92,7 +92,7 @@ the requests and responses directly.
 ## Fields
 A resource may have one or more fields, and resources of the same type share 
 the same collection of fields. For example, a resource of type users may have
-field `name`, `display_name`, `email` associated with it. Note that one of 
+field `name`, `displayName`, `email` associated with it. Note that one of 
 these fields must be its resource name, a string that uniquely identifies the
 resource in the service; usually field name is reserved for this purpose.
 
