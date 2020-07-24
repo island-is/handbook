@@ -7,6 +7,7 @@ We need to ensure that the applications stay available and performant once they 
 - Provide observability into the applications
 - Define the boundaries of expected behaviour
 - Document applications' components and their maintenance operations
+- Application recent change history
 - Contact information for dev team emergency contact
 
 ## What is observability
