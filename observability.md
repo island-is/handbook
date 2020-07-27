@@ -30,7 +30,7 @@ Grafana - TBD.
 
 ## Document applications' components and their maintenance operations
 
-[Ops][./personas.md#ops] need to know each application's components, how they interact together as well as interaction with any external services. For example the following information would be really useful:
+[Ops](./personas.md#ops) need to know each application's components, how they interact together as well as interaction with any external services. For example the following information would be really useful:
 
 - component type - web service, web frontend, message processor, etc.
 - description - the purpose and responsibilities of this component.
