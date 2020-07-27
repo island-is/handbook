@@ -20,8 +20,8 @@ difficult to model using only the **standard methods**.
 
 A photo album service, for example, may provide the following methods:
 
-| Method                          | Resource                                                                           |
-| :------------------------------ | :----------------------------------------------------------------------------------|
+| Method                        | Resource                                                                         |
+| :---------------------------- | :--------------------------------------------------------------------------------|
 | `CREATE` Creates a user       | `//my-service.island.is/users/` a collection of `User` resources                 |
 | `GET` Gets a user             | `//my-service.island.is/users/my-user` a single `User` resource                  |
 | `UPDATE` Updates a user       | `//my-service.island.is/users/my-user` a single `User` resource                  |

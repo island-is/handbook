@@ -114,7 +114,7 @@ The returned object should provide the fields:
        - **weekdays** (*List of numbers*) where each number represents a weekday
          where sunday is `0`, monday is `1` and saturday is `6`.
        - **from** (*String*) from what time during each day is the upTime 
-       - promise made [date string w3 format](https://www.w3.org/TR/NOTE-datetime).
+         promise made [date string w3 format](https://www.w3.org/TR/NOTE-datetime).
        - **to** what time during each day will the service upTime promise stop 
          [date string w3 format](https://www.w3.org/TR/NOTE-datetime).
  - **responseTime** (*Number*) a positive integer which contains information on 
