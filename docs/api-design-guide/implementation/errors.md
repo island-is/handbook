@@ -25,7 +25,7 @@ the response should contain a [REST error object].
 This object should be in a REST API response when an error occurs.  The object
 should contain the key `error` and it's value should be a json object 
 containing at least the two keys, `code` and `message`.  If there were multiple
-errors, the values of `code` and `message` should contain the values regarding
+errors, the values of `code` and `message` should contain the values describing
 the first error.
 
  - `error` The key of the error object
@@ -33,14 +33,17 @@ the first error.
      field value will usually represent the HTTP response code.
      - `message` *(String)* A human readable string providing more details about the error.
      - `errors` *(Array)*  **(Optional)** A more detailed information about the 
-     - error(s).  API developers can structure each object in the array as they 
-     - like, but should when ever possible, use that structure through out the 
-     - application. `help` and `trackingId` are examples of keys that could be 
-       included in this object.
+       error(s).  API developers can structure each object in the array as they 
+       like, but should when ever possible, use that structure through out the 
+       application.  For example, the following fields in each object of the 
+       array could be included.
          - `help` *(Optional)* Url to a page explaining the error and possible 
            solutions.
          - `trackingId` *(Optional)* identifier for mapping failures to service
-           internal codes. 
+           internal codes.
+         - `param` *(Optional)* name of the parameter which was incorrect.
+         - `code` and `message` *(Optional)* could provide more detailed 
+           information about a specific error, like when parsing parameters.
 
 
 #### REST error response examples
@@ -155,9 +158,9 @@ When an error occurs calling a XML-RPC method a fault element should exist
 within the a XML-RPC API response.
 
 ### Fault element
-This element should be structured with two members 
-named `code` and `message`.  The `code` value should include a 32 bit integer 
-value and the `message` should contain a text string describing what went wrong. 
+This element should include the two member elements named `code` and `message`.
+ - `code` should include a 32 bit integer *fault code* value and the
+ -  `message` should contain a text string describing what went wrong. 
 
 ### XML-RPC fault codes
 [XML-RPC] protocol doesn't standardize fault codes(error codes) but the 
