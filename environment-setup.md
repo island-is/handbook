@@ -77,6 +77,6 @@ Each application needs to be classified in each of these dimensions:
   - `critical` - this application provides an essential service. Its design decisions must be reviewed by the DevOps team at the inception of the application. It cannot use proprietary tech.
   - `non-critical` - optional service that might take some time to bring on-line in case of a disaster or moving to on-premise
 - SLA
-  - `personal` - services for individuals. 9-5 and MTTR 5 hours?
+  - `personal` - services for individuals. 9-5 and [MTTR](https://en.wikipedia.org/wiki/Mean_time_to_recovery)(mean time to recovery) 5 hours?
   - `business` - services for businesses. 9-5 and MTTR 2 hours?
   - `24/7` - critical service. 24/7 and MTTR 1 hour?
