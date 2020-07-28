@@ -22,11 +22,11 @@ When an error occurs, a REST API should respond with a HTTP status code and
 the response should contain a [REST error object].
 
 ### REST error object
-This object should be in a REST API response when an error occurs.  The object
-should contain the key `error` and it's value should be a json object 
-containing at least the two keys, `code` and `message`.  If there were multiple
-errors, the values of `code` and `message` should contain the values describing
-the first error.
+This object should be in a REST API response when an error occurs.  The response
+should contain the key `error` and it's value should be a json object containing
+at least the two keys, `code` and `message`.  If there were multiple errors, the
+values of `code` and `message` should contain the values describing the first 
+error.
 
  - `error` The key of the error object
      - `code` *(Number)* A integer number that indicates the error type that occurred. This 
@@ -87,10 +87,12 @@ More detailed response
 ## SOAP
 
 ## JSON-RPC
-According to specification, error code should be in a response message. Http 
-server should respond with status code 200, even if there is an error.
+According to the [JSON-RPC] specification, error code should be in a response 
+message. Http server should respond with status code 200, even if there is an 
+error and therefore clients consuming the service will need to handle errors
+with that in mind.
 
-JSON-RPC APIs should follow the [JSON-RPC] specification, [2.0] is preferred but
+JSON-RPC APIs should follow the preferred JSON-RPC [2.0] specification, but
 [1.0] is allowed.
 
 ### Error Response
