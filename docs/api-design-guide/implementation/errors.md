@@ -1,24 +1,34 @@
-# Errors
-TODO
-* Describe exception handling of apis
-* Describe correct use of http status codes for rest services
-* It would be nice if we could follow a standard like [rfc7807](https://tools.ietf.org/html/rfc7807)
-  (see examples [Here](https://tools.ietf.org/html/rfc7807#appendix-A)).  The 
-  libraries [http-problem-details](https://www.npmjs.com/package/http-problem-details) 
-  or [express-http-problem-details](https://www.npmjs.com/package/express-http-problem-details)
-  could help with this kind of error reporting.
+# Error Handling 
+This document describes how [REST], [SOAP], [JSON-RPC] and [XML-RPC] APIs should
+present errors to clients consuming these services.
 
 When a error occurs in a API, the service should return the error to the calling
-client in a structured manner.  The API should return information about the 
-error in the body part of a response, even if the error is from a SOAP or REST
-API which should always return a [HTTP status code].
+client in a informative and structured manner.  The API should return 
+information about the error in the body part of a response.
+
+## HTTP status codes
+**[SOAP] over http** APIs MUST always return the http status code **500** - 
+*Internal Server Error* when errors occur.
+
+**[REST]** APIs services MUST respond with a [HTTP status code] in a response 
+to every request.
+
+These are the recommended error status codes to use for REST APIs.
+
+| Code | Meaning |
+| :--- | :---    |
+| 400  | **Bad Request** — The request is malformed, or don’t pass validation. Used with GET, POST, PUT |
+| 401  | **Unauthorized** — No authentication credentials provided or credentials are invalid. |
+| 403  | **Forbidden** — Authenticated user is not authorized to access the resource |
+| 404  | **Not Found** — The requested resource was not found |
+
+### Response body
+When errors occur in a [SOAP] or an [REST] API add additional information about 
+the errors to the body part of the returned response.
 
 
 ## REST
-A restful API MUST return one of the [HTTP status code]s in a response to every
-request in conformance with the standards [RFC-2616] or the preferred [RFC-7231].
-
-When an error occurs, a REST API should respond with a HTTP status code and 
+When an error occurs, a REST API should respond with a [HTTP status code]s and 
 the response should contain a [REST error object].
 
 ### REST error object
@@ -29,20 +39,20 @@ values of `code` and `message` should contain the values describing the first
 error.
 
  - `error` The key of the error object
-     - `code` *(Number)* A integer number that indicates the error type that occurred. This 
-     field value will usually represent the HTTP response code.
+     - `code` *(Number)* A integer number that indicates the error type that 
+       occurred. This field value will usually represent the HTTP response code.
      - `message` *(String)* A human readable string providing more details about the error.
      - `errors` *(Array)*  **(Optional)** A more detailed information about the 
        error(s).  API developers can structure each object in the array as they 
        like, but should when ever possible, use that structure through out the 
        application.  For example, the following fields in each object of the 
        array could be included.
-         - `help` *(Optional)* Url to a page explaining the error and possible 
+         - `help` **(Optional)** Url to a page explaining the error and possible 
            solutions.
-         - `trackingId` *(Optional)* identifier for mapping failures to service
+         - `trackingId` **(Optional)** Identifier for mapping failures to service
            internal codes.
-         - `param` *(Optional)* name of the parameter which was incorrect.
-         - `code` and `message` *(Optional)* could provide more detailed 
+         - `param` **(Optional)** Name of the parameter which was incorrect.
+         - `code` and `message` **(Optional)** could provide more detailed 
            information about a specific error, like when parsing parameters.
 
 
@@ -85,9 +95,138 @@ More detailed response
 ```
 
 ## SOAP
+**SOAP over http** is here after referrer to as SOAP.
+
+In case of a SOAP error while processing the request, the SOAP HTTP server MUST 
+issue an HTTP 500 "Internal Server Error" response and include a SOAP message in 
+the response containing a [SOAP 1.1 Fault Element] or a [SOAP 1.2 Fault Element]
+indicating the SOAP processing error.
+
+### SOAP 1.1 Fault Element
+According to the specification a [SOAP 1.1 Fault] element should be returned in
+the body part of a response when a error occurs.
+
+The Fault element must have the following sub-elements
+ -  `faultCode` It is a text code used to indicate a class of errors. The 
+    predefined fault codes are:
+    - `SOAP-ENV:VersionMismatch` Found an invalid namespace for the SOAP 
+      Envelope element.
+    - `SOAP-ENV:MustUnderstand` An immediate child element of the Header element, 
+      with the mustUnderstand attribute set to "1", was not understood.
+    - `SOAP-ENV:Client` The message was incorrectly formed or contained
+      incorrect information.
+    - `SOAP-ENV:Server` There was a problem with the server, so the message 
+      could not proceed.
+ -  `faultString` It is a text message explaining the error.
+ -  `faultActor` It is a text string indicating who caused the fault. It is 
+    useful if the SOAP message travels through several nodes in the SOAP message 
+    path, and the client needs to know which node caused the error. A node that 
+    does not act as the ultimate destination must include a faultActor element.
+ -  `detail` It is an element used to carry application-specific error messages.
+    The detail element can contain child elements called detail entries.
+
+### SOAP 1.2 Fault Element
+According to the specification a [SOAP 1.2 Fault] element should be returned in
+the body part of a response when a error occurs.
+
+The Fault element has the following sub-elements:
+ - `Code` [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultcodeelement)
+   - `Value` [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultvalueelement) 
+     is one of the SOAP Fault Codes defined
+     in [this table](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#tabsoapfaultcodes)
+     of the standard.
+   - `Subcode` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultsubcodeelement)
+     - `value` [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultsubvalueelem)
+      an application defined subcategory of the value of the Value child 
+      element.  Format: `xs:QName`.
+     - `Subcode` *(Optional)* (Same as above)
+ - `Reason` [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultstringelement) 
+   is intended to provide a human-readable explanation of the fault. `Reason` 
+   has one or more `Text` elements.
+   - `Text` [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#reasontextelement)
+     intended to carry the text of a human-readable explanation of the fault.
+ - `Node` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultactorelement)
+ - `Role` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultroleelement)
+ - `Detail` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultdetailelement) is intended for carrying application specific error 
+   information. The Detail element information item MAY have any number of character information item children.
+  
+   
+
+#### SOAP 1.1 Fault Example
+The client has requested a method named ValidateCreditCard, but the service does
+not support such a method. This represents a client request error, and the
+server returns the following SOAP response.
+```xml
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SOAP-ENV:Envelope
+   xmlns:SOAP-ENV = "http://schemas.xmlsoap.org/soap/envelope/"
+   xmlns:xsi = "http://www.w3.org/1999/XMLSchema-instance"
+   xmlns:xsd = "http://www.w3.org/1999/XMLSchema">
+
+   <SOAP-ENV:Body>
+      <SOAP-ENV:Fault>
+         <faultcode xsi:type = "xsd:string">SOAP-ENV:Client</faultcode>
+         <faultstring xsi:type = "xsd:string">
+            Failed to locate method (ValidateCreditCard) in class (examplesCreditCard) at
+               /usr/local/ActivePerl-5.6/lib/site_perl/5.6.0/SOAP/Lite.pm line 1555.
+         </faultstring>
+      </SOAP-ENV:Fault>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
+#### SOAP 1.2 Fault Example A
+```xml
+<?xml version="1.0"?>
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+              xmlns:enc="http://www.w3.org/2003/05/soap-encoding">
+  <env:Body>
+    <env:Fault>
+      <env:Code>
+        <env:Value>env:Sender</env:Value>
+        <env:Subcode>
+          <env:Value>enc:MissingID</env:Value>
+        </env:Subcode>
+      </env:Code>
+      <env:Reason>
+        <env:Text xml:lang="en-US">
+          Violation of id and ref information items
+        </env:Text>
+      </env:Reason>
+      <env:detail>
+        A ref attribute information item and an id attribute information 
+        item MUST NOT appear on the same element information item.
+      </env:detail>
+    </env:Fault>
+ </env:Body>
+</env:Envelope>
+```
+#### SOAP 1.2 Fault Example B
+```xml
+<?xml version="1.0" ?>
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+  <env:Body>
+    <env:Fault>
+      <env:Code>
+        <env:Value xmlns:ns1="http://www.w3.org/2003/05/soap-envelope">
+          ns:Sender
+        </env:Value>
+        <env:Subcode>
+          <env:Value xmlns:ns2="http://www.w3.org/2003/05/soap-rpc">
+            ns:BadArguments
+          </env:Value>
+        </env:Subcode>
+      </env:Code>
+      <env:Reason>
+        <env:Text xml:lang="en">Missing parameter.</env:Text>
+      </env:Reason>
+    </env:Fault>
+  </env:Body>
+</env:Envelope>
+```
+
 
 ## JSON-RPC
-According to the [JSON-RPC] specification, error code should be in a response 
+According to the [JSON-RPC specification], error code should be in a response 
 message. Http server should respond with status code 200, even if there is an 
 error and therefore clients consuming the service will need to handle errors
 with that in mind.
@@ -111,19 +250,21 @@ The two specifications differ on what needs to be in a error response object.
      Invalid Request), it MUST be null.
 
 #### Error object
-When a rpc call encounters an error, the Response Object MUST contain the error
-member with a value that is a Object with the following members:
+When a rpc call encounters an error, the Response Object MUST contain the 
+`error` member with a value that is a Object, with the following members:
 
- - `code` A Number that indicates the error type that occurred. 
+ - `code` *(Number)* that indicates the error type that occurred. 
    This MUST be an integer.  (see possible values: [JSON-RPC error codes])
    
- - `message` A String providing a short description of the error.
+ - `message` *(String)* providing a short description of the error.
   The message SHOULD be limited to a concise single sentence.
- - `data` (*optional*) A Primitive or Structured value that contains additional 
-   information about the error.  This may be omitted.
+ - `data` **(Optional)** A Primitive or Structured value that contains additional 
+   information about the error.  The value of this member is defined by the 
+   Server (e.g. detailed error information, nested errors etc.).
 
-The value of this member is defined by the Server (e.g. detailed error information, nested errors etc.).
-and the result field must be null JSON-RPC 1.0 object 
+
+If the API is a JSON-RPC [1.0] service the response must include a `result`
+member and it's value must be `null`.
 
 
 ##### JSON-RPC error codes
@@ -148,16 +289,16 @@ execution of a response from a client.
 {
     "jsonrpc": "2.0", 
     "error": {
-        "code": 26, 
-        "message": "Method not found"}, 
-        "id": "1"
+            "code": -32601, 
+            "message": "Method not found"}, 
+            "id": "1"
     }
 }
 ```
 
 ## XML-RPC
-When an error occurs calling a XML-RPC method a fault element should exist
-within the a XML-RPC API response.
+When an error occurs calling a [XML-RPC](https://en.wikipedia.org/wiki/XML-RPC)
+method a fault element should exist within the a XML-RPC API response.
 
 ### Fault element
 This element should include the two member elements named `code` and `message`.
@@ -165,9 +306,8 @@ This element should include the two member elements named `code` and `message`.
  -  `message` should contain a text string describing what went wrong. 
 
 ### XML-RPC fault codes
-[XML-RPC] protocol doesn't standardize fault codes(error codes) but the 
-[XML-RPC Fault Code] specification should be followed when possible, but that is
-not required.
+XML-RPC protocol doesn't standardize fault codes(error codes) but the 
+[XML-RPC Fault Code] specification should be followed when possible.
 
 [XML-RPC Fault Code] specification states the following:
 
@@ -176,16 +316,17 @@ the application to set an error code within this range.
 
 | Code  |  message                                              | 
 | ---   | :---                                                  | 
-| 32700 | parse error. not well formed                          |
-| 32701 | parse error. unsupported encoding                     |
-| 32702 | parse error. invalid character for encoding           |
+| 32700 | parse error. not well formed.                         |
+| 32701 | parse error. unsupported encoding.                    |
+| 32702 | parse error. invalid character for encoding.          |
 | 32600 | server error. invalid xml-rpc. not conforming to spec.|
-| 32601 | server error. requested method not found              |
-| 32602 | server error. invalid method parameters               |
-| 32603 | server error. internal xml-rpc error                  |
-| 32500 | application error                                     |
-| 32400 | system error                                          |
-| 32300 | transport error                                       |
+| 32601 | server error. requested method not found.             |
+| 32602 | server error. invalid method parameters.              |
+| 32603 | server error. internal xml-rpc error.                 |
+| 32500 | application error.                                    |
+| 32400 | system error.                                         |
+| 32300 | transport error.                                      |
+
 
 In addition, the range -32099 .. -32000, is reserved for implementation defined
 server errors. Server errors which do not cleanly map to a specific error 
@@ -202,7 +343,7 @@ execution of a response from a client.
             <struct>
                 <member>
                     <name>code</name>
-                    <value><int>26</int></value>
+                    <value><int>32601</int></value>
                 </member>
 
                 <member>
@@ -216,17 +357,21 @@ execution of a response from a client.
 </methodResponse>
 ```
 
-
 [RFC-2616]: https://www.ietf.org/rfc/rfc2616.txt
-[RFC-7231]: https://www.ietf.org/rfc/rfc7231.txt
-[JSON-RPC]: https://www.jsonrpc.org/specification
+[JSON-RPC specification]: https://www.jsonrpc.org/specification
 [2.0]: https://www.jsonrpc.org/specification
 [1.0]: https://www.jsonrpc.org/specification_v1
 [Error object]: #error-object.  
+[REST]: #rest  
+[SOAP]: #soap
+[SOAP 1.1 Fault]: https://www.w3.org/TR/2000/NOTE-SOAP-20000508/#_Toc478383507
+[SOAP 1.2 Fault]: https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#soapfault
+[SOAP 1.1 Fault Element]: #soap-11-fault-element
+[SOAP 1.2 Fault Element]: #soap-12-fault-element
 [JSON-RPC error codes]: #error-codes
 [XML-RPC fault Code]: http://xmlrpc-epi.sourceforge.net/specs/rfc.fault_codes.php
-
-[XML-RPC]: https://en.wikipedia.org/wiki/XML-RPC
-
+[JSON-RPC]: #json-rpc
+[XML-RPC]: #xml-rpc
 [REST error object]: #rest-error-object
 [HTTP status code]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+[Soap protocol 1.1]: https://www.w3.org/TR/2000/NOTE-SOAP-20000508
