@@ -147,8 +147,10 @@ The Fault element has the following sub-elements:
      intended to carry the text of a human-readable explanation of the fault.
  - `Node` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultactorelement)
  - `Role` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultroleelement)
- - `Detail` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultdetailelement) is intended for carrying application specific error 
-   information. The Detail element information item MAY have any number of character information item children.
+ - `Detail` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultdetailelement) 
+   is intended for carrying application specific error information. The Detail
+   element information item MAY have any number of character information item
+   children.
   
    
 
@@ -174,7 +176,7 @@ server returns the following SOAP response.
    </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 ```
-#### SOAP 1.2 Fault Example A
+#### SOAP 1.2 Fault Response Example A
 ```xml
 <?xml version="1.0"?>
 <env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope"
@@ -200,7 +202,7 @@ server returns the following SOAP response.
  </env:Body>
 </env:Envelope>
 ```
-#### SOAP 1.2 Fault Example B
+#### SOAP 1.2 Fault Response Example B
 ```xml
 <?xml version="1.0" ?>
 <env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
