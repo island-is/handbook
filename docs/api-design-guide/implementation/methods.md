@@ -67,6 +67,35 @@ the source code of a Cloud Function, and the method is mapped to the
 HTTP verb `POST`; to call this method on Cloud Function hello-world, 
 one must pass an HTTP `POST` request to `https://cloudfunctions.googleapis.com/v1/hello-world:generateDownloadUrl`.
 
+#### Response codes from HTTP methods
+Try to minimize the number of HTTP status codes a *REST* API returns.  When
+more details are needed in a error response use the *Rest error object* in a 
+response, described in the [errors] document.
+For each HTTP method you should try to use only status codes marked with **X** 
+in the following table.
+
+
+| Code    | Meaning      | GET |  POST | PUT | PATCH | DELETE|
+| :-----  | :------      | :-: |  :--: | :-: | :---: | :----:|
+| 200     | OK           |  X  |       |     |       |       |
+| 201     | Created      |     |   X   |     |       |       |
+| 202     | Accepted     |     |       |     |       |       |
+| 204     | No Content   |     |       |  X  |   X   |   X   |
+| 400     | Bad Request  |  X  |   X   |  X  |   X   |       |
+| 401     | Unauthorized |     |       |     |       |       |
+| 403     | Forbidden    |     |       |     |       |       |
+| 404     | Not Found    |  X  |       |  X  |   X   |       |
+| 500     | Server error |  X  |   X   |  X  |   X   |   X   |
+
+
+**TODO**: Continue writing about each method response 
+[here](https://github.com/paypal/api-standards/blob/master/api-style-guide.md#mapping)
+ - `GET` GGGG.
+ - `POST` PPPP.
+ - `PUT` UUUUU.
+ - `PATCH` AAAA.
+ - `DELETE` DDDD.
+ 
 
 [resource-oriented]: ../design-principles/resource-oriented-design.md
-
+[errors]: ./errors.md#rest

@@ -92,15 +92,6 @@ For *SOAP* APIs, there are number of automatic generation documentation tools
 available to help with documentation generation from WSDL files.  To name few
 [TechWriter], [oxygen XML Editor] and [Altova XMLSpy] are such tools.
 
-
-### Source code documentation generation
-You could also use tools to generate detailed documentation about your 
-application.  But this documentation is more for the API developer, not the API
-consumer.
-
-To name few [DocFX],[APIDOC] and [Doxygen] could be used to to generate detailed 
-documentation from the application code.
-
 ### GraphQL
 When documenting a GraphQL service automatically you could use the
 [graphql-docs] npm package.
@@ -132,6 +123,16 @@ type Query {
   author(name: String!): Author
 }
 ```
+
+### Source code documentation generation
+You could also use tools to generate detailed documentation about your 
+application.  But this documentation is more for the API developer, not the API
+consumer.
+
+To name few [DocFX],[APIDOC] and [Doxygen] could be used to to generate detailed 
+documentation from the application code.
+
+
 
 ---------------------------------------------------------
 
