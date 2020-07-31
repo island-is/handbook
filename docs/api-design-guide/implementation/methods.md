@@ -69,9 +69,10 @@ one must pass an HTTP `POST` request to `https://cloudfunctions.googleapis.com/v
 
 #### Response codes from HTTP methods
 Try to minimize the number of HTTP status codes a *REST* API returns.  When
-more details are needed in a error response use the *Rest error object* in a 
-response, described in the [errors] document.
-For each HTTP method you should try to use only status codes marked with **X** 
+more details are needed in a error response use application defined errors
+and supply them in a *Rest error object*, described in the [errors] document.
+
+For each HTTP method, you should try to use only status codes marked with **X** 
 in the following table.
 
 
