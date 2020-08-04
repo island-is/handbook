@@ -25,12 +25,12 @@ Consumer can then test their application against supported version of the API.
 
 Data used for API in consumer test environment can be either Production Test Data or Synthetic data.
 
-###Synthetic test data
+### Synthetic test data
 
 Synthetic test data does not use any actual data from the production data store and sources. It is artificial data based on the data model for that database. 
 Synthetic test data can be generated automatically by a synthetic test data generation.
 
-###Production test data
+### Production test data
 
 Production test data is a copy of a production database that has been masked, or obfuscated, and subsetted to represent a portion of the database that is relevant to test the API.
 
