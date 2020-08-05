@@ -14,7 +14,7 @@ resources with a small number of methods.
 
 Most API services 
 support the following 5 operations: `LIST`, `GET`, `CREATE`, `UPDATE`, and
-`DELETE` on all resources, also known as the **standard methods**. Create
+`DELETE` on all resources, also known as the **standard methods** ([CRUD]). Create
 **custom methods** to provide a means to express arbitrary actions that are 
 difficult to model using only the **standard methods**.
 
@@ -45,7 +45,7 @@ and HTTP verbs:
 | `LIST`    | `GET`                      |
 | `GET`     | `GET`                      |
 | `CREATE`  | `POST`                     |
-| `UPDATE`  | `PATCH`                    |
+| `UPDATE`  | `PATCH`/`PUT`              |
 | `DELETE`  | `DELETE`                   |
 | --------  | ----------                 |
 | `Custom` | `POST` (usually)            |
@@ -104,7 +104,7 @@ in the following table.
 
  - `PATCH` for making a partial update on a resource.  After a successful 
    execution `204` should be returned.  Patch should only return content in a 
-   response body when error occurs. 
+   response body when a error occurs. 
 
  - `DELETE` for removing a resource.  After a successful execution `204` should
    be returned.  If a client asks for the removal of a resource already deleted
@@ -114,3 +114,4 @@ in the following table.
 
 [resource-oriented]: ../design-principles/resource-oriented-design.md
 [errors]: ./errors.md#rest
+[CRUD]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete

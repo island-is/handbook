@@ -41,15 +41,21 @@ Additionally, the `https://my-service.island.is/v1/info` url should provide the
 property `version` with the MAJOR.MINOR.PATCH version number as a string value 
 in the returned resource representation.
 
-### Considerations when incrementing version numbers
+### Considerations when planning to increment a version numbers
 If an API introduces a breaking change, such as removing or renaming a field, 
 it must increment its API `major` version number to ensure that existing user 
 code does not suddenly break, but incrementing the `major` version should be 
 avoided whenever possible to avoid increasing maintenance and cost of running 
 many versions of the same service.  Consider using
-
-**Content negotiation**(see below) to methods, before deciding to make 
+[content negotiation] (see below) on methods, before deciding to make 
 breaking changes.
+
+For **GraphQL** APIs use `@deprecated` directive on fields which are to be renamed or 
+removed from schemas.  Add a descriptive text in the `reason:` with information 
+on what the client should use in the future.  This will allow older clients to 
+continue functioning while updated clients can get the new schema right away.
+See [here](https://www.netlify.com/blog/2020/01/21/advice-from-a-graphql-expert/#designing-a-schema-that-is-easy-to-evolve) 
+for more details.
 
 ### Content negotiation
 Versioning a single resource representation here described as content can be 
@@ -101,6 +107,6 @@ that no calls to this API version are made anymore.
 
 
 
-
+[content negotiation]: #content-negotiation
 
 

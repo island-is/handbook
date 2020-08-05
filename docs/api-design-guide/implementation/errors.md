@@ -145,8 +145,8 @@ The Fault element has the following sub-elements:
    has one or more `Text` elements.
    - `Text` [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#reasontextelement)
      intended to carry the text of a human-readable explanation of the fault.
- - `Node` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultactorelement)
- - `Role` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultroleelement)
+ - `Node` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultactorelement) intended to provide information about which SOAP node on the SOAP message path caused the fault to happen.
+ - `Role` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultroleelement) identifies the role the node was operating in at the point the fault occurred.
  - `Detail` *(Optional)* [Element](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#faultdetailelement) 
    is intended for carrying application specific error information. The Detail
    element information item MAY have any number of character information item
@@ -363,7 +363,7 @@ execution of a response from a client.
 [JSON-RPC specification]: https://www.jsonrpc.org/specification
 [2.0]: https://www.jsonrpc.org/specification
 [1.0]: https://www.jsonrpc.org/specification_v1
-[Error object]: #error-object.  
+[Error object]: #error-object
 [REST]: #rest  
 [SOAP]: #soap
 [SOAP 1.1 Fault]: https://www.w3.org/TR/2000/NOTE-SOAP-20000508/#_Toc478383507
