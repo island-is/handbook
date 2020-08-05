@@ -89,13 +89,27 @@ in the following table.
 | 500     | Server error |  X  |   X   |  X  |   X   |   X   |
 
 
-**TODO**: Continue writing about each method response 
-[here](https://github.com/paypal/api-standards/blob/master/api-style-guide.md#mapping)
- - `GET` GGGG.
- - `POST` PPPP.
- - `PUT` UUUUU.
- - `PATCH` AAAA.
- - `DELETE` DDDD.
+ - `GET` for retrieving a resource or a collection of resources.  On success, status code `200` should be 
+ returned .  If a collection asked for is empty then `200` is still to be 
+ returned. When a resource ask for is not found `404` should be returned. 
+
+ - `POST` for creating a resource.  If the resource did not previously exist and
+ was created the response should be http status code `201` and in the response 
+ body a resource identifier to the created resource.
+
+ - `PUT` for updating a existing resource. After a successful execution there 
+ is usually no need for a additional content so `204` should be returned.  In 
+ the rare case a response is needed in the body the `200` status code should be 
+ returned.  If a resource to be updated is not found `404` should be returned.
+
+ - `PATCH` for making a partial update on a resource.  After a successful 
+   execution `204` should be returned.  Patch should only return content in a 
+   response body when error occurs. 
+
+ - `DELETE` for removing a resource.  After a successful execution `204` should
+   be returned.  If a client asks for the removal of a resource already deleted
+   `204` should be returned, **not** `404`, because clients usually do not care if a resource 
+   was previously deleted.
  
 
 [resource-oriented]: ../design-principles/resource-oriented-design.md
