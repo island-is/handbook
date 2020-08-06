@@ -5,7 +5,7 @@ Adapted from [StyleGuide] and [Google].
 This document describes API naming conventions related to services and resources,
 with focus on the general consumer experience. For further information about
 our naming conventions related to developer experience please refer to our
-[coding-standard].
+[coding standard].
 
 ## General
 
@@ -126,10 +126,53 @@ class Foo {
 }
 ```
 
+## URI
+
+The [URI] defined in [RFC3986] consists of the five components scheme,
+authority, path, query and fragment.
+
+```
+https://example.com:8042/over/there?name=ferret#nose
+\___/   \______________/\_________/ \_________/ \__/
+  |            |            |            |        |
+scheme     authority       path        query   fragment
+```
+
+Example URI of a authority and a path component
+
+```
+
+//example.com/users/1/photos/121
+  \_________/ \___/   \____/ \_/
+      |         |        |    \
+      |         |        |      Resource ID
+      |         |        |         (type)
+      |         |         \
+      |         |           Collection ID
+      |         |              (type)
+      |          \
+      |            Resource name of parent resource
+       \
+         API service name
+```
+
+Please follow the following naming conventions
+
+- Do not end a path with a trailing forward slash (`/`).
+- When convenient, lowercase letters are preferred in URI paths since capital
+  letters can sometimes cause problems.
+- Use the forward slash (`/`) in a path to indicates hierarchical relationship
+  between resources.
+- [Resource names and collection ID's] must be the plural form of the noun used
+  for the resource.
+
 <!-- URLs -->
 
-[coding-standard]: https://github.com/island-is/handbook/blob/feature/add-api-design-guide-structure/code-standards.md
+[coding standard]: https://github.com/island-is/handbook/blob/feature/add-api-design-guide-structure/code-standards.md
 [styleguide]: https://basarat.gitbook.io/typescript/styleguide
 [google]: https://cloud.google.com/apis/design/naming_convention
 [glossary]: https://github.com/island-is/handbook/blob/feature/add-api-design-guide-structure/glossary.md
 [viskuausan]: https://viskuausan.island.is/
+[uri]: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
+[rfc3986]: https://tools.ietf.org/html/rfc3986
+[resource names and collection id's]: https://github.com/island-is/handbook/blob/feature/add-api-design-guide-structure/docs/api-design-guide/design-principles/resource-oriented-design.md#user-content-resources
