@@ -124,4 +124,43 @@ const PI: number = 3.14;
 declare var FOO: string = "Foo";
 ```
 
+## URI 
+The [URI] defined in [RFC3986] consists of the five components scheme, 
+authority, path, query and fragment.
+
+```
+https://example.com:8042/over/there?name=ferret#nose
+\___/   \______________/\_________/ \_________/ \__/
+  |            |            |            |        |
+scheme     authority       path        query   fragment
+```
+
+Example URI of a authority and a path component 
+```
+
+//example.com/users/1/photos/121
+  \_________/ \___/   \____/ \_/
+      |         |        |    \
+      |         |        |      Resource ID 
+      |         |        |         (type)   
+      |         |         \ 
+      |         |           Collection ID
+      |         |              (type)
+      |          \     
+      |            Resource name of parent resource
+       \            
+         API service name     
+```
+Please follow the following naming conventions
+ - Do not end a path with a trailing forward slash (`/`).
+ - When convenient, lowercase letters are preferred in URI paths since capital
+   letters can sometimes cause problems.
+ - Use the forward slash (`/`) in a path to indicates hierarchical relationship 
+   between resources.
+ - [Resource names and collection ID's] must be the plural form of the noun used 
+   for the resource.
+
 [StyleGuide]: https://basarat.gitbook.io/typescript/styleguide
+[URI]: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
+[RFC3986]: https://tools.ietf.org/html/rfc3986
+[Resource names and Collection ID's]: https://github.com/island-is/handbook/blob/feature/add-api-design-guide-structure/docs/api-design-guide/design-principles/resource-oriented-design.md#user-content-resources
