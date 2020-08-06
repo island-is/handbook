@@ -26,3 +26,10 @@ as a best practice guide for API development.
 - [Example Service](./example.md)
 
 ## Introduction
+
+This guide is a general guide for designing APIs, it should help synchronize the work between developers and make working together easier.
+The guide covers the relevant design principles, technology and how to operate your API so the experience for the consumers is enjoyable.
+
+This guide is under constant review and updates will be made over time as new design patterns and style are adopted. 
+
+All feedback from the users is welcomed and encouraged to help make the guide better.
