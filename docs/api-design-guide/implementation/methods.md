@@ -89,9 +89,10 @@ in the following table.
 | 500     | Server error |  X  |   X   |  X  |   X   |   X   |
 
 
- - `GET` for retrieving a resource or a collection of resources.  On success, status code `200` should be 
- returned .  If a collection asked for is empty then `200` is still to be 
- returned. When a resource ask for is not found `404` should be returned. 
+ - `GET` for retrieving a resource or a collection of resources.  On success, 
+   status code `200` should be returned .  If a collection asked for, is empty
+   `200` is still to be returned. When a resource asked for is not found, `404` 
+   should be returned. 
 
  - `POST` for creating a resource.  If the resource did not previously exist and
  was created the response should be http status code `201` and in the response 
@@ -108,8 +109,8 @@ in the following table.
 
  - `DELETE` for removing a resource.  After a successful execution `204` should
    be returned.  If a client asks for the removal of a resource already deleted
-   `204` should be returned, **not** `404`, because clients usually do not care if a resource 
-   was previously deleted.
+   `204` should be returned, **not** `404`, because clients usually do not care 
+   if a resource was previously deleted.
  
 
 [resource-oriented]: ../design-principles/resource-oriented-design.md
