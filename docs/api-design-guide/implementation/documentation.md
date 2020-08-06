@@ -180,9 +180,9 @@ The returned object should provide the following fields:
        - **weekdays** (*List of numbers*) where each number represents a weekday
          where sunday is `0`, monday is `1` and saturday is `6`.
        - **from** (*String*) from what time during each day is the upTime 
-         promise made [date string w3 format].
-       - **to** what time during each day will the service upTime promise stop 
-         [date string w3 format].
+         promise made.  See [date string format].
+       - **to** what time during each day will the service upTime promise stop.
+         See [date string format].
  - **responseTime** (*Number*) a positive integer which contains information on 
    what is the longest possible time in milliseconds a client consuming the 
    service will have to wait for a response.  If `0` is returned as a value, 
@@ -278,7 +278,7 @@ Xml representation example
   [NextJS + Remark]: https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript
   [APIDOC]: https://apidocjs.com/
   [semantic versioning]: https://semver.org/
-  [date string w3 format]: https://www.w3.org/TR/NOTE-datetime
+  [date string format]: https://tools.ietf.org/html/rfc3339#section-5.6
   [TechWriter]: https://techwriter.me/techwriter.aspx
   [oxygen XML Editor]: https://www.oxygenxml.com/xml_editor/wsdl_documentation.html
   [Altova XMLSpy]: https://www.altova.com/xmlspy-xml-editor/wsdl-editor
