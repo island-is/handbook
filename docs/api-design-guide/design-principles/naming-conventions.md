@@ -1,11 +1,9 @@
 # Naming Conventions
 
-Adapted from [StyleGuide] and [Google].
-
 This document describes API naming conventions related to services and resources,
-with focus on the general consumer experience. For further information about
-our naming conventions related to developer experience please refer to our
-[coding standard].
+with focus on the general consumer experience. Consistency and clear naming conventions is key to provide uniform APIs between government agencies.  
+_For further information about our naming conventions for the developer
+experience please refer to our [coding standard]._
 
 ## General
 
@@ -42,94 +40,46 @@ evaluated in their context.
 **Bad**
 
 ```
-Info     // info about what?
-Service  // service for what?
+Info        // info about what?
+Service     // service for what?
+Application // application for what?
 ```
 
 **Good**
 
 ```
-Order        // Info about Order object
-OrderService // Service that works with the Order resource
+OrderStatus    // Info about Order status
+OrderService   // Service that works with the Order resource
+PaternityLeave // Application data for paternity leave application
 ```
 
 Carefully consider use of names that may conflict with keywords in common
 programming languages. Such names may be used but will likely trigger
 additional scrutiny during API review. Use them judiciously and sparingly.
 
-## Services
+## Resources
 
-Use `PascalCase` for services.
+Resource names should be `singular noun` and use `PascalCase`.
 
-> Reason: Fairly conventional in standard JavaScript. Purpose of class is obvious.
+**Bad**
 
-Use nouns affixed with Service to distinguish it from models.
-Should be short and descriptive when possible.
-
-### Bad
-
-```javascript
-class Foos {}
-class barService {}
+```
+Users
+user
+Paternityleave
 ```
 
-### Good
+**Good**
 
-```javascript
-class FooService {}
-class BarService {}
+```
+User
+PaternityLeave
 ```
 
-## Models
+### URIs
 
-Use `PascalCase` for models.
-
-> Reason: Fairly conventional in standard JavaScript. Distinguishes it from variables and functions.
-
-Should be descriptive single case noun.
-
-### Bad
-
-```javascript
-class Foos {}
-class bar {}
-```
-
-### Good
-
-```javascript
-class Foo {}
-class Bar {}
-```
-
-## Properties and methods
-
-Use `camelCase` for properties and methods.
-
-> Reason: Conventional JavaScript and improved readability.
-
-### Bad
-
-```javascript
-class Foo {
-  Bar: number;
-  Baz() {}
-}
-```
-
-### Good
-
-```javascript
-class Foo {
-  bar: number;
-  baz() {}
-}
-```
-
-## URI
-
-The [URI] defined in [RFC3986] consists of the five components scheme,
-authority, path, query and fragment.
+The [URI] defined in [RFC3986] consists of the five components:
+scheme, authority, path, query and fragment.
 
 ```
 https://example.com:8042/over/there?name=ferret#nose
@@ -138,10 +88,22 @@ https://example.com:8042/over/there?name=ferret#nose
 scheme     authority       path        query   fragment
 ```
 
+When structuring resource URIs please follow the following rules:
+
+- [Resource names and collection ID's] must be the plural form of
+  the singular noun used for the resource.
+- Use lowercase letters for URI paths since capital
+  letters can sometimes cause problems.
+- Use hyphens (`-`) to improve readability of concatenated resource names.
+- Use the forward slash (`/`) in a path to indicates hierarchical relationship
+  between resources.
+- Do not end a path with a trailing forward slash (`/`).
+- Do not use underscores ( `_` ) as it can be partially obscured or hidden
+  in some browsers or screens.
+
 Example URI of a authority and a path component
 
 ```
-
 //example.com/users/1/photos/121
   \_________/ \___/   \____/ \_/
       |         |        |    \
@@ -156,23 +118,54 @@ Example URI of a authority and a path component
          API service name
 ```
 
-Please follow the following naming conventions
+## Fields
 
-- Do not end a path with a trailing forward slash (`/`).
-- When convenient, lowercase letters are preferred in URI paths since capital
-  letters can sometimes cause problems.
-- Use the forward slash (`/`) in a path to indicates hierarchical relationship
-  between resources.
-- [Resource names and collection ID's] must be the plural form of the noun used
-  for the resource.
+Resource field names should be clear, descriptive and use `camelCase`.
+
+**Bad**
+
+```yaml
+User:
+  type: object
+  properties:
+    Name:
+      type: string
+    DisplayName:
+      type: string
+    dspName:
+      type: string
+    Email:
+      type: string
+}
+```
+
+**Good**
+
+```yaml
+User:
+  type: object
+  properties:
+    name:
+      type: string
+    displayName:
+      type: string;
+    email:
+      type: string;
+}
+```
+
+## References
+
+- [Google]
+- [restfulapi.net]
 
 <!-- URLs -->
 
-[coding standard]: https://github.com/island-is/handbook/blob/feature/add-api-design-guide-structure/code-standards.md
-[styleguide]: https://basarat.gitbook.io/typescript/styleguide
+[coding standard]: https://github.com/island-is/handbook/blob/master/code-standards.md
 [google]: https://cloud.google.com/apis/design/naming_convention
-[glossary]: https://github.com/island-is/handbook/blob/feature/add-api-design-guide-structure/glossary.md
+[restfulapi.net]: https://restfulapi.net/resource-naming/
+[glossary]: https://github.com/island-is/handbook/blob/master/glossary.md
 [viskuausan]: https://viskuausan.island.is/
 [uri]: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 [rfc3986]: https://tools.ietf.org/html/rfc3986
-[resource names and collection id's]: https://github.com/island-is/handbook/blob/feature/add-api-design-guide-structure/docs/api-design-guide/design-principles/resource-oriented-design.md#user-content-resources
+[resource names and collection id's]: https://github.com/island-is/handbook/blob/master/docs/api-design-guide/design-principles/resource-oriented-design.md#user-content-resources
