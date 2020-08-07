@@ -24,7 +24,7 @@ We need to allow the Organization be able to deliver new services to the users a
 
 ## Be prepared for running a subset of critical services on-premise
 
-As part of Iceland's government infrastructure, we need to be prepared to run a subset of our services in a local data center. To achieve that, we need to use technologies that we know we can run on-premise. Fortunately, the majority of the core tech today is open-source or is based on open standards which, makes this requirement quite achievable.
+As part of Iceland's government infrastructure, we need to be prepared to run a subset of our services in a local data center. To achieve that, we need to use technologies that are known to work on-premises. Fortunately, the majority of the core tech today is open-source or is based on open standards, which makes this requirement quite achievable.
 Non-critical services can utilize all the advantages of the cloud.
 
 ## Minimize operational overhead
