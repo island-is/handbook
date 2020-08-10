@@ -3,7 +3,7 @@ The [Once Only Principles](https://ec.europa.eu/cefdigital/wiki/display/CEFDIGIT
 
  * Public service customers (citizens, institutions, and companies) should not have to supply the same information more than once to public administrations.
 
- * APIs should to store collected data in a single database. That means for example when a service is enriching existing data from another database it should store the enriched data in it's own database, with only a linkable identifier to the existing data.
+ * APIs should store collected data in a single database. That means for example when a service is enriching existing data from another database it should store the enriched data in it's own database, with only a linkable identifier to the existing data.
 
 
 ## References
