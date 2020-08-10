@@ -36,4 +36,3 @@ Since SLAs have many applications they have been split into categories:
 ## References
 
 - [Service-level agreement](https://en.wikipedia.org/wiki/Service-level_agreement)
-
