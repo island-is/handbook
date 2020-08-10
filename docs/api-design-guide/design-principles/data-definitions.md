@@ -28,14 +28,12 @@ a later time.
 ```
 {
   "users":[
-    { "id": "1", "name": "Matt"},
-    { "id": "2", "name": "Mark"},
-    { "id": "3", "name": "John"},
+Definitions    { "id": "1", "name": "Einar"},
+    { "id": "2", "name": "Erlendur"},
+    { "id": "3", "name": "Valdimar"},
   ]
 }
 ```
-
-
 
 ## Date and Time
 Date and time values should be represented in a string, as described in the
