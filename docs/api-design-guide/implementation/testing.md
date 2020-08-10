@@ -6,7 +6,7 @@ The purpose of API testing is to verify that APIs exposed by your application op
 ## Different types of tests
 
 - Unit testing — the API code unit is doing things right.
-- Integration testing — the integration of more than one API code unists is doing the right thing.
+- Integration testing — the integration of more than one API code units is doing the right thing.
 - Functionality testing — the API works and does exactly what it’s supposed to do.
 - Reliability testing — the API can be consistently connected to and lead to consistent results
 - Load testing — the API can handle a large amount of calls
@@ -24,7 +24,7 @@ Testing of provided API's should be:
 - Automated
 - Performed on all supported API versions.
 
-### Repetable tests
+### Repeatable tests
 
 Create repeatable test steps, so the same test steps can be executed on the API. The test steps should provide consistent results.
 
