@@ -4,12 +4,10 @@ simpler and more coherent web service interfaces, which should be easy to use
 and maintain.  The data (resource) should control the design of the service. As the data is 
 the key player and the service is centered around making the data accessible.
 
-
-
 ## Design flow
 The fundamental idea is that the basic, well-understood, and well-known 
 technologies of the current web (HTTP, URI and XML) should be used according
-to their design principles. This facilitates the design of Web Services that
+to their design principles. This facilitates the design of web services that
 have simple and coherent interfaces, and which are easy to use and maintain.
 Such web services will also be easier to optimize for working with the existing
 infrastructure of the web.
@@ -24,8 +22,6 @@ The Resource-Oriented Architecture (ROA) consists of four concepts:
    - Statelessness.
    - Connectedness.
    - A uniform interface.
-
-
 
 The Design Guide suggests taking the following steps when designing resource- 
 oriented APIs.
@@ -81,13 +77,11 @@ A photo
                   |                \     
                    \                Resource name of parent resource
                     API service name
-       
 ```
 
 Resource names are referenced throughout your API service. For HTTP RESTful 
 API services, resource names will become the HTTP endpoints (HTTP URL paths); 
-[gRPC API services](https://grpc.io/docs/what-is-grpc/) use these values in
-the requests and responses directly.
+[gRPC API services] use these values in the requests and responses directly.
 
 ## Fields
 A resource may have one or more fields, and resources of the same type share 
@@ -107,11 +101,11 @@ There are three types of fields:
 It is up to developers themselves to determine the types of fields. There is an 
 exception though: the `name` field **should always be a reserved field**.
 
-#### References
+## References
 - [Google: Resource Oriented Design](https://cloud.google.com/apis/design/resources)
 - [Ratros Y: Designing APIs](https://medium.com/@ratrosy/designing-apis-4eed43409f93)
 - [Arnulf Christl: Towards a Resource Oriented Future](http://arnulf.us/Towards_a_Resource_Oriented_Future)
 
-
-
+<!-- URLs -->
 [methods]: ../implementation/methods.md
+[grpc api services]: https://grpc.io/docs/what-is-grpc/
