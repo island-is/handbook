@@ -1,15 +1,5 @@
 # Data Definitions
 
-TODO
-
-- Describe how to define data definitions (schemas)
-- What rules apply? Reference to applicable naming conventions
-  (write them if the don't exists)
-- Articles:
-  - https://restful-api-design.readthedocs.io/en/latest/resources.html#resource-data
-  - https://swagger.io/specification/#data-types
-  - alternative Date Time String Format [ecma](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15)
-
 APIs should represent all texts in the [UTF-8] encoding. Attributes
 representing arrays or lists should be named as plural nouns.
 
@@ -19,15 +9,15 @@ Primitive values MUST be serialized to JSON following the rules of [RFC8259] and
 as stated in the standard JSON text MUST be encoded using UTF-8 [RFC3629].
 
 JSON can represent four primitive types _strings_, _numbers_, _booleans_, and
-_null_ and two structured types _objects_ and _arrays_. There for concepts like
-_date and time_ need to be represented using these types. Below you can find
-how to represent other concepts like _date and time_.
+_null_ and two structured types _objects_ and _arrays_. Concepts like
+[Date and Time] need to be represented using these types.
 
 ### Response with top level JSON object
 
-In a response body, you should return a JSON object, not an array, as a top
+In a response body, you should return a JSON object but, not an array, as a top
 level data structure to support future extensibility. This would allow you to
-extend your response and for example, add server side pagination later.
+extend your response and for example, add server side pagination attribute at
+a later time.
 
 **Bad response body**
 
@@ -44,18 +34,18 @@ extend your response and for example, add server side pagination later.
 ```
 {
   "users":[
-    { "id": "1", "name": "Matt"},
-    { "id": "2", "name": "Mark"},
-    { "id": "3", "name": "John"},
+Definitions    { "id": "1", "name": "Einar"},
+    { "id": "2", "name": "Erlendur"},
+    { "id": "3", "name": "Valdimar"},
   ]
 }
 ```
 
 ## Date and Time
 
-Date and time values should be represented as described in the [RFC3339]
-proposed standard. The standard defines a profile of [ISO 8601] for use in
-Internet protocols. See: [Section 5.6] for Date/Time Format.
+Date and time values should be represented in a string, as described in the
+[RFC3339] proposed standard. The standard defines a profile of [ISO 8601]
+for use in Internet protocols. See: [Section 5.6] for Date/Time Format.
 
 ##### Summary for date and time
 
@@ -69,8 +59,8 @@ the format `yyyy-MM-ddThh:mm:ss.sssZ`. Where
 - **mm** represents minute, (two digits _00 - 59_).
 - **ss** represents second, (two digits _00 - 59_).
 - **sss** represents a decimal fraction of a second, (one or more digits).
-- **Z** represents time zone offset specified as "Z" (for [UTC]) or either
-  "+" or "-" followed by a time expression hh:mm.
+- **Z** represents time zone offset specified as `Z` (for [UTC]) or either
+  `+` or `-` followed by a time expression `hh:mm`.
 
 Icelandic local time can be represented with `Z` because Iceland follows
 the [UTC] +00:00 all year round, which is the same as [GMT].
@@ -95,6 +85,7 @@ Examples:
     money. Separate amount and currency in different fields. Example amount:
     `1250.23`.
 
+[date and time]: #date-and-time
 [rfc8259]: https://tools.ietf.org/html/rfc8259
 [rfc3629]: https://tools.ietf.org/html/rfc3629
 [utf-8]: https://en.wikipedia.org/wiki/UTF-8
