@@ -33,6 +33,6 @@ Since SLAs have many applications they have been split into categories:
 - Total pass and error rates: Measurement of success rates in terms of HTTP or other codes.
 - Transactions per time period: The amount of transactions per a set time period the API endpoint must be able to handle.
 
-## References
+### References
 
 - [Service-level agreement](https://en.wikipedia.org/wiki/Service-level_agreement)
