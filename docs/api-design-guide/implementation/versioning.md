@@ -52,8 +52,7 @@ If an API introduces a breaking change, such as removing or renaming a field,
 it must increment its API `major` version number to ensure that existing user
 code does not suddenly break, but incrementing the `major` version should be
 avoided whenever possible to avoid increasing maintenance and cost of running
-many versions of the same service. Consider using [content negotiation] on methods,
-before deciding to make breaking changes.
+many versions of the same service.
 
 For **GraphQL** APIs use `@deprecated` directive on fields which are to be renamed or
 removed from schemas. Add a descriptive text in the `reason:` with information
@@ -67,14 +66,13 @@ for more details.
 When there are more than one running instances of an API, the old versions
 need to be decommissioned at some time to reduce maintenance costs.
 
-Please follow these guidelines when decommissioning APIs.
-
 #### Notify clients when a specific API version will be discontinued
 
 You should notify clients, who use your service, that the old version will stop
 working at a specified date. You should give them a link to a new version of
 the service and provide them with information about all breaking changes
-between versions.
+between versions.  To help with that, you should always provide release notes
+with every version bump.
 
 The specified date must not be less than 6 months from the time you notify your
 last client. Exception from this rule can be made when you see via your logs
