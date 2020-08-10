@@ -12,7 +12,7 @@ The details of a SLA are as varied as the service that could be covered by them,
  * Responsiveness: How quickly should services be delivered?
  * Reporting procedure: How and where to report problems? What reporting process is used in routine tasks (if applicable).
  * Performance monitoring: How will performance be monitored, who does the monitoring and how will it be measured?
- * Penalties for failure to meet obligations: What penalties will be implemented of the service provider fails to perform as outlined in the SLA.
+ * Penalties for failure to meet obligations: What penalties will be implemented if the service provider fails to perform as outlined in the SLA.
  * Constraints: Under what circumstances will the terms of the SLA be waived?
 
 ## Service Level Agreement types
@@ -27,5 +27,5 @@ Since SLAs have many applications they have been split into categories:
 * Total pass and error rates: Measurement of success rates in terms of HTTP or other codes.
 * Transactions per time period: The amount of transactions per a set time period the API endpoint must be able to handle.
 
-#### References
+### References
 * [Service-level agreement](https://en.wikipedia.org/wiki/Service-level_agreement)
