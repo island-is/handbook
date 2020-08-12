@@ -64,45 +64,66 @@ one must pass an HTTP `POST` request to `https://cloudfunctions.googleapis.com/v
 
 Try to minimize the number of HTTP status codes a _REST_ API returns. When
 more details are needed in a error response use application defined errors
-and supply them in a _Rest error object_, described in the [errors] document.
+and supply them in a _REST error object_, described in the [errors] document.
 
-For each HTTP method, you should try to use only status codes marked with **X**
-in the following table.
+For each HTTP method, you should try to use only status
+codes marked with **X** in the following table.
 
 | Code | Meaning      | GET | POST | PUT | PATCH | DELETE |
 | :--- | :----------- | :-: | :--: | :-: | :---: | :----: |
-| 200  | OK           |  X  |      |     |       |        |
+| 200  | OK           |  X  |      |  X  |   X   |   X    |
 | 201  | Created      |     |  X   |     |       |        |
-| 202  | Accepted     |     |      |     |       |        |
 | 204  | No Content   |     |      |  X  |   X   |   X    |
-| 400  | Bad Request  |  X  |  X   |  X  |   X   |        |
-| 401  | Unauthorized |     |      |     |       |        |
-| 403  | Forbidden    |     |      |     |       |        |
+| 400  | Bad Request  |     |  X   |  X  |   X   |        |
+| 401  | Unauthorized |  X  |  X   |  X  |   X   |   X    |
+| 403  | Forbidden    |  X  |  X   |  X  |   X   |   X    |
 | 404  | Not Found    |  X  |      |  X  |   X   |        |
 | 500  | Server error |  X  |  X   |  X  |   X   |   X    |
 
-- `GET` for retrieving a resource or a collection of resources. On success,
-  status code `200` should be returned . If a collection asked for, is empty
-  `200` is still to be returned. When a resource asked for is not found, `404`
-  should be returned.
+- General for all methods
 
-- `POST` for creating a resource. If the resource did not previously exist and
-  was created the response should be http status code `201` and in the response
-  body a resource identifier to the created resource.
+  - `401` should be returned when client fails to authenticate.
+  - `403` should be returned when client is authenticated but does not have necessary permission to perform the operation.
+  - `500` should be returned when the server occurs some unexpected error, preferably along with an [errors] object.
 
-- `PUT` for updating a existing resource. After a successful execution there
-  is usually no need for a additional content so `204` should be returned. In
-  the rare case a response is needed in the body the `200` status code should be
-  returned. If a resource to be updated is not found `404` should be returned.
+- `GET` for retrieving a resource or a collection of resources.
 
-- `PATCH` for making a partial update on a resource. After a successful
-  execution `204` should be returned. Patch should only return content in a
-  response body when a error occurs.
+  - `200` should be returned on success.
+    If a collection asked for is empty, `200` is still to be returned.
+  - `404` should be returned when a resource asked for is not found.
 
-- `DELETE` for removing a resource. After a successful execution `204` should
-  be returned. If a client asks for the removal of a resource already deleted
-  `204` should be returned, **not** `404`, because clients usually do not care
-  if a resource was previously deleted.
+- `POST` for creating a resource.
+
+  - `201` should be returned if the resource was created the response
+    body should contain a resource identifier to the created resource.
+  - `400` should be returned if the request is invalid, i.e. the resource
+    already exists or contains invalid fields
+
+- `PUT` for updating a existing resource.
+
+  - `200` should be returned after a successful execution,
+    when there is a need for a content in the response.
+  - `204` should be returned after a successful execution,
+    as usually there is no need for content in the response.
+  - `400` should be returned if the request is invalid,
+    i.e. the resource contains invalid fields.
+  - `404` should be returned if the resource to be updated is not found.
+
+- `PATCH` for making a partial update on a resource.
+
+  - `200` should be returned after a successful execution,
+    when there is a need for a content in the response.
+  - `204` should be returned after a successful execution,
+    with no content in the response.
+  - `400` should be returned if the request is invalid,
+    i.e. the resource contains invalid fields.
+  - `404` should be returned if the resource to be updated is not found.
+
+- `DELETE` for removing a resource.
+  - `204` should be returned after a successful execution  
+    **Note:** If a client asks for the removal of a resource already deleted
+    `204` should be returned, **not** `404`, because clients usually do not care
+    if a resource was previously deleted.
 
 [resource-oriented]: ../design-principles/resource-oriented-design.md
 [errors]: ./errors.md#rest
