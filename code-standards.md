@@ -1,6 +1,6 @@
 # Code standards
 
-We use [Prettier] and [ESLint] to automatically enforce most of our Code
+We use [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) to automatically enforce most of our Code
 Standards. Most of our rules follow recommendations from both project with
 these additions and changes:
 
@@ -8,7 +8,7 @@ these additions and changes:
  all trailing commas.
 - ESLint is configured to catch likely errors but otherwise provide warnings to
 encourage best practices without stopping the developer.The base configuration
-comes from NX.
+comes from [NX](https://nx.dev/).
 
 Code standard changes can be proposed to the larger team in discipline
 meetings. For any new rule, we should try to enforce it automatically, even
@@ -23,7 +23,7 @@ This can be challenging when dealing with government domain words. However,
 the goal is to provide all of our services in English as well as Icelandic,
 so we need to find good translations anyways.
 
-When in doubt, check out the [Glossary]. If something is missing from it, you
+When in doubt, check out the [Glossary](https://github.com/island-is/handbook/blob/master/glossary.md). If something is missing from it, you
 can ask for suggestions in the team. Just remember to add any new
 translations to the Glossary.
 
