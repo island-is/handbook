@@ -6,7 +6,11 @@ reduces significantly implementation time for API consumers. The API developer
 is responsible for keeping it up to date.
 
 To help with keeping documentation up to date consider using automatic 
-generation tools. 
+generation tools.
+
+**Note** - To be able to register a REST or a RPC-JSON service to *Viskuausan* 
+the service **MUST** provide a [OPENAPI 3] service description.  
+Here you can see an [example] about such description.
 
 ## Consider using markdown
 Markdown is recommended, but not required when writing documentation about an
@@ -35,7 +39,7 @@ Something to consider for a Getting Started page:
  - Describe if a client will need to authenticate him self.
    - Will he need to be issued a certificate?
    - Will he need to apply for a user and password?
- - Create example codes on how to call the [/info] method in your service.
+ - Create example codes on how to call a get `/ping` method in your service.
    - Create a Node.js example.
    - Create a Microsoft .NET Core example.
    - Create examples for other frameworks your current clients are using or other 
@@ -79,12 +83,12 @@ documentation up to date.
   also benefit with structured and readable documentation.
 
 ### REST
-It is recommended using the [OpenAPI] Specification to describe *REST* services.
-Tools like [Swagger] can then be used to help with the documentation. Other 
-tools like [Postman] are available but are not as well known as Swagger.
+Use [OPENAPI 3] specification to describe *REST* services.
+Tools like [Swagger] and [Swagger-editor] can help with the documentation.
 
 ### JSON-RPC
-  [open-rpc] is a possible solution for automatic document generation for 
+  You should also use [OPENAPI 3] specification to describe JSON-RPC services. 
+  For automatic document generation [open-rpc] is a possible solution for 
   *JSON-RPC 2.0* APIs.
 
 ### SOAP
@@ -274,14 +278,16 @@ Xml representation example
   [Errors]: ./errors.md
   [HTTP status codes]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
   [Swagger]: http://swagger.io/
+  [Swagger-editor]: https://editor.swagger.io/
+  [example]: https://github.com/nordic-institute/X-Road/blob/0d0a65663daa8f3a94a4993d7948d4655d31b376/doc/Protocols/pr-rest_x-road_message_protocol_for_rest.md#appendix-1-example-service-definition
   [docusaurus]: https://v2.docusaurus.io/
   [NextJS + Remark]: https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript
   [APIDOC]: https://apidocjs.com/
   [semantic versioning]: https://semver.org/
-    [TechWriter]: https://techwriter.me/techwriter.aspx
+  [TechWriter]: https://techwriter.me/techwriter.aspx
   [oxygen XML Editor]: https://www.oxygenxml.com/xml_editor/wsdl_documentation.html
   [Altova XMLSpy]: https://www.altova.com/xmlspy-xml-editor/wsdl-editor
-  [OpenAPI]: https://swagger.io/specification/
+  [OPENAPI 3]: https://swagger.io/specification/
   [open-rpc]: https://github.com/open-rpc/open-rpc
   [DocFX]: https://dotnet.github.io/docfx/
   [Doxygen]: https://www.doxygen.nl/index.html
