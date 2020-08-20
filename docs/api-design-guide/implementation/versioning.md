@@ -42,10 +42,6 @@ https://my-service.island.is/v1.2.3/users
 https://my-service.island.is/v1/users
 ```
 
-Additionally, the `https://my-service.island.is/v1/info` url should provide the
-property `version` with the MAJOR.MINOR.PATCH version number as a string value
-in the returned resource representation.
-
 ### Considerations when planning to increment a version numbers
 
 If an API introduces a breaking change, such as removing or renaming a field,
