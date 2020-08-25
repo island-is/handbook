@@ -85,6 +85,13 @@ Examples:
     money. Separate amount and currency in different fields. Example amount:
     `1250.23`.
 
+## Data from different sources
+When returning data generated from different resources, a creationTime property
+should be added to the returned data.  
+
+For example, when returning some data which contains an amount calculated using
+ currency rate, a createTime should be added to the response.
+
 [date and time]: #date-and-time
 [rfc8259]: https://tools.ietf.org/html/rfc8259
 [rfc3629]: https://tools.ietf.org/html/rfc3629
