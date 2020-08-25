@@ -78,11 +78,10 @@ with finding concepts that need further explanation and keeping the
 documentation up to date.
 
 ## Automatic documentation generation 
-  Using tools for Automatic documentation generation, will help API developers
-  with maintaining and keeping the documentation up to date. API consumers will
-  also benefit with structured and readable documentation.
+Using tools for Automatic documentation generation, will help API developers
+with maintaining and keeping the documentation up to date. API consumers will
+also benefit with structured and readable documentation.
 
-### REST
 Use [OPENAPI 3] specification to describe *REST* services.
 Tools like [Swagger] and [Swagger-editor] can help with the documentation.
 

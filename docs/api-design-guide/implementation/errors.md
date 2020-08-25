@@ -1,5 +1,4 @@
 # Error Handling
-
 This document describes how REST APIs should present errors to clients 
 consuming these services.
 
@@ -8,7 +7,6 @@ client in a informative and structured manner. The API should return
 information about the error in the body part of a response.
 
 ## HTTP status codes
-
 APIs services MUST respond with a [HTTP status code] 
 in a response to every request.
 
@@ -22,7 +20,6 @@ These are the recommended error status codes to use for REST APIs.
 | 404  | **Not Found** — The requested resource was not found                                           |
 
 ## Response body
-
 When errors occur in a REST API, add additional information 
 about the errors to the body part of the returned response.
 
@@ -30,7 +27,6 @@ When an error occurs, a REST API should respond with a [HTTP status code]s and
 the response should contain a error object.
 
 ### Error object
-
 This object should be in a REST API response when an error occurs. The response
 should contain the key `error` and it's value should be a json object containing
 at least the two keys, `code` and `message`. If there were multiple errors, the
@@ -55,7 +51,6 @@ error.
       information about a specific error, like when parsing parameters.
 
 #### REST error response examples
-
 A simple response
 
 ```json

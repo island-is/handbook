@@ -34,7 +34,7 @@ a later time.
 ```
 {
   "users":[
-Definitions    { "id": "1", "name": "Einar"},
+    { "id": "1", "name": "Einar"},
     { "id": "2", "name": "Erlendur"},
     { "id": "3", "name": "Valdimar"},
   ]
