@@ -6,7 +6,7 @@ The purpose of API testing is to verify that APIs exposed by your application op
 ## Different types of tests
 
 - Unit testing — the API code unit is doing things right.
-- End to End testing - tests the entire software product from beginning to end 
+- End to End testing — tests the entire software product from beginning to end 
   to ensure the application flow behaves as expected.
 - Integration testing — the integration of more than one API code units is doing the right thing.
 - Functionality testing — the API works and does exactly what it’s supposed to do.
