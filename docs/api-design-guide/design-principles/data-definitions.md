@@ -43,6 +43,14 @@ APIs should use the name **nationalId**.  Its value is usually represented to
 users on the form `NNNNNN-NNNN` but APIs should use the form `NNNNNNNNNN` at all
 times.
 
+## Language and currency
+- **Languages** When specifying a language please use the [ISO-639-1]
+  (two letter) standard. See: [639-1 codes].
+- **Currencies** When specifying currency codes please use the [ISO-4217]
+  standard. See: [4217 codes].
+  - **Amount** Use the format `[0-9]+(.[0-9]+)?` to represent an amount like
+    money. Separate amount and currency in different fields. Example amount:
+    `1250.23`.
 
 ## Date and Time
 Date and time values should be represented in a string, as described in the
@@ -76,14 +84,6 @@ Examples:
   Standard Time). Note that this is equivalent to `1996-12-20T00:39:57Z`
   in UTC.
 
-## Language and currency
-- **Languages** When specifying a language please use the [ISO-639-1]
-  (two letter) standard. See: [639-1 codes].
-- **Currencies** When specifying currency codes please use the [ISO-4217]
-  standard. See: [4217 codes].
-  - **Amount** Use the format `[0-9]+(.[0-9]+)?` to represent an amount like
-    money. Separate amount and currency in different fields. Example amount:
-    `1250.23`.
 
 ## Data from different sources
 When returning data generated from different resources, a creationTime property
