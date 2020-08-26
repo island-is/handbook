@@ -16,15 +16,15 @@ A photo album service, for example, may provide the following methods:
 
 | Method                          | Resource                                               |                                   |
 | :------------------------------ | :----------------------------------------------------- | :-------------------------------- |
-| `CREATE` _Creates a user_       | `//my-service.island.is/users`                         | a collection of `User` resources  |
-| `GET` _Gets a user_             | `//my-service.island.is/users/:userId`                 | a single `User` resource          |
-| `UPDATE` _Updates a user_       | `//my-service.island.is/users/:userId`                 | a single `User` resource          |
-| `LIST` _Lists photos of a user_ | `//my-service.island.is/users/:userId/photo`           | a collection of `Photo` resources |
-| `DELETE` _Deletes a photo_      | `//my-service.island.is/users/:userId/photos/:photoId` | a single `Photo` resource         |
+| `CREATE` _Creates a user_       | `//my-service.island.is/v1/users`                         | a collection of `User` resources  |
+| `GET` _Gets a user_             | `//my-service.island.is/v1/users/:userId`                 | a single `User` resource          |
+| `UPDATE` _Updates a user_       | `//my-service.island.is/v1/users/:userId`                 | a single `User` resource          |
+| `LIST` _Lists photos of a user_ | `//my-service.island.is/v1/users/:userId/photos`           | a collection of `Photos` resources |
+| `DELETE` _Deletes a photo_      | `//my-service.island.is/v1/users/:userId/photos/:photoId` | a single `Photo` resource         |
 
 For obvious reasons, operation `CREATE` and `LIST` always work on a resource
 collection, and `GET`, `UPDATE` and `DELETE` a single resource.  
-**Note:** _You should never define a method with no associated resource_
+**Note:** _You should never define a method with no associated resource_.
 
 ### Methods in HTTP RESTful API services
 
@@ -54,11 +54,14 @@ database transactions, import and export, or data analysis.
 To map a custom method, pick the HTTP verb closest to the nature of your custom
 method. Note that when developers call the custom method, its method name must
 be attached to the end of the resource name so as to help the API service
-distinguish between standard methods and custom methods. Google Cloud Functions,
-for example, supports a custom method, `generateDownloadUrl`, for downloading
-the source code of a Cloud Function, and the method is mapped to the
-HTTP verb `POST`; to call this method on Cloud Function hello-world,
-one must pass an HTTP `POST` request to `https://cloudfunctions.googleapis.com/v1/hello-world:generateDownloadUrl`.
+distinguish between standard methods and custom methods. For example if you have
+a custom method called `render-yellow` mapped to a GET method defined in your
+router like so `/users/:userId/photos-render-yellow/:photoId`
+
+Clients could call the method like so:
+```
+//my-service.island.is/v1/users/1/photos-render-yellow/2
+```
 
 #### Response codes from HTTP methods
 
