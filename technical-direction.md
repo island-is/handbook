@@ -18,6 +18,7 @@ summarise the highlights here.
 * Written in TypeScript for [Node.JS] for consistency and easy collaboration
  with front-end.
 * Integrating with government services through [X-Road].
+* Unit testing with [Jest]
 
 ## Priorities
 
@@ -47,3 +48,4 @@ as the project grows and best practices evolve.
 [Node.JS]: https://nodejs.org/en/about/
 [GraphQL]: https://graphql.org/
 [X-Road]: https://x-road.global/
+[Jest]: https://jestjs.io/
