@@ -23,8 +23,8 @@ These are the recommended error status codes to use for REST APIs.
 When errors occur in a REST API, add additional information 
 about the errors to the body part of the returned response.
 
-When an error occurs, a REST API should respond with a [HTTP status code]s and
-the response should contain a error object.
+When an error occurs, a REST API should respond with a [HTTP status code] and
+the response should contain a error object described below.
 
 ### Error object
 This object should be in a REST API response when an error occurs. The response

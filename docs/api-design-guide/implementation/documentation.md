@@ -10,7 +10,7 @@ generation tools.
 
 **Note** - To be able to register a **REST** service to *Viskuausan* 
 the service **MUST** provide a [OPENAPI 3] service description.  
-Here you can see an [example] about such description.
+Here you can see an [example] about a such description.
 
 ## Consider using markdown
 Markdown is recommended, but not required when writing documentation about an
@@ -54,7 +54,7 @@ explanation.
 If a requests or responses support multiple representations, such as HTTP, XML, 
 and JSON a good practice would be to show example for at least these three.
 
-When you use tables you will need to provided links to other tables for nested 
+When you use tables you will need to provide links to other tables for nested 
 elements or objects.  When this is the case (for simple objects/elements), you
 could also provide the the description as a list allowing you to intent for each 
 element or object.
