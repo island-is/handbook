@@ -54,28 +54,34 @@ Below are two examples of valid resource names:
 
 A user
 ```
-       //my-service.island.is / users / 1
-                  |               |     |
-                  |               |      \
-                  |               |       Resource ID
-                  |                \  
-                  |                 Collection ID 
-                   \                   (type)
+       //my-service.island.is / v1 / users / 1
+                  |             |      |     |
+                  |             |      |      \
+                  |             |      |       Resource ID
+                  |             |       \  
+                  |             |        Collection ID 
+                  |             |           (type)
+                  |              \   
+                  |               Major version          
+                   \
                     API service name
 ```
 
 A photo
 ```
-       //my-service.island.is / users / 1 / photos / 1
-                  |               |           |      |
-                  |               |           |       \
-                  |               |           |        Resource ID 
-                  |               |           |          (type)   
-                  |               |            \  
-                  |               |              Collection ID
-                  |               |                 (type)
-                  |                \     
-                   \                Resource name of parent resource
+       //my-service.island.is / v1 / users / 1 / photos / 1
+                  |             |      |           |      |
+                  |             |      |           |       \
+                  |             |      |           |        Resource ID 
+                  |             |      |           |          (type)   
+                  |             |      |            \  
+                  |             |      |             Collection ID
+                  |             |      |                (type)
+                  |             |       \     
+                  |             |        Resource name of parent resource
+                  |              \
+                  |               Major version
+                   \
                     API service name
 ```
 
