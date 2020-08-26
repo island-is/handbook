@@ -104,16 +104,18 @@ When structuring resource URIs please follow the following rules:
 Example URI of a authority and a path component
 
 ```
-//example.com/users/1/photos/121
-  \_________/ \___/   \____/ \_/
-      |         |        |    \
-      |         |        |      Resource ID
-      |         |        |         (type)
-      |         |         \
-      |         |           Collection ID
-      |         |              (type)
-      |          \
-      |            Resource name of parent resource
+//example.com/v1/users/1/photos/121
+  \_________/ | \___/   \____/ \_/
+      |       |    |        |    \
+      |       |    |        |      Resource ID
+      |       |    |        |         (type)
+      |       |    |         \
+      |       |    |           Collection ID
+      |       |    |              (type)
+      |       |     \
+      |       |      Resource name of parent resource
+      |        \
+      |          Major version
        \
          API service name
 ```
