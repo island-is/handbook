@@ -1,10 +1,8 @@
 # Data Definitions and Standards
-
 APIs should represent all texts in the [UTF-8] encoding. Attributes
 representing arrays or lists should be named as plural nouns.
 
 ## JSON
-
 Primitive values MUST be serialized to JSON following the rules of [RFC8259] and
 as stated in the standard JSON text MUST be encoded using UTF-8 [RFC3629].
 
@@ -13,14 +11,12 @@ _null_ and two structured types _objects_ and _arrays_. Concepts like
 [Date and Time] need to be represented using these types.
 
 ### Response with top level JSON object
-
 In a response body, you should return a JSON object but, not an array, as a top
 level data structure to support future extensibility. This would allow you to
 extend your response and for example, add server side pagination attribute at
 a later time.
 
 **Bad response body**
-
 ```
 [
     { "id": "1", "name": "Einar"   },
@@ -30,7 +26,6 @@ a later time.
 ```
 
 **Good response body**
-
 ```
 {
   "users":[
@@ -41,14 +36,20 @@ a later time.
 }
 ```
 
-## Date and Time
+## National identifier
+Icelandic individual are uniquely identified by a national identifier called 
+`kennitala`.  When referring to this identifier in URIs, requests,  or responses, 
+APIs should use the name **nationalId**.  Its value is usually represented to
+users on the form `NNNNNN-NNNN` but APIs should use the form `NNNNNNNNNN` at all
+times.
 
+
+## Date and Time
 Date and time values should be represented in a string, as described in the
 [RFC3339] proposed standard. The standard defines a profile of [ISO 8601]
 for use in Internet protocols. See: [Section 5.6] for Date/Time Format.
 
 ##### Summary for date and time
-
 Date and time should be represented as a string using
 the format `yyyy-MM-ddThh:mm:ss.sssZ`. Where
 
@@ -76,7 +77,6 @@ Examples:
   in UTC.
 
 ## Language and currency
-
 - **Languages** When specifying a language please use the [ISO-639-1]
   (two letter) standard. See: [639-1 codes].
 - **Currencies** When specifying currency codes please use the [ISO-4217]
