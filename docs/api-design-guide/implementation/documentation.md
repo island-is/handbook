@@ -48,7 +48,7 @@ paths:
   /individuals:
     get:
       description: |
-        Returns all individuals registered in the National Register
+        Returns all individuals registered
       operationId: getIndividuals
       parameters:
         - name: dateOfBirth
@@ -186,17 +186,6 @@ components:
           type: string
           format: date-time
           description: UTC date of birth
-        parents:
-          allOf:
-            - $ref: "#/components/schemas/Individual"
-            - type: array
-        child:
-          allOf:
-            - $ref: "#/components/schemas/Individual"
-            - type: array
-        spouse:
-          allOf:
-            - $ref: "#/components/schemas/Individual"
       example:
         id: "BA84DAF1-DE55-40A8-BF35-8A76C7F936F6"
         nationalId: "160108117573"
@@ -204,27 +193,6 @@ components:
         lastName: "Rice"
         dateOfBirth: "2019-03-29T18:00:58.000Z"
         address: "377-8970 Vitae Rd."
-        parents:
-          [
-            {
-              "id": "BA84DAF1-DE55-40A8-BF35-8A76C7F936F6",
-              "nationalId": "164208076325",
-              "firstName": "Hermione W.",
-              "lastName": "Mcfarland",
-              "dateOfBirth": "1962-04-12T13:37:00.000Z",
-              "address": "377-8970 Vitae Rd.",
-            },
-            {
-              "id": "040030F1-A02A-4DA2-92B5-BD77BDD9C110",
-              "nationalId": "164301171502",
-              "firstName": "Caleb O.",
-              "lastName": "Mccarthy",
-              "dateOfBirth": "1964-06-21T13:37:00.000Z",
-              "address": "377-8970 Vitae Rd.",
-            },
-          ]
-        child: []
-        spouse: null
     Error:
       type: object
       required:
@@ -238,7 +206,6 @@ components:
       example:
         code: 400
         message: "Bad request"
-
 ```
 
 ## Write examples
