@@ -15,13 +15,30 @@ the service **MUST** provide a [OPENAPI 3] service description.
 The following fields are required for services to be automatically imported to _Viskuausan_
 
 - info
-  - description
-  - version
-  - title
-  - contact
-  - x-dataAccess
-  - x-dataCategory
-  - x-links
+  - description — short but proper description of the API.
+  - version — to distinguish API versions following [semantic versioning]
+    specification.
+  - title — descriptive name of the API.
+  - contact — quick information, who to contact when an issue about the service arises.
+    - name — of the person or a department.
+    - email — fully qualified email.
+  - x-access — (*comma separated list*) Who can use this service.
+    Possible values: `open`, `islykill`, `trusted`, `trustedPriority`,
+    `trustedEssential`.
+  - x-dataCategory — (*comma separated list*) What kind of data does this 
+    service work with. Possible values: `open`, `official`,`personal`,`health`,
+    `financial`.
+  - x-pricing —  (*comma separated list*) Cost of using this service.  
+    Possible values:  `free`,`usage`,`daly`,`monthly`,`yearly`,`custom`.
+  - x-links — Links regarding the service
+    - responsibleParty — a fully qualified url to a online page containing
+      information about the responsible party/owner of the service.
+    - documentation —  (*Optional*) a fully qualified url to the API 
+       documentation page.
+    - bugReport (*Optional*) — a fully qualified url to a online page or 
+      form a consumer can report bugs about the service.
+    - featureRequest (*Optional*) — a fully qualified url to a online page
+      or form a consumer can ask for a new feature in api service.
 
 ## Example
 
@@ -321,3 +338,4 @@ Tools like [Swagger] and [Swagger-editor] can help with the documentation.
 [openapi 3]: https://swagger.io/specification/
 [postman]: https://www.postman.com/api-documentation-tool/
 [date and time]: ../design-principles/data-definitions.md#date-and-time
+[semantic versioning]: https://semver.org/

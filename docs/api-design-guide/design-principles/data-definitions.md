@@ -45,10 +45,10 @@ a later time.
 ```
 
 ## National identifier
-Icelandic individual are uniquely identified by a national identifier called 
+Icelandic individuals are uniquely identified by a national identifier called 
 `kennitala`.  When referring to this identifier in URIs, requests,  or responses, 
 APIs should use the name **nationalId**.  Its value is usually represented to
-users on the form `NNNNNN-NNNN` but APIs should use the form `NNNNNNNNNN` at all
+users on the form `######-####` but APIs should use the form `##########` at all
 times.
 
 ## Language and currency
