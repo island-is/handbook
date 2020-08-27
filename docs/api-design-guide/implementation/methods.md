@@ -86,8 +86,10 @@ codes marked with **X** in the following table.
 - General for all methods
 
   - `401` should be returned when client fails to authenticate.
-  - `403` should be returned when client is authenticated but does not have necessary permission to perform the operation.
-  - `500` should be returned when the server occurs some unexpected error, preferably along with an [errors] object.
+  - `403` should be returned when client is authenticated but does not have
+  necessary permission to perform the operation.
+  - `500` should be returned when the server encounters some unexpected error,
+  preferably along with an [errors] object.
 
 - `GET` for retrieving a resource or a collection of resources.
 
@@ -97,15 +99,15 @@ codes marked with **X** in the following table.
 
 - `POST` for creating a resource.
 
-  - `201` should be returned if the resource was created the response
+  - `201` should be returned if the resource was created. The response
     body should contain a resource identifier to the created resource.
   - `400` should be returned if the request is invalid, i.e. the resource
-    already exists or contains invalid fields
+    already exists or contains invalid fields.
 
 - `PUT` for updating a existing resource.
 
   - `200` should be returned after a successful execution,
-    when there is a need for a content in the response.
+    when there is a need for content in the response.
   - `204` should be returned after a successful execution,
     as usually there is no need for content in the response.
   - `400` should be returned if the request is invalid,
@@ -115,15 +117,15 @@ codes marked with **X** in the following table.
 - `PATCH` for making a partial update on a resource.
 
   - `200` should be returned after a successful execution,
-    when there is a need for a content in the response.
+    when there is a need for content in the response.
   - `204` should be returned after a successful execution,
-    with no content in the response.
+    as usually there is no need for content in the response.
   - `400` should be returned if the request is invalid,
     i.e. the resource contains invalid fields.
   - `404` should be returned if the resource to be updated is not found.
 
 - `DELETE` for removing a resource.
-  - `204` should be returned after a successful execution  
+  - `204` should be returned after a successful execution.  
     **Note:** If a client asks for the removal of a resource already deleted
     `204` should be returned, **not** `404`, because clients usually do not care
     if a resource was previously deleted.

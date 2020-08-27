@@ -1,20 +1,20 @@
 # Naming Conventions
 
 This document describes API naming conventions related to services and resources,
-with focus on the general consumer experience. Consistency and clear naming conventions is key to provide uniform APIs between government agencies.  
+with focus on the general consumer experience. Consistency and clear naming conventions are key to provide uniform APIs between government agencies.  
 _For further information about our naming conventions for the developer
 experience please refer to our [coding standard]._
 
 ## General
 
-In order to provide consistent consumer experience across the government API ecosystem and over a long period of time, all names used by an API should be:
+In order to provide a consistent consumer experience across the government API ecosystem and over a long period of time, all names used by an API should be:
 
 - simple
 - intuitive
 - consistent
 
 One goal of these naming conventions is to ensure that the majority of consumers
-can easily understand an API. It does this by encouraging the use of simple, consistent and small vocabulary when naming methods and resources.
+can easily understand an API. It does this by encouraging the use of a simple, consistent and small vocabulary when naming methods and resources.
 It also enforces names to be in British English. A developer should use our [glossary] list when in trouble finding the appropriate English translation of
 an Icelandic concept.
 
@@ -26,12 +26,12 @@ Use the same name or term for the same concept, including for concepts
 shared across the ecosystem.
 
 Name overloading should be avoided. Use different names for different concepts.  
-_Developer should use [Viskuausan] to look up existing
+_Developers should use [Viskuausan] to look up existing
 concepts before naming services and resources._
 
 Overly general names that are ambiguous within the context of the
 API and the government's larger API ecosystem should be avoided.
-They can lead to misunderstanding of API concepts.
+They can lead to a misunderstanding of API concepts.
 Specific names that accurately describe the API concept and distinguish it
 from other relevant concepts should be used.
 There is no definitive list of names to avoid, as every name must be
