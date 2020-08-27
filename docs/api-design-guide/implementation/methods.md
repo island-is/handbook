@@ -14,17 +14,17 @@ using only the **standard methods**.
 
 A photo album service, for example, may provide the following methods:
 
-| Method                          | Resource                                               |                                   |
-| :------------------------------ | :----------------------------------------------------- | :-------------------------------- |
-| `CREATE` _Creates a user_       | `//my-service.island.is/users`                         | a collection of `User` resources  |
-| `GET` _Gets a user_             | `//my-service.island.is/users/:userId`                 | a single `User` resource          |
-| `UPDATE` _Updates a user_       | `//my-service.island.is/users/:userId`                 | a single `User` resource          |
-| `LIST` _Lists photos of a user_ | `//my-service.island.is/users/:userId/photo`           | a collection of `Photo` resources |
-| `DELETE` _Deletes a photo_      | `//my-service.island.is/users/:userId/photos/:photoId` | a single `Photo` resource         |
+| Method                          | Resource                                                  |                                    |
+| :------------------------------ | :-------------------------------------------------------- | :--------------------------------- |
+| `CREATE` _Creates a user_       | `//my-service.island.is/v1/users`                         | a collection of `User` resources   |
+| `GET` _Gets a user_             | `//my-service.island.is/v1/users/:userId`                 | a single `User` resource           |
+| `UPDATE` _Updates a user_       | `//my-service.island.is/v1/users/:userId`                 | a single `User` resource           |
+| `LIST` _Lists photos of a user_ | `//my-service.island.is/v1/users/:userId/photos`          | a collection of `Photos` resources |
+| `DELETE` _Deletes a photo_      | `//my-service.island.is/v1/users/:userId/photos/:photoId` | a single `Photo` resource          |
 
 For obvious reasons, operation `CREATE` and `LIST` always work on a resource
 collection, and `GET`, `UPDATE` and `DELETE` a single resource.  
-**Note:** _You should never define a method with no associated resource_
+**Note:** _You should never define a method with no associated resource_.
 
 ## Methods mapping to HTTP verbs
 
@@ -52,23 +52,33 @@ methods to your API is to nounify the action and make it a sub-resource.
 
 ### Example
 
-An API has a `Message` resource and it provides the standard methods on the URL
-`https://api.island.is/v1/messages`. Then there is a requirement to provide a
-functionality to be able to archive and unarchive a single message and a batch
-of messages.
+An API has a `Message` resource and it provides the standard [CRUD] methods like:
 
-The archiving of a single message is simple to design in a RESTful way using the
-nounify method. Simply let `Archive` be a sub-resource of `Message`. As it is a
-creation of an archive the method is mapped to the `POST` verb and the path is
-structured as `https://api.island.is/v1/messages/{messageId}/archives`. If the
-method requires additional parameters they would be provided in the request body.
-To add support to unarchive it is implemented as the `DELETE` verb on the path
-`https://api.island.is/v1/messages/{messageId}/archives`.
+```
+GET    https://api.island.is/v1/messages
+GET    https://api.island.is/v1/messages/{messageId}
+POST   https://api.island.is/v1/messages
+PUT    https://api.island.is/v1/messages/{messageId}
+DELETE https://api.island.is/v1/messages/{messageId}
+```
 
-To design the batch archiving it would be similar. It would use the `POST` verb
-on the path `https://api.island.is/v1/messages/archives`. Then the method can
-accepts parameters in the request body, like the a list of message ids to archive
-along with any additional parameters available for the archive method.
+Then there is a requirement to provide a functionality to be able to archive and
+unarchive a single message and a batch of messages. The archiving and unarchiving
+a single message is then provided by:
+
+```
+POST   https://api.island.is/v1/messages/{messageId}/archives
+DELETE https://api.island.is/v1/messages/{messageId}/archives
+```
+
+The batch archiving is provided by
+
+```
+POST   https://api.island.is/v1/messages/archives
+DELETE https://api.island.is/v1/messages/archives
+```
+
+_Note:_ The `POST` methods accepts list af message Ids in the request body.
 
 ## HTTP Status Response codes
 

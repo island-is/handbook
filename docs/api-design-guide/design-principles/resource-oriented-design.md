@@ -54,52 +54,36 @@ Below are two examples of valid resource names:
 
 A user
 ```
-       //my-service.island.is / users / 1
-                  |               |     |
-                  |               |      \
-                  |               |       Resource ID
-                  |                \  
-                  |                 Collection ID 
-                   \                   (type)
+       //my-service.island.is / v1 / users / 1
+                  |             |      |     |
+                  |             |      |      \
+                  |             |      |       Resource ID
+                  |             |       \  
+                  |             |        Collection ID 
+                  |             |           (type)
+                  |              \   
+                  |               Major version          
+                   \
                     API service name
 ```
 
 A photo
 ```
-       //my-service.island.is / users / 1 / photos / 1
-                  |               |           |      |
-                  |               |           |       \
-                  |               |           |        Resource ID 
-                  |               |           |          (type)   
-                  |               |            \  
-                  |               |              Collection ID
-                  |               |                 (type)
-                  |                \     
-                   \                Resource name of parent resource
+       //my-service.island.is / v1 / users / 1 / photos / 1
+                  |             |      |           |      |
+                  |             |      |           |       \
+                  |             |      |           |        Resource ID 
+                  |             |      |           |          (type)   
+                  |             |      |            \  
+                  |             |      |             Collection ID
+                  |             |      |                (type)
+                  |             |       \     
+                  |             |        Resource name of parent resource
+                  |              \
+                  |               Major version
+                   \
                     API service name
 ```
-
-Resource names are referenced throughout your API service. For HTTP RESTful 
-API services, resource names will become the HTTP endpoints (HTTP URL paths); 
-[gRPC API services] use these values in the requests and responses directly.
-
-## Fields
-A resource may have one or more fields, and resources of the same type share 
-the same collection of fields. For example, a resource of type users may have
-field `name`, `displayName`, `email` associated with it. Note that one of 
-these fields must be its resource name, a string that uniquely identifies the
-resource in the service; usually field name is reserved for this purpose.
-
-There are three types of fields:
-
-| Type     | Description                                                                                                       |
-|:---------|:------------------------------------------------------------------------------------------------------------------|
-| Required | Required fields must be populated by clients.                                                                     |
-| Optional | Optional fields can be populated by clients. If left empty, they will be automatically filled by the server.      |
-| Reserved | Reserved fields are only populated by server. API services should ignore user-provided values in reserved fields. |
-
-It is up to developers themselves to determine the types of fields. There is an 
-exception though: the `name` field **should always be a reserved field**.
 
 ## References
 - [Google: Resource Oriented Design](https://cloud.google.com/apis/design/resources)
@@ -108,4 +92,3 @@ exception though: the `name` field **should always be a reserved field**.
 
 <!-- URLs -->
 [methods]: ../implementation/methods.md
-[grpc api services]: https://grpc.io/docs/what-is-grpc/
