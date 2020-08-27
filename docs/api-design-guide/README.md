@@ -27,9 +27,12 @@ as a best practice guide for API development.
 
 ## Introduction
 
-This guide is a general guide for designing APIs, it should help synchronize the work between developers and make working together easier.
-The guide covers the relevant design principles, technology and how to operate your API so the experience for the consumers is enjoyable.
+This guide is a general guide for designing APIs. It should help synchronize the
+work between developers and make working together easier.
+The guide covers the relevant design principles, technology and how to operate
+your API so the consumer experience is enjoyable.
 
-This guide is under constant review and updates will be made over time as new design patterns and style are adopted. 
+This guide is under constant review and updates will be made over time as new
+design patterns and styles are adopted. 
 
-All feedback from the users is welcomed and encouraged to help make the guide better.
+All user feedback is welcomed and encouraged to help make the guide better.

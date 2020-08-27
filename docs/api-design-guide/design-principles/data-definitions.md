@@ -22,9 +22,9 @@ _null_ and two structured types _objects_ and _arrays_. Concepts like
 
 ### Response with top level JSON object
 
-In a response body, you should return a JSON object but, not an array, as a top
+In a response body, you should return a JSON object, not an array, as a top
 level data structure to support future extensibility. This would allow you to
-extend your response and for example, add server side pagination attribute at
+extend your response and for example, add a server side pagination attribute at
 a later time.
 
 **Bad response body**
@@ -51,11 +51,10 @@ a later time.
 
 ## National identifier
 
-Icelandic individual are uniquely identified by a national identifier called
+Icelandic individuals are uniquely identified by a national identifier called
 `kennitala`. When referring to this identifier in URIs, requests, or responses,
 APIs should use the name **nationalId**. Its value is usually represented to
-users on the form `NNNNNN-NNNN` but APIs should use the form `NNNNNNNNNN` at all
-times.
+users on the form `######-####` but APIs should use the form `##########` at all
 
 ## Language and currency
 
@@ -67,7 +66,7 @@ times.
     money. Separate amount and currency in different fields. Example amount:
     `1250.23`.
 
-## Date and Time
+## Date and time
 
 Date and time values should be represented in a string, as described in the
 [RFC3339] proposed standard. The standard defines a profile of [ISO 8601]
@@ -107,7 +106,7 @@ When returning data generated from different resources, a creationTime property
 should be added to the returned data.
 
 For example, when returning some data which contains an amount calculated using
-currency rate, a createTime should be added to the response.
+currency rate, a creationTime should be added to the response.
 
 [date and time]: #date-and-time
 [rfc8259]: https://tools.ietf.org/html/rfc8259

@@ -2,44 +2,53 @@
 
 This document describes different environments and their purpose.
 
-- Development Environment -
-- Test Environment (for Providers of API) -
-- Sandbox Environment (for Consumers of API) -
-- Production Environment -
+- Development environment
+- Test environment (for Providers of API)
+- Sandbox environment (for Consumers of API)
+- Production environment
 
-## Development Environment
+## Development environment
 
-The Development Environment used to develop API's should contain set of processes and programing tools to develop functional API.
-The developed assets should be connected to revision control and build process to create functional API. The functional API can then be deployed to other test and production environments.
+The Development environment used to develop APIs should contain set of processes
+and programing tools to develop functional APIs.
+The developed assets should be connected to revision control and build processes
+to create a functional API. The functional API can then be deployed to other test
+and production environments.
 
-## Test Environment (for Providers of API)
+## Test environment (for providers of an API)
 
-The purpose of the test environment is to exercise new and changed code via either automated checks or non-automated techniques.
-This is to validate that the functionality of provided API is correct before moving it to production and sandbox.
+The purpose of the test environment is to test new and changed code via either
+automated checks or non-automated techniques.
+This is to validate that the functionality of a provided API is correct before
+moving it to the production and sandbox environments.
 
-This environment is not used for consumers of the API, only the provider.
+This environment is not used by consumers of the API, only providers.
 
-## Sandbox Environment (for Consumer of API)
+## Sandbox environment (for consumers of an API)
 
-The purpose of the sandbox environment is for consumer / subscribers of API to test and develop applications using this API.
-Consumer can then test their application against supported version of the API.
+The purpose of the sandbox environment is for consumers/subscribers of an API to
+test and develop applications using the API.
+Consumers can then test their application against supported versions of the API.
 
-Data used for API in consumer test environment can be either Production Test Data or Synthetic data.
+Data used by an API in a sandbox environment can be either production or
+synthetic test data.
 
 ### Synthetic test data
 
-Synthetic test data does not use any actual data from the production data store and sources. It is artificial data based on the data model for that database.
-Synthetic test data can be generated automatically by a synthetic test data generation.
+Synthetic test data does not use any actual data from the production data store
+and sources. It is artificial data based on the data model for that database.
+Synthetic test data can be generated automatically by synthetic test data generation.
 
 ### Production test data
 
-Production test data is a copy of a production database that has been masked, or obfuscated, and subsetted to represent a portion of the database that is relevant to test the API.
+Production test data is a copy of a production database that has been masked,
+or obfuscated, and subsetted to represent a portion of the database that is
+relevant to test the API.
 
-## Production Environment
+## Production environment
 
-The live system hosting the API. Consumer of API uses this environment to call API's with live authentication and actual data.
-
-There are lots of other test tools available, list above is not final.
+The live system hosting the API. Consumers of APIs use this environment to call
+APIs with live authentication and actual data.
 
 #### References
 

@@ -10,8 +10,7 @@ suits their needs and culture.
 
 Code reviews lose all their value if nobody feels motivated to comment on code
 that they feel needs improvements or further explaining, or if these comments 
-have a
-negative effect on the programmer who committed the code. 
+have a negative effect on the programmer who committed the code. 
 
 Reviews should be concise and written in neutral language. Critique the code, 
 not the author. When something is unclear, ask for clarification rather than 
@@ -19,7 +18,7 @@ assuming ignorance.
 
 There are many programmers contributing to this repository, people who have 
 different backgrounds, culture and personalities. It is very likely that without
-a common code review etiquette, that people will receive comments on their pull 
+a common code review etiquette, people will receive comments on their pull 
 requests that might offend them, when the commenter meant no harm, or 
 accidentally chose some unfortunate words.
 
