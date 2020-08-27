@@ -3,6 +3,14 @@
 APIs should represent all texts in the [UTF-8] encoding. Attributes
 representing arrays or lists should be named as plural nouns.
 
+<!--
+  Describe data transfer objects for collections to support pagination.
+  {
+    result: [] // collection of resource
+    // pagination details
+  }
+ -->
+
 ## JSON
 
 Primitive values MUST be serialized to JSON following the rules of [RFC8259] and

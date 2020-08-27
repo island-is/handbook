@@ -1,7 +1,7 @@
-## Methods
+# Methods
 
 Methods are operations a client can take on resources. Follow
-[resource-oriented] design when developing methods for APIs. Emphasize
+[resource-oriented design] when developing methods for APIs. Emphasize
 resources (data model) over the methods performed on the resources
 (functionality). A typical resource-oriented API exposes a large number of
 resources with a small number of methods.
@@ -26,7 +26,7 @@ For obvious reasons, operation `CREATE` and `LIST` always work on a resource
 collection, and `GET`, `UPDATE` and `DELETE` a single resource.  
 **Note:** _You should never define a method with no associated resource_
 
-### Methods in HTTP RESTful API services
+## Methods mapping to HTTP verbs
 
 In HTTP RESTful API services, each method must be mapped to an HTTP verb
 ([HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)).
@@ -43,28 +43,38 @@ and HTTP verbs:
 | `DELETE` | `DELETE`                   |
 | `Custom` | `POST` (usually)           |
 
-#### Custom methods
+## Custom methods
 
-APIs should prefer standard methods over custom methods. The purpose of custom
-methods is to define functionality that does not cleanly map to any of the
-standard methods. Custom methods offer the same design freedom as traditional
-RPC APIs, which can be used to implement common programming patterns, such as
-database transactions, import and export, or data analysis.
+APIs should prefer standard methods over custom methods. But in the real world
+there is often need to provide custom methods. A custom method is an action
+that does not cleanly map to any of the standard methods. The way to add custom
+methods to your API is to nounify the action and make it a sub-resource.
 
-To map a custom method, pick the HTTP verb closest to the nature of your custom
-method. Note that when developers call the custom method, its method name must
-be attached to the end of the resource name so as to help the API service
-distinguish between standard methods and custom methods. Google Cloud Functions,
-for example, supports a custom method, `generateDownloadUrl`, for downloading
-the source code of a Cloud Function, and the method is mapped to the
-HTTP verb `POST`; to call this method on Cloud Function hello-world,
-one must pass an HTTP `POST` request to `https://cloudfunctions.googleapis.com/v1/hello-world:generateDownloadUrl`.
+### Example
 
-#### Response codes from HTTP methods
+An API has a `Message` resource and it provides the standard methods on the URL
+`https://api.island.is/v1/messages`. Then there is a requirement to provide a
+functionality to be able to archive and unarchive a single message and a batch
+of messages.
 
-Try to minimize the number of HTTP status codes a _REST_ API returns. When
+The archiving of a single message is simple to design in a RESTful way using the
+nounify method. Simply let `Archive` be a sub-resource of `Message`. As it is a
+creation of an archive the method is mapped to the `POST` verb and the path is
+structured as `https://api.island.is/v1/messages/{messageId}/archives`. If the
+method requires additional parameters they would be provided in the request body.
+To add support to unarchive it is implemented as the `DELETE` verb on the path
+`https://api.island.is/v1/messages/{messageId}/archives`.
+
+To design the batch archiving it would be similar. It would use the `POST` verb
+on the path `https://api.island.is/v1/messages/archives`. Then the method can
+accepts parameters in the request body, like the a list of message ids to archive
+along with any additional parameters available for the archive method.
+
+## HTTP Status Response codes
+
+Try to minimize the number of HTTP status codes a REST API returns. When
 more details are needed in a error response use application defined errors
-and supply them in a _REST error object_, described in the [errors] document.
+and supply them in a response error object, described in the [errors] document.
 
 For each HTTP method, you should try to use only status
 codes marked with **X** in the following table.
@@ -120,11 +130,13 @@ codes marked with **X** in the following table.
   - `404` should be returned if the resource to be updated is not found.
 
 - `DELETE` for removing a resource.
+  - `200` can be returned after a successful execution,
+    when there is a need for a content in the response.
   - `204` should be returned after a successful execution  
     **Note:** If a client asks for the removal of a resource already deleted
     `204` should be returned, **not** `404`, because clients usually do not care
     if a resource was previously deleted.
 
-[resource-oriented]: ../design-principles/resource-oriented-design.md
+[resource-oriented design]: ../design-principles/resource-oriented-design.md
 [errors]: ./errors.md#rest
 [crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
