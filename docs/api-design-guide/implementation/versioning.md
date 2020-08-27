@@ -10,7 +10,7 @@ part of the URI path for all APIs.
 Developers should strive to make all changes
 backwards compatible (non-breaking changes).
 
-Versioning APIs should follow the the [semantic versioning](https://semver.org/)
+Versioning APIs should follow the [semantic versioning]
 specification. Given a version number MAJOR.MINOR.PATCH, increment the:
 
 1.  MAJOR version when you make incompatible API changes,
@@ -20,7 +20,7 @@ specification. Given a version number MAJOR.MINOR.PATCH, increment the:
 When a `major` version is incremented, a new instance of the API service must
 be made available.
 
-## Urls
+## URLs
 
 In all URLs with no exceptions, APIs must expose the **major** version number,
 with the character `v` as a prefix. The **minor** and **patch** version
@@ -45,17 +45,17 @@ https://my-service.island.is/v1/users
 ### Considerations when planning to increment a version numbers
 
 If an API introduces a breaking change, such as removing or renaming a field,
-it must increment its API `major` version number to ensure that existing user
-code does not suddenly break, but incrementing the `major` version should be
+its `major` version number must be incremented to ensure that existing user
+code does not suddenly break. Incrementing the `major` version should be
 avoided whenever possible to avoid increasing maintenance and cost of running
 many versions of the same service.
 
-For **GraphQL** APIs use `@deprecated` directive on fields which are to be renamed or
-removed from schemas. Add a descriptive text in the `reason:` with information
-on what the client should use in the future. This will allow older clients to
-continue functioning while updated clients can get the new schema right away.
-See [here](https://www.netlify.com/blog/2020/01/21/advice-from-a-graphql-expert/#designing-a-schema-that-is-easy-to-evolve)
-for more details.
+For **GraphQL** APIs use the `@deprecated` directive on fields which are to be 
+renamed or removed from schemas. Add a descriptive text in the `reason:` with
+information on what the client should use in the future. This will allow older
+clients to continue functioning while updated clients can get the new schema
+right away.
+See [here] for more details.
 
 ### Deprecating API versions
 
@@ -67,11 +67,13 @@ need to be decommissioned at some time to reduce maintenance costs.
 You should notify clients, who use your service, that the old version will stop
 working at a specified date. You should give them a link to a new version of
 the service and provide them with information about all breaking changes
-between versions.  To help with that, you should always provide release notes
+between versions. To help with that, you should always provide release notes
 with every version bump.
 
 The specified date must not be less than 6 months from the time you notify your
 last client. Exception from this rule can be made when you see via your logs
 that no calls to this API version are made anymore.
 
+[semantic versioning]: https://semver.org/
 [deprecating api versions]: #deprecating-api-versions
+[here]: https://www.netlify.com/blog/2020/01/21/advice-from-a-graphql-expert/#designing-a-schema-that-is-easy-to-evolve
