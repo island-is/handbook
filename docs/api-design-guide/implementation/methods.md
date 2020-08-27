@@ -1,7 +1,7 @@
-## Methods
+# Methods
 
 Methods are operations a client can take on resources. Follow
-[resource-oriented] design when developing methods for APIs. Emphasize
+[resource-oriented design] when developing methods for APIs. Emphasize
 resources (data model) over the methods performed on the resources
 (functionality). A typical resource-oriented API exposes a large number of
 resources with a small number of methods.
@@ -14,19 +14,19 @@ using only the **standard methods**.
 
 A photo album service, for example, may provide the following methods:
 
-| Method                          | Resource                                               |                                   |
-| :------------------------------ | :----------------------------------------------------- | :-------------------------------- |
-| `CREATE` _Creates a user_       | `//my-service.island.is/v1/users`                         | a collection of `User` resources  |
-| `GET` _Gets a user_             | `//my-service.island.is/v1/users/:userId`                 | a single `User` resource          |
-| `UPDATE` _Updates a user_       | `//my-service.island.is/v1/users/:userId`                 | a single `User` resource          |
-| `LIST` _Lists photos of a user_ | `//my-service.island.is/v1/users/:userId/photos`           | a collection of `Photos` resources |
-| `DELETE` _Deletes a photo_      | `//my-service.island.is/v1/users/:userId/photos/:photoId` | a single `Photo` resource         |
+| Method                          | Resource                                                  |                                    |
+| :------------------------------ | :-------------------------------------------------------- | :--------------------------------- |
+| `CREATE` _Creates a user_       | `//my-service.island.is/v1/users`                         | a collection of `User` resources   |
+| `GET` _Gets a user_             | `//my-service.island.is/v1/users/:userId`                 | a single `User` resource           |
+| `UPDATE` _Updates a user_       | `//my-service.island.is/v1/users/:userId`                 | a single `User` resource           |
+| `LIST` _Lists photos of a user_ | `//my-service.island.is/v1/users/:userId/photos`          | a collection of `Photos` resources |
+| `DELETE` _Deletes a photo_      | `//my-service.island.is/v1/users/:userId/photos/:photoId` | a single `Photo` resource          |
 
 For obvious reasons, operation `CREATE` and `LIST` always work on a resource
 collection, and `GET`, `UPDATE` and `DELETE` a single resource.  
 **Note:** _You should never define a method with no associated resource_.
 
-### Methods in HTTP RESTful API services
+## Methods mapping to HTTP verbs
 
 In HTTP RESTful API services, each method must be mapped to an HTTP verb
 ([HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)).
@@ -43,31 +43,48 @@ and HTTP verbs:
 | `DELETE` | `DELETE`                   |
 | `Custom` | `POST` (usually)           |
 
-#### Custom methods
+## Custom methods
 
-APIs should prefer standard methods over custom methods. The purpose of custom
-methods is to define functionality that does not cleanly map to any of the
-standard methods. Custom methods offer the same design freedom as traditional
-RPC APIs, which can be used to implement common programming patterns, such as
-database transactions, import and export, or data analysis.
+APIs should prefer standard methods over custom methods. But in the real world
+there is often need to provide custom methods. A custom method is an action
+that does not cleanly map to any of the standard methods. The way to add custom
+methods to your API is to nounify the action and make it a sub-resource.
 
-To map a custom method, pick the HTTP verb closest to the nature of your custom
-method. Note that when developers call the custom method, its method name must
-be attached to the end of the resource name so as to help the API service
-distinguish between standard methods and custom methods. For example if you have
-a custom method called `render-yellow` mapped to a GET method defined in your
-router like so `/users/:userId/photos-render-yellow/:photoId`
+### Example
 
-Clients could call the method like so:
+An API has a `Message` resource and it provides the standard [CRUD] methods like:
+
 ```
-//my-service.island.is/v1/users/1/photos-render-yellow/2
+GET    https://api.island.is/v1/messages
+GET    https://api.island.is/v1/messages/{messageId}
+POST   https://api.island.is/v1/messages
+PUT    https://api.island.is/v1/messages/{messageId}
+DELETE https://api.island.is/v1/messages/{messageId}
 ```
 
-#### Response codes from HTTP methods
+Then there is a requirement to provide a functionality to be able to archive and
+unarchive a single message and a batch of messages. The archiving and unarchiving
+a single message is then provided by:
 
-Try to minimize the number of HTTP status codes a _REST_ API returns. When
+```
+POST   https://api.island.is/v1/messages/{messageId}/archives
+DELETE https://api.island.is/v1/messages/{messageId}/archives
+```
+
+The batch archiving is provided by
+
+```
+POST   https://api.island.is/v1/messages/archives
+DELETE https://api.island.is/v1/messages/archives
+```
+
+_Note:_ The `POST` methods accepts list af message Ids in the request body.
+
+## HTTP Status Response codes
+
+Try to minimize the number of HTTP status codes a REST API returns. When
 more details are needed in a error response use application defined errors
-and supply them in a _REST error object_, described in the [errors] document.
+and supply them in a response error object, described in the [errors] document.
 
 For each HTTP method, you should try to use only status
 codes marked with **X** in the following table.
@@ -125,11 +142,13 @@ codes marked with **X** in the following table.
   - `404` should be returned if the resource to be updated is not found.
 
 - `DELETE` for removing a resource.
-  - `204` should be returned after a successful execution.  
+  - `200` can be returned after a successful execution,
+    when there is a need for a content in the response.
+  - `204` should be returned after a successful execution  
     **Note:** If a client asks for the removal of a resource already deleted
     `204` should be returned, **not** `404`, because clients usually do not care
     if a resource was previously deleted.
 
-[resource-oriented]: ../design-principles/resource-oriented-design.md
+[resource-oriented design]: ../design-principles/resource-oriented-design.md
 [errors]: ./errors.md#rest
 [crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete

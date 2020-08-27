@@ -92,4 +92,3 @@ Photo
 
 <!-- URLs -->
 [methods]: ../implementation/methods.md
-[grpc api services]: https://grpc.io/docs/what-is-grpc/
