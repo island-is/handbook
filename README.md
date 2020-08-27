@@ -19,6 +19,6 @@ into the project, as well as document project architecture and decisions.
 - [Architecture Decision Record](./docs/adr/index.md)
 - [Glossary](./glossary.md)
 
-[Digital Iceland]: http://www.reddit.com
+[Digital Iceland]: https://stafraent.island.is/
 [Ministry of Finance and Economic Affairs]: https://www.government.is/ministries/ministry-of-finance-and-economic-affairs/
 [FOSS]: https://en.wikipedia.org/wiki/Free_and_open-source_software
