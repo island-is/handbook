@@ -8,7 +8,7 @@ these additions and changes:
  all trailing commas.
 - ESLint is configured to catch likely errors but otherwise provide warnings to
 encourage best practices without stopping the developer.The base configuration
-comes from NX.
+comes from [NX].
 
 Code standard changes can be proposed to the larger team in discipline
 meetings. For any new rule, we should try to enforce it automatically, even
@@ -55,3 +55,8 @@ const typeDefs = gql`
   }
 `
 ```
+
+[Prettier]: https://prettier.io/
+[ESLint]: https://eslint.org/
+[NX]: https://nx.dev/
+[Glossary]: ./glossary.md
