@@ -12,6 +12,17 @@ generation tools.
 **Note** - To be able to register a **REST** service to _Viskuausan_
 the service **MUST** provide a [OPENAPI 3] service description.
 
+The following fields are required for services to be automatically imported to _Viskuausan_
+
+- info
+  - description
+  - version
+  - title
+  - contact
+  - x-dataAccess
+  - x-dataCategory
+  - x-links
+
 ## Example
 
 ```
@@ -72,25 +83,9 @@ paths:
                     items:
                       $ref : "#/components/schemas/Individual"
         "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    $ref: "#/components/schemas/Error"
+          $ref: "#/components/responses/BadRequest"
         "500":
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    $ref: "#/components/schemas/Error"
+          $ref: "#/components/responses/InternalServerError"
         default:
           description: Unexpected error
           content:
@@ -99,7 +94,6 @@ paths:
                 type: object
                 properties:
                   error:
-                    type: object
                     $ref: "#/components/schemas/Error"
   /individuals/{id}:
     get:
@@ -128,36 +122,49 @@ paths:
                     items:
                       $ref : "#/components/schemas/Individual"
         "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    $ref: "#/components/schemas/Error"
+          $ref: "#/components/responses/BadRequest"
         "404":
-          description: Not found
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    $ref: "#/components/schemas/Error"
+          $ref: "#/components/responses/NotFound"
         "500":
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    $ref: "#/components/schemas/Error"
+          $ref: "#/components/responses/BadRequest"
 components:
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                $ref: '#/components/schemas/Error'
+    InternalServerError:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                $ref: '#/components/schemas/Error'
   schemas:
     Individual:
       type: object
@@ -203,9 +210,37 @@ components:
           type: integer
         message:
           type: string
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/ErrorDetail"
       example:
         code: 400
         message: "Bad request"
+        errors:
+          - code: 87
+            message: "Parameter is incorrectly formatted"
+            help: "https://www.moa.is/awesome/documetation/devices"
+            trackingId: "5d17a8ada52a2327f02c6a1a"
+            param: "deviceId"
+          - code: 85
+            message: Parameter missing
+            help: 'https://www.moa.is/awesome/documetation/devices'
+    ErrorDetail:
+      type: object
+      required:
+        - message
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        help:
+          type: string
+        trackingId:
+          type: string
+        param:
+          type: string
 ```
 
 ## Write examples
