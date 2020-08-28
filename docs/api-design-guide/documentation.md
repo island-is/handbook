@@ -6,13 +6,13 @@ It makes it much easier for other developers to use services and significantly
 reduces implementation time for API consumers. The API developer is responsible
 for keeping the documentation up to date.
 
-To help with keeping documentation up to date consider using automatic
-generation tools that during build time can f.ex. gather comments in predefined syntax
-and generate the OAS, this means that the OAS lives bundled with the code and
-should be easier for developers to maintain.
+To be able to register a REST service to _Viskuausan_
+the service **MUST** provide an [OpenAPI Specification] (OAS).
 
-**Note** - To be able to register a **REST** service to _Viskuausan_
-the service **MUST** provide an [OPENAPI 3] service description.
+To help with keeping documentation up to date consider using automatic
+generation tools that during build time can gather comments in predefined syntax
+and generate the OAS. This means that the OAS lives bundled with the code and
+should be easier for developers to maintain.
 
 The following fields are required for services to be automatically imported to _Viskuausan_
 
@@ -24,12 +24,8 @@ The following fields are required for services to be automatically imported to _
   - contact — quick information, who to contact when an issue about the service arises.
     - name — of the person or a department.
     - email — fully qualified email.
-  - x-access — Who can use this service.
-    Possible values: `open`, `islykill`, `trusted`, `trustedPriority`,
-    `trustedEssential`.
-  - x-dataCategory — What kind of data does this
-    service work with. Possible values: `open`, `official`,`personal`,`health`,
-    `financial`.
+  - x-category — What kind of data does this service work with.
+    Possible values: `open`, `official`,`personal`,`health`, `financial`.
   - x-pricing — Cost of using this service.
     Possible values: `free`,`usage`,`daily`,`monthly`,`yearly`,`custom`.
   - x-links — Links regarding the service
@@ -46,10 +42,10 @@ Example can be found [here](#example).
 
 ## Describe error handling
 
-Provide information on which [HTTP status codes] a client consuming
+Provide information on which HTTP status codes a client consuming
 your service can expect the API to return, and provide information
 on application defined errors and how the errors are presented to clients.
-See [Errors] for recommendations.
+See [Errors] for further details.
 
 ## Provide feedback mechanism
 
@@ -59,15 +55,6 @@ documentation up to date.
 
 The field x-links in the OpenAPI schema provides a way to include paths where
 consumers can provide feedback on the API.
-
-## Automatic documentation generation
-
-Using tools for Automatic documentation generation will help API developers
-maintain and keep the documentation up to date. API consumers will also benefit
-with structured and readable documentation.
-
-Use the [OPENAPI 3] specification to describe _REST_ services.
-Tools like [Swagger] and [Swagger Editor] can help with the documentation.
 
 ## Example
 
@@ -93,11 +80,9 @@ info:
   license:
     name: MIT
     url: "https://opensource.org/licenses/MIT"
-  x-access:
-    - open
   x-pricing:
     - free
-  x-dataCategory:
+  x-category:
     - personal
     - official
   x-links:
@@ -294,9 +279,5 @@ components:
 ```
 
 [errors]: ./errors.md
-[http status codes]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
-[swagger]: http://swagger.io/
-[swagger editor]: https://editor.swagger.io/
-[openapi 3]: https://swagger.io/specification/
-[date and time]: ../design-principles/data-definitions.md#date-and-time
+[openapi specification]: https://swagger.io/specification/
 [semantic versioning]: https://semver.org/
