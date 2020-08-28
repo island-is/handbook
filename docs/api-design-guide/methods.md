@@ -149,6 +149,6 @@ codes marked with **X** in the following table.
     `204` should be returned, **not** `404`, because clients usually do not care
     if a resource was previously deleted.
 
-[resource-oriented design]: ../design-principles/resource-oriented-design.md
+[resource-oriented design]: ./resource-oriented-design.md
 [errors]: ./errors.md#rest
 [crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
