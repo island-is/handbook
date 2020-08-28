@@ -30,7 +30,7 @@ The following fields are required for services to be automatically imported to _
   - x-dataCategory — What kind of data does this
     service work with. Possible values: `open`, `official`,`personal`,`health`,
     `financial`.
-  - x-pricing — Cost of using this service.  
+  - x-pricing — Cost of using this service.
     Possible values: `free`,`usage`,`daily`,`monthly`,`yearly`,`custom`.
   - x-links — Links regarding the service
     - responsibleParty — a fully qualified url to a online page containing

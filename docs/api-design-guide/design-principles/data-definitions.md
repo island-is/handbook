@@ -93,12 +93,12 @@ Examples:
   in UTC.
 
 
-## Data from different sources
-When returning data generated from different resources, a creationTime property
-should be added to the returned data.  
+## Add timestamp to returned data
+All returned data should contain the field `createdTimestamp` and it's value 
+should hold, the [date and time] of, when the data was created.  This is 
+important because of different caching rules and different viewpoints on when 
+data should be considered obsolete.
 
-For example, when returning some data which contains an amount calculated using
- currency rate, a creationTime should be added to the response.
 
 [date and time]: #date-and-time
 [rfc8259]: https://tools.ietf.org/html/rfc8259
