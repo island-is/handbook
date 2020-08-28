@@ -49,7 +49,7 @@ extend your response and for example, add a server side pagination attribute.
     { "id": "1002", "name": "Erlendur"},
     { "id": "1003", "name": "Valdimar"},
   ],
-  "next_cursor": "aWQ6MTAwNA==",
+  "nextCursor": "aWQ6MTAwNA==",
 }
 ```
 
@@ -65,24 +65,24 @@ Cursor pagination returns a cursor in the response, which is a pointer to
 a specific item in the dataset. This pointer needs to be a unique sequential
 field (or fields).
 
-When implementing cursor pagination a field called `next_cursor` is returned
+When implementing cursor pagination a field called `nextCursor` is returned
 in the response object. This field is Base64 encoded string. By having it encoded
 makes it uniform while providing flexibility to implement different cursor logic
-between different endpoints. In the example above the `next_cursor` field is
+between different endpoints. In the example above the `nextCursor` field is
 Base64 encoding the value `id:1004`, meaning the server is using the `id` field
 of the user object as a pointer to next item.
 
-To indicate there are no more result the value of `next_cursor` is set to empty string:
-`"next_cursor": ""`.
+To indicate there are no more result the value of `nextCursor` is set to empty string:
+`"nextCursor": ""`.
 
-Optionally an API can also provide the field `total_count` to indicate to the client how
+Optionally an API can also provide the field `totalCount` to indicate to the client how
 many results are available.
 
 ### Pagination query parameters
 
 For an API to support pagination it needs to support the following query parameters:
 
-- `cursor` - The client provides the value of `next_cursor` from the previous
+- `cursor` - The client provides the value of `nextCursor` from the previous
   response to set the start of next page of results.
 - `limit` - Limits the number of results in a request. The server should have
   a default value for this field.
@@ -92,7 +92,7 @@ For an API to support pagination it needs to support the following query paramet
 Icelandic individuals are uniquely identified by a national identifier called
 `kennitala`. When referring to this identifier in URIs, requests, or responses,
 APIs should use the name `nationalId`. Its value is usually represented to
-users on the form `######-####` but APIs should use the form `##########` at all
+users on the form `######-####` but APIs should use the form `##########` at all times.
 
 ## Language and currency
 

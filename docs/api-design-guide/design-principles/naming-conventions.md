@@ -105,7 +105,7 @@ Example URI of a authority and a path component
 
 ```
 //example.com/v1/users/1/photos/121
-  \_________/ | \___/   \____/ \_/
+  \_________/ |  \___/   \____/ \_/
       |       |    |        |    \
       |       |    |        |      Resource ID
       |       |    |        |         (type)

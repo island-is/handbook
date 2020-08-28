@@ -8,4 +8,3 @@ the design of an API.
 - [Resource Oriented Design](./resource-oriented-design.md)
 - [Naming Conventions](./naming-conventions.md)
 - [Data Definitions](./data-definitions.md)
-- [Technology Standards](./tech-standards.md)
