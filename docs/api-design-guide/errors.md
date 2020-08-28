@@ -22,18 +22,14 @@ These are the recommended error status codes for REST APIs.
 
 ## Response body
 
-When errors occur in a REST API, additional information
-about the errors should be added to the body of the returned response.
-
-When an error occurs, a REST API should respond with an [HTTP status code] and
-the response should contain an error object as described below.
+When an error occurs, a REST API should respond with an [HTTP status error codes]
+and the response should contain an error object as described below.
 
 ### Error object
 
-This object should be in a REST API response when an error occurs. The response
-should contain the key `error` and it's value should be a json object containing
-at least the two keys, `code` and `message`. If there were multiple errors, the
-values of `code` and `message` should describe the first error.
+The response should contain the key `error` and it's value should be a json object
+containing at least the two keys, `code` and `message`. If there were multiple
+errors, the values of `code` and `message` should describe the first error.
 
 - `error` The key of the error object
   - `code` _(Number)_ An integer number that indicates the error type that
@@ -91,3 +87,5 @@ More detailed response
   }
 }
 ```
+
+[http status error codes]: #http-status-error-codes
