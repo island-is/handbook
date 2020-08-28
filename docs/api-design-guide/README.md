@@ -1,17 +1,18 @@
 # API Design Guide
 
-This is the home of the API Design Guide published by Stafrænt Ísland
-as a best practice guide for API development.
+_Draft 1 - Published 2020-08-31_
 
-This guide is a general guide for designing APIs. It should help synchronize the
-work between developers and make working together easier.
-The guide covers the relevant design principles, technology and how to operate
-your API so the consumer experience is enjoyable.
+This is the home of the API Design Guide published by Stafrænt Ísland
+as a best practice guide for API development. It should help
+synchronize the work between developers and make working together easier.
+The guide covers the relevant design principles and patterns to use so
+the consumer experience is enjoyable and consistent throughout APIs.
 
 This guide is under constant review and updates will be made over time as new
-design patterns and styles are adopted. 
+design patterns and styles are adopted.
 
-All user feedback is welcomed and encouraged to help make the guide better.
+All feedback is welcomed and encouraged to help make the guide better so
+please feel free to create pull requests.
 
 ## Content
 
