@@ -1,12 +1,14 @@
 # Error Handling
-This document describes how REST APIs should present errors to clients 
+
+This document describes how REST APIs should present errors to clients
 consuming their services.
 
 When an error occurs in a API, the service should return the error to the calling
 client in an informative and structured manner. The API should return
 information about the error in the response body.
 
-## HTTP status codes
+## HTTP status error codes
+
 API services **MUST** respond to every request with an [HTTP status code].
 
 These are the recommended error status codes for REST APIs.
@@ -19,13 +21,15 @@ These are the recommended error status codes for REST APIs.
 | 404  | **Not Found** — The requested resource was not found.                                             |
 
 ## Response body
-When errors occur in a REST API, additional information 
+
+When errors occur in a REST API, additional information
 about the errors should be added to the body of the returned response.
 
 When an error occurs, a REST API should respond with an [HTTP status code] and
 the response should contain an error object as described below.
 
 ### Error object
+
 This object should be in a REST API response when an error occurs. The response
 should contain the key `error` and it's value should be a json object containing
 at least the two keys, `code` and `message`. If there were multiple errors, the
@@ -38,7 +42,7 @@ values of `code` and `message` should describe the first error.
   - `errors` _(Array)_ **(Optional)** More detailed information about the
     error(s). API developers can structure each object in the array as they
     like, but should, whenever possible, use that structure throughout the
-    application. For example, the following fields could be included in each 
+    application. For example, the following fields could be included in each
     object of the array.
     - `help` **(Optional)** Url to a page explaining the error and possible
       solutions.
@@ -49,6 +53,7 @@ values of `code` and `message` should describe the first error.
       information about a specific error, like when parsing parameters.
 
 #### REST error response examples
+
 Simple response
 
 ```json

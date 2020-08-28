@@ -25,10 +25,7 @@ removing (and destroying) a resource, delete is preferred over erase.
 Use the same name or term for the same concept, including for concepts
 shared across the ecosystem.
 
-Name overloading should be avoided. Use different names for different concepts.  
-_Developers should use [Viskuausan] to look up existing
-concepts before naming services and resources._
-
+Name overloading should be avoided. Use different names for different concepts.
 Overly general names that are ambiguous within the context of the
 API and the government's larger API ecosystem should be avoided.
 They can lead to a misunderstanding of API concepts.
@@ -124,6 +121,7 @@ Example URI of a authority and a path component
 ## Fields
 
 Resource field names should be clear, descriptive and use `camelCase`.
+Fields representing arrays or lists should be named as _plural nouns_.
 
 **Bad**
 
@@ -139,7 +137,8 @@ User:
       type: string
     Email:
       type: string
-}
+    child:
+      type: array
 ```
 
 **Good**
@@ -151,10 +150,11 @@ User:
     name:
       type: string
     displayName:
-      type: string;
+      type: string
     email:
-      type: string;
-}
+      type: string
+    childs:
+      type: array
 ```
 
 ## References

@@ -1,7 +1,8 @@
 # Data Definitions and Standards
 
-APIs should represent all texts in the [UTF-8] encoding. Attributes
-representing arrays or lists should be named as plural nouns.
+## Text encoding
+
+APIs should represent all texts in the [UTF-8] encoding.
 
 ## JSON
 

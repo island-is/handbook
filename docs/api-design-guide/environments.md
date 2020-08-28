@@ -49,7 +49,3 @@ relevant to test the API.
 
 The live system hosting the API. Consumers of APIs use this environment to call
 APIs with live authentication and actual data.
-
-#### References
-
-- [Software Testing News: When to use production vs. synthetic data for software testing](https://www.softwaretestingnews.co.uk/when-to-use-production-vs-synthetic-data-for-software-testing)
