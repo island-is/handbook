@@ -46,7 +46,7 @@ and HTTP verbs:
 ## Custom methods
 
 APIs should prefer standard methods over custom methods. But in the real world
-there is often need to provide custom methods. A custom method is an action
+there is often a need to provide custom methods. A custom method is an action
 that does not cleanly map to any of the standard methods. The way to add custom
 methods to your API is to nounify the action and make it a sub-resource.
 
