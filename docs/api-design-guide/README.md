@@ -16,7 +16,6 @@ as a best practice guide for API development.
   - [Methods](./implementation/methods.md)
   - [Errors](./implementation/errors.md)
   - [Security](./implementation/security.md)
-  - [Testing](./implementation/testing.md)
   - [Documentation](./implementation/documentation.md)
   - [Versioning](./implementation/versioning.md)
 - [Environments](./environments.md)
