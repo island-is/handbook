@@ -15,7 +15,6 @@ All user feedback is welcomed and encouraged to help make the guide better.
 
 ## Content
 
-- [Introduction](#introduction)
 - [Design Principles](./design-principles/README.md)
   - [Once-Only](./design-principles/once-only.md)
   - [Resource Oriented Design](./design-principles/resource-oriented-design.md)
