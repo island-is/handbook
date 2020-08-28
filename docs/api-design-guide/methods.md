@@ -80,6 +80,6 @@ DELETE https://api.island.is/v1/messages/archives
 
 _Note:_ The `POST` methods accepts list af message Ids in the request body.
 
-[resource-oriented design]: ../design-principles/resource-oriented-design.md
+[resource-oriented design]: ./resource-oriented-design.md
 [errors]: ./errors.md#rest
 [crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete

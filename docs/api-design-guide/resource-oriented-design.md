@@ -91,4 +91,4 @@ Photo
 - [Arnulf Christl: Towards a Resource Oriented Future](http://arnulf.us/Towards_a_Resource_Oriented_Future)
 
 <!-- URLs -->
-[methods]: ../implementation/methods.md
+[methods]: ./methods.md

@@ -171,4 +171,4 @@ User:
 [viskuausan]: https://viskuausan.island.is/
 [uri]: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 [rfc3986]: https://tools.ietf.org/html/rfc3986
-[resource names and collection id's]: https://github.com/island-is/handbook/blob/master/docs/api-design-guide/design-principles/resource-oriented-design.md#user-content-resources
+[resource names and collection id's]: ./resource-oriented-design.md#user-content-resources
