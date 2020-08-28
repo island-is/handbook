@@ -92,7 +92,7 @@ For an API to support pagination it needs to support the following query paramet
 Icelandic individuals are uniquely identified by a national identifier called
 `kennitala`. When referring to this identifier in URIs, requests, or responses,
 APIs should use the name `nationalId`. Its value is usually represented to
-users on the form `######-####` but APIs should use the form `##########` at all
+users on the form `######-####` but APIs should use the form `##########` at all times.
 
 ## Language and currency
 
