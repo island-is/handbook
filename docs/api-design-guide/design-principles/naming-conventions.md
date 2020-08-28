@@ -100,6 +100,7 @@ When structuring resource URIs please follow the following rules:
 - Do not end a path with a trailing forward slash (`/`).
 - Do not use underscores ( `_` ) as it can be partially obscured or hidden
   in some browsers or screens.
+- For naming query parameters please use the camelCase naming convention.
 
 Example URI of a authority and a path component
 
