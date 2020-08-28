@@ -20,7 +20,6 @@ All user feedback is welcomed and encouraged to help make the guide better.
   - [Resource Oriented Design](./design-principles/resource-oriented-design.md)
   - [Naming Conventions](./design-principles/naming-conventions.md)
   - [Data Definitions](./design-principles/data-definitions.md)
-  - [Technology Standards](./design-principles/tech-standards.md)
 - [Implementing your API](./implementation/README.md)
   - [Methods](./implementation/methods.md)
   - [Errors](./implementation/errors.md)
