@@ -70,7 +70,7 @@ When implementing cursor pagination a field called `nextCursor` is returned
 in the response object. This field is a Base64 encoded string. Having it encoded
 makes it uniform while providing flexibility to implement different cursor logic
 between different endpoints. In the example above the `nextCursor` field is
-Base64 encoding the value `id:1004`, meaning the server is using the `id` field
+a Base64 encoding the value `id:1004`, meaning the server is using the `id` field
 of the user object as a pointer to next item.
 
 To indicate there are no more results the value of `nextCursor` is set to the

@@ -21,6 +21,7 @@ please feel free to create pull requests.
 - [Naming Conventions](./naming-conventions.md)
 - [Data Definitions](./data-definitions.md)
 - [Methods](./methods.md)
+- [HTTP Status Codes](./http-status-codes.md)
 - [Errors](./errors.md)
 - [Documentation](./documentation.md)
 - [Versioning](./versioning.md)

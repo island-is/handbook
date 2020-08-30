@@ -7,23 +7,11 @@ When an error occurs in a API, the service should return the error to the callin
 client in an informative and structured manner. The API should return
 information about the error in the response body.
 
-## HTTP status error codes
-
-API services **MUST** respond to every request with an [HTTP status code].
-
-These are the recommended error status codes for REST APIs.
-
-| Code | Meaning                                                                                           |
-| :--- | :------------------------------------------------------------------------------------------------ |
-| 400  | **Bad Request** — The request is malformed, or doesn’t pass validation. Used with GET, POST, PUT. |
-| 401  | **Unauthorized** — No authentication credentials provided or credentials are invalid.             |
-| 403  | **Forbidden** — Authenticated user is not authorized to access the resource.                      |
-| 404  | **Not Found** — The requested resource was not found.                                             |
-
 ## Response body
 
-When an error occurs, a REST API should respond with an [HTTP status error code]
-and the response should contain an error object as described below.
+When an error occurs, a REST API should respond with an 4xx or 500x
+[HTTP status code] and the response should contain an error object as
+described below.
 
 ### Error object
 
@@ -88,5 +76,4 @@ More detailed response
 }
 ```
 
-[http status code]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
-[http status error code]: #http-status-error-codes
+[http status code]: #http-status-codes
