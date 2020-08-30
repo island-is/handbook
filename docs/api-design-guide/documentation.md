@@ -25,10 +25,10 @@ The following fields are required for services to be automatically imported to _
     - name — of the person or a department.
     - email — fully qualified email.
   - x-category — What kind of data does this service work with.
-    Possible values: `open`, `official`,`personal`,`health`, `financial`.
+    - Possible values: `open`, `official`, `personal`, `health`, `financial`.
   - x-pricing — Cost of using this service.
-    Possible values: `free`,`usage`,`daily`,`monthly`,`yearly`,`custom`.
-  - x-links — Links regarding the service
+    - Possible values: `free`, `usage`, `daily`, `monthly`, `yearly`, `custom`.
+  - x-links — Links regarding the service.
     - responsibleParty — a fully qualified url to an online page containing
       information about the responsible party/owner of the service.
     - documentation — (_Optional_) a fully qualified url to the API
