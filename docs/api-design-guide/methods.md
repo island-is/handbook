@@ -22,8 +22,8 @@ A photo album service, for example, may provide the following methods:
 | `LIST` _Lists photos of a user_ | `//my-service.island.is/v1/users/:userId/photos`          | a collection of `Photos` resources |
 | `DELETE` _Deletes a photo_      | `//my-service.island.is/v1/users/:userId/photos/:photoId` | a single `Photo` resource          |
 
-For obvious reasons, operation `CREATE` and `LIST` always work on a resource
-collection, and `GET`, `UPDATE` and `DELETE` a single resource.  
+For obvious reasons, operations `CREATE` and `LIST` always work on a resource
+collection, and `GET`, `UPDATE` and `DELETE` on a single resource.  
 **Note:** _You should never define a method with no associated resource_.
 
 ## Methods mapping to HTTP verbs
@@ -45,8 +45,8 @@ and HTTP verbs:
 
 ## Custom methods
 
-APIs should prefer standard methods over custom methods. But in the real world
-there is often need to provide custom methods. A custom method is an action
+APIs should prefer standard methods over custom methods. However, in the real world
+there is often a need to provide custom methods. A custom method is an action
 that does not cleanly map to any of the standard methods. The way to add custom
 methods to your API is to nounify the action and make it a sub-resource.
 
@@ -64,7 +64,7 @@ DELETE https://api.island.is/v1/messages/{messageId}
 
 Then there is a requirement to provide a functionality to be able to archive and
 unarchive a single message and a batch of messages. The archiving and unarchiving
-a single message is then provided by:
+of a single message is then provided by:
 
 ```
 POST   https://api.island.is/v1/messages/{messageId}/archives
@@ -78,12 +78,12 @@ POST   https://api.island.is/v1/messages/archives
 DELETE https://api.island.is/v1/messages/archives
 ```
 
-_Note:_ The `POST` methods accepts list af message Ids in the request body.
+_Note:_ The `POST` method accepts a list of message Ids in the request body.
 
 ## HTTP Status Response codes
 
 Try to minimize the number of HTTP status codes a REST API returns. When
-more details are needed in a error response use application defined errors
+more details are needed in an error response use application defined errors
 and supply them in a response error object, described in the [errors] document.
 
 For each HTTP method, you should try to use only status
@@ -102,16 +102,16 @@ codes marked with **X** in the following table.
 
 - General for all methods
 
-  - `401` should be returned when client fails to authenticate.
-  - `403` should be returned when client is authenticated but does not have
-  necessary permission to perform the operation.
+  - `401` should be returned when the client fails to authenticate.
+  - `403` should be returned when the client is authenticated but does not have
+  the necessary permission to perform the operation.
   - `500` should be returned when the server encounters some unexpected error,
   preferably along with an [errors] object.
 
 - `GET` for retrieving a resource or a collection of resources.
 
   - `200` should be returned on success.
-    If a collection asked for is empty, `200` is still to be returned.
+    If a collection asked for is empty, `200` should still be returned.
   - `404` should be returned when a resource asked for is not found.
 
 - `POST` for creating a resource.
@@ -121,7 +121,7 @@ codes marked with **X** in the following table.
   - `400` should be returned if the request is invalid, i.e. the resource
     already exists or contains invalid fields.
 
-- `PUT` for updating a existing resource.
+- `PUT` for updating an existing resource.
 
   - `200` should be returned after a successful execution,
     when there is a need for content in the response.
@@ -143,8 +143,8 @@ codes marked with **X** in the following table.
 
 - `DELETE` for removing a resource.
   - `200` can be returned after a successful execution,
-    when there is a need for a content in the response.
-  - `204` should be returned after a successful execution  
+    when there is a need for content in the response.
+  - `204` should be returned after a successful execution.  
     **Note:** If a client asks for the removal of a resource already deleted
     `204` should be returned, **not** `404`, because clients usually do not care
     if a resource was previously deleted.

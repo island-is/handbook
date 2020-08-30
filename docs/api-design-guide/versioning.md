@@ -42,7 +42,7 @@ https://my-service.island.is/v1.2.3/users
 https://my-service.island.is/v1/users
 ```
 
-### Considerations when planning to increment a version numbers
+### Considerations when planning to increment version numbers
 
 If an API introduces a breaking change, such as removing or renaming a field,
 its `major` version number must be incremented to ensure that existing user
@@ -71,7 +71,7 @@ between versions. To help with that, you should always provide release notes
 with every version bump.
 
 The specified date must not be less than 6 months from the time you notify your
-last client. Exception from this rule can be made when you see via your logs
+last client. Exceptions from this rule can be made when you see via your logs
 that no calls to this API version are made anymore.
 
 [semantic versioning]: https://semver.org/

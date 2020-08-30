@@ -3,14 +3,14 @@
 This document describes different environments and their purpose.
 
 - Development environment
-- Test environment (for Providers of API)
-- Sandbox environment (for Consumers of API)
+- Test environment (for providers of API)
+- Sandbox environment (for consumers of API)
 - Production environment
 
 ## Development environment
 
-The Development environment used to develop APIs should contain set of processes
-and programing tools to develop functional APIs.
+The development environment used to develop APIs should contain set of processes
+and programming tools to develop functional APIs.
 The developed assets should be connected to revision control and build processes
 to create a functional API. The functional API can then be deployed to other test
 and production environments.

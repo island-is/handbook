@@ -1,27 +1,27 @@
 # Documentation
 
-API documentation should be targeted towards the developer that will consume your
-API. A good documentation is one of the single most important quality of an API.
+API documentation should be targeted towards the developer that will consume the
+API. A good documentation is one of the single most important qualities of an API.
 It makes it much easier for other developers to use services and significantly
 reduces implementation time for API consumers. The API developer is responsible
 for keeping the documentation up to date.
 
-To help with keeping documentation up to date consider using automatic
-generation tools that during build time can f.ex. gather comments in predefined syntax
-and generate the OAS, this means that the OAS lives bundled with the code and
-should be easier for developers to maintain.
+To help with keeping documentation up to date consider using automatic 
+generation tools that during build time can, for example, gather comments in
+predefined syntax and generate the [Open API Specification] (OAS), this means that
+the OAS lives bundled with the code and should be easier for developers to maintain.
 
 **Note** - To be able to register a **REST** service to _Viskuausan_
 the service **MUST** provide an [OPENAPI 3] service description.
 
-The following fields are required for services to be automatically imported to _Viskuausan_
+The following fields are required for services to be automatically imported to _Viskuausan_:
 
 - info
   - description — short but proper description of the API.
   - version — to distinguish API versions following [semantic versioning]
     specification.
   - title — descriptive name of the API.
-  - contact — quick information, who to contact when an issue about the service arises.
+  - contact — information on who to contact about an issue with the service.
     - name — of the person or a department.
     - email — fully qualified email.
   - x-access — Who can use this service.
@@ -33,13 +33,13 @@ The following fields are required for services to be automatically imported to _
   - x-pricing — Cost of using this service.
     Possible values: `free`,`usage`,`daily`,`monthly`,`yearly`,`custom`.
   - x-links — Links regarding the service
-    - responsibleParty — a fully qualified url to a online page containing
+    - responsibleParty — a fully qualified url to an online page containing
       information about the responsible party/owner of the service.
     - documentation — (_Optional_) a fully qualified url to the API
       documentation page.
-    - bugReport (_Optional_) — a fully qualified url to a online page or
+    - bugReport (_Optional_) — a fully qualified url to an online page or
       form a consumer can report bugs about the service.
-    - featureRequest (_Optional_) — a fully qualified url to a online page
+    - featureRequest (_Optional_) — a fully qualified url to an online page
       or form a consumer can ask for a new feature in api service.
 
 Example can be found [here](#example).
@@ -293,6 +293,7 @@ components:
           type: string
 ```
 
+[open api specification]: https://swagger.io/specification/
 [errors]: ./errors.md
 [http status codes]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 [swagger]: http://swagger.io/

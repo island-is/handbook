@@ -10,12 +10,12 @@ the Digital Single Market by reducing the administrative burden on citizens and
 businesses.
 
 - Public service customers (citizens, institutions, and companies) should not
-have to supply the same information more than once to public administrations.
+  have to supply the same information more than once to public administrations.
 
 - APIs should store collected data in a single database. That means for example
-when a service is enriching existing data from another database it should store
-the enriched data in it's own database, with only a linkable identifier to the
-existing data.
+  when a service is enriching existing data from another database it should store
+  the enriched data in it's own database, with only a linkable identifier to the
+  existing data.
 
 ## References
 

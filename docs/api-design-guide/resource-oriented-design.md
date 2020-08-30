@@ -1,8 +1,9 @@
 # Resource Oriented Design
 API structure should follow Resource Oriented Design, which should facilitate 
 simpler and more coherent web service interfaces, that should be easy to use
-and maintain. The data (resource) should control the design of the service, as the data is 
-the key player and the service is centered around making the data accessible.
+and maintain. The data (resource) should control the design of the service,
+as the data is  the key player and the service is centered around making the
+data accessible.
 
 ## Design flow
 The fundamental idea is that the basic, well-understood, and well-known 
@@ -30,11 +31,11 @@ oriented APIs.
   - Determine the relationships between resources.
   - Decide the resource name schemes based on types and relationships.
   - Decide the resource schemas.
-  - Attach minimum set of [methods] to resources, as much as possible use the
-  standard methods(verbs).
+  - Attach a minimum set of [methods] to resources. Use the standard methods(verbs)
+    as much as possible.
 
 ## Resources
-A resource-oriented API is generally modeled as a resource hierarchy, where 
+A resource-oriented API is generally modelled as a resource hierarchy, where 
 each node is either a simple resource or a collection resource. For convenience, 
 they are often called a resource and a collection, respectively.
 
@@ -47,8 +48,8 @@ A resource name consists of the resource’s type, its identifier, the resource
 name of its parent and the name of the API service. The type is known as the
 **Collection ID**, and the identifier is known as the **Resource ID**. Resource
 IDs are usually random strings assigned by the API service, though it is also
-OK to accept custom resource IDs from clients. **Collection ID's must be the 
-plural form of the noun used for the resource and Resource ID's should be immutable**.
+OK to accept custom resource IDs from clients. **Collection IDs must be the 
+plural form of the noun used for the resource and Resource IDs should be immutable**.
 
 Below are two examples of valid resource names:
 

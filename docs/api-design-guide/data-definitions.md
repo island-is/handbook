@@ -6,8 +6,8 @@ APIs should represent all texts in the [UTF-8] encoding.
 
 ## JSON
 
-Primitive values MUST be serialized to JSON following the rules of [RFC8259] and
-as stated in the standard JSON text MUST be encoded using UTF-8 [RFC3629].
+Primitive values MUST be serialized to JSON following the rules of [RFC8259] and,
+as stated in the standard, JSON text MUST be encoded using UTF-8 [RFC3629].
 
 JSON can represent four primitive types _strings_, _numbers_, _booleans_, and
 _null_ and two structured types _objects_ and _arrays_. Concepts like
@@ -15,12 +15,12 @@ _null_ and two structured types _objects_ and _arrays_. Concepts like
 
 ## Data transfer objects
 
-Data transfer objects, or DTO, are objects used to wrap resource definitions in
-request / response objects along with additional information.
+Data transfer objects, or DTOs, are objects used to wrap resource definitions in
+request/response objects along with additional information.
 
 In a response body, you should return a JSON object, not an array, as a top
 level data structure to support future extensibility. This would allow you to
-extend your response and for example, add a server side pagination attribute.
+extend your response and, for example, add a server side pagination attribute.
 
 **Bad response body**
 
@@ -61,23 +61,23 @@ dataset is small. It is harder to add it later on as it would break the
 service interface for current users.
 
 Pagination should be implemented using _Cursor_. Cursor pagination solves
-the missing or duplication of data that the typical offset method has.
+the missing or duplication of data problems that the typical offset method has.
 Cursor pagination returns a cursor in the response, which is a pointer to
 a specific item in the dataset. This pointer needs to be a unique sequential
 field (or fields).
 
 When implementing cursor pagination a field called `nextCursor` is returned
-in the response object. This field is Base64 encoded string. By having it encoded
+in the response object. This field is a Base64 encoded string. Having it encoded
 makes it uniform while providing flexibility to implement different cursor logic
 between different endpoints. In the example above the `nextCursor` field is
 Base64 encoding the value `id:1004`, meaning the server is using the `id` field
 of the user object as a pointer to next item.
 
-To indicate there are no more result the value of `nextCursor` is set to empty string:
-`"nextCursor": ""`.
+To indicate there are no more results the value of `nextCursor` is set to the
+empty string: `"nextCursor": ""`.
 
-Optionally an API can also provide the field `totalCount` to indicate to the client how
-many results are available.
+Optionally, an API can also provide the field `totalCount` to indicate to the
+client how many results are available.
 
 ### Pagination query parameters
 
@@ -93,16 +93,17 @@ For an API to support pagination it needs to support the following query paramet
 Icelandic individuals are uniquely identified by a national identifier called
 `kennitala`. When referring to this identifier in URIs, requests, or responses,
 APIs should use the name `nationalId`. Its value is usually represented to
-users on the form `######-####` but APIs should use the form `##########` at all times.
+users in the form `######-####` but APIs should use the form `##########` at
+all times.
 
 ## Language and currency
 
-- **Languages** When specifying a language please use the [ISO-639-1]
+- **Languages** - When specifying a language please use the [ISO-639-1]
   (two letter) standard. See: [639-1 codes].
-- **Currencies** When specifying currency codes please use the [ISO-4217]
+- **Currencies** - When specifying currency codes please use the [ISO-4217]
   standard. See: [4217 codes].
-  - **Amount** Use the format `[0-9]+(.[0-9]+)?` to represent an amount like
-    money. Separate amount and currency in different fields. Example amount:
+  - **Amount** - Use the format `[0-9]+(.[0-9]+)?` to represent an amount.
+    Separate amount and currency in different fields. Example amount:
     `1250.23`.
 
 ## Date and time
@@ -123,7 +124,7 @@ the format `yyyy-MM-ddThh:mm:ss.sssZ`. Where
 - **mm** represents minute, (two digits _00 - 59_).
 - **ss** represents second, (two digits _00 - 59_).
 - **sss** represents a decimal fraction of a second, (one or more digits).
-- **Z** represents time zone offset specified as `Z` (for [UTC]) or either
+- **Z** represents a time zone offset specified as `Z` (for [UTC]) or either
   `+` or `-` followed by a time expression `hh:mm`.
 
 Icelandic local time can be represented with `Z` because Iceland follows
@@ -142,9 +143,9 @@ Examples:
 ## Timestamp data
 
 All returned data should contain the field `createdTimestamp` and it's value
-should hold, the [date and time] of, when the data was created. This is
-important because of different caching rules and different viewpoints on when
-data should be considered obsolete.
+should be the [date and time] when the data was created. This is important
+because of different caching rules and different viewpoints on when data should
+be considered obsolete.
 
 [date and time]: #date-and-time
 [rfc8259]: https://tools.ietf.org/html/rfc8259
