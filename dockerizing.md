@@ -1,0 +1,40 @@
+# Dockerizing
+
+## General
+
+The services that you are building need to be packaged as Docker containers. For that, you do not need to write a `Dockerfile` or anything like that. We already have pre-defined types of Docker image packaging that you should use.
+
+## What should I do then?
+
+You need to ask the [DevOps](personas.md#devops) team to create a Docker repository for you, which has the same name your service has in NX. This is an important convention to make everyone's lives easier. Then you need to manually add to [workspace.json](https://github.com/island-is/island.is/blob/master/workspace.json) a target for your service that describes what kind of Docker packaging it needs. For example, adding this target
+
+```
+  "docker-next": {}
+```
+
+means your service will be packaged as a NextJS Docker container image. We also have `docker-express`, which is suitable for [ExpressJS](https://expressjs.com) as well as [NestJS](https://nestjs.com) services. If you need help just search for "docker" in that file and you should find plenty of examples on how to do it.
+
+That's it.
+
+When you push this change to `main` your Docker image will get built and pushed to our private central Docker registry
+
+## Troubleshooting
+
+Prerequisite: Local Docker support
+
+If you are having problems with your application running inside a Docker container you need to download the Docker container and run it locally.
+
+To do that you need to follow this process:
+
+1. Login to our AWS Shared account and get command line access settings
+   ![Login](images/aws-login.png)
+   ![Env copy](images/aws-env-setup.png)
+2. Open your terminal and paste the AWS creds from the clipboard
+3. Run this to authenticate to our private Docker registry
+   ```
+   aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 821090935708.dkr.ecr.eu-west-1.amazonaws.com
+   ```
+4. Now you can poke around in the Docker container like this
+  ```
+  docker run --rm -it --entrypoint=sh 821090935708.dkr.ecr.eu-west-1.amazonaws.com/<image>:<tag>
+  ```
