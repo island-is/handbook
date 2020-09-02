@@ -20,7 +20,7 @@ When you push this change to `main` your Docker image will get built and pushed 
 
 ## Troubleshooting
 
-Prerequisite: Local Docker support
+_Prerequisite_: Local Docker support
 
 If you are having problems with your application running inside a Docker container you need to download the Docker container and run it locally.
 
