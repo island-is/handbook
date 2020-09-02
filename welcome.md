@@ -24,6 +24,7 @@ For database access we use [Sequalize](https://sequelize.org).
 You can find the latest and greatest in how we setup a backend in our [reference-backend](https://github.com/island-is/island.is/blob/master/apps/reference-backend)
 
 Applications are composed of services that are [packaged in Docker containers](#dockerizing) and then deployed in a Kubernetes cluster using Helm. You will hardly need to know about this if you follow the path everyone else in the organization is walking.
+
 [All our environments are hosted in AWS.](environment-setup.md)
 
 ## Practices
