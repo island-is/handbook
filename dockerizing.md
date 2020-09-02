@@ -31,10 +31,10 @@ To do that you need to follow this process:
    ![Env copy](images/aws-env-setup.png)
 2. Open your terminal and paste the AWS creds from the clipboard
 3. Run this to authenticate to our private Docker registry
-   ```
-   aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 821090935708.dkr.ecr.eu-west-1.amazonaws.com
-   ```
+    ```
+    aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 821090935708.dkr.ecr.eu-west-1.amazonaws.com
+    ```
 4. Now you can poke around in the Docker container like this
-  ```
-  docker run --rm -it --entrypoint=sh 821090935708.dkr.ecr.eu-west-1.amazonaws.com/<image>:<tag>
-  ```
+    ```
+    docker run --rm -it --entrypoint=sh 821090935708.dkr.ecr.eu-west-1.amazonaws.com/<image>:<tag>
+    ```
