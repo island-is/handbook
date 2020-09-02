@@ -11,7 +11,7 @@ The project is a [monorepo](monorepo.md) which means the code for all custom-wri
 
 The codebase is all [TypeScript](https://www.typescriptlang.org) and [NodeJS](https://nodejs.org/en/). For more info please see the [Technical Direction](technical-direction.md).
 
-The tool we use to manage the monorepo structure is called [NX](https://nx.dev).
+The tool we use to manage the monorepo structure is called [NX](https://nx.dev). We have one set of NodeJS modules used by all code and any changes in there affect potentially multiple services.
 
 For the backend we use [NestJS](https://nestjs.com). Use the pre-packaged setup that we have and you will save us all some time.
 
@@ -32,7 +32,7 @@ To contribute you need to follow the standard [GitHub Pull Request(PR)](https://
 
 When a code change gets on `main`, that will create Docker containers for all services and everything will get deployed to `Dev` env. For more info please see the [Continuous Delivery process](continuous-delivery.md).
 
-We expect you to deliver the following:
+We expect contributors to deliver the following:
 
 - the business logic
 - the tests
