@@ -46,7 +46,7 @@ If you are adding a new application, please follow the instructions in the [mono
 
 ## Dockerizing
 
-You simply need to add an NX target to your service to enable creating a Docker image for it. For more info see [dockerizing](dockerizing.md)
+You simply need to add an NX target to your service to enable creating a Docker image for it. For more info see [dockerizing](dockerizing.md).
 
 ## Kubernetes
 
