@@ -14,8 +14,11 @@ The codebase is all TypeScript and NodeJS. For more info please see the [Technic
 The tool we use to manage the monorepo structure is called [NX](https://nx.dev).
 
 For the backend we use NestJS. Use the pre-packaged setup that we have.
-For the frontend we use React or NextJS.
-For testing we use Jest.
+
+For the frontend we use [React](https://reactjs.org) or [NextJS](https://nextjs.org).
+
+For testing we use [Jest](https://jestjs.io).
+
 For database access we use [Sequalize](https://sequelize.org).
 
 You can find the latest and greatest in how we setup a backend in our [reference-backend](https://github.com/island-is/island.is/blob/master/apps/reference-backend)
