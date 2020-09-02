@@ -9,11 +9,11 @@ The project is a [monorepo](monorepo.md) which means the code for all custom-wri
 
 ## Technology
 
-The codebase is all TypeScript and NodeJS. For more info please see the [Technical Direction](technical-direction.md)
+The codebase is all [TypeScript](https://www.typescriptlang.org) and [NodeJS](https://nodejs.org/en/). For more info please see the [Technical Direction](technical-direction.md).
 
 The tool we use to manage the monorepo structure is called [NX](https://nx.dev).
 
-For the backend we use NestJS. Use the pre-packaged setup that we have.
+For the backend we use [NestJS](https://nestjs.com). Use the pre-packaged setup that we have and you will save us all some time.
 
 For the frontend we use [React](https://reactjs.org) or [NextJS](https://nextjs.org).
 
@@ -23,7 +23,8 @@ For database access we use [Sequalize](https://sequelize.org).
 
 You can find the latest and greatest in how we setup a backend in our [reference-backend](https://github.com/island-is/island.is/blob/master/apps/reference-backend)
 
-Applications are composed of services that are packaged in Docker containers and then deployed in a Kubernetes cluster using Helm. You will hardly need to know about this if you follow the path everyone else in the organization is walking.
+Applications are composed of services that are [packaged in Docker containers](#dockerizing) and then deployed in a Kubernetes cluster using Helm. You will hardly need to know about this if you follow the path everyone else in the organization is walking.
+[All our environments are hosted in AWS.](environment-setup.md)
 
 ## Practices
 
