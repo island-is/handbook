@@ -27,7 +27,25 @@ Code and assets from [island.is] are packaged in Docker containers and stored in
 
 When the CI process finishes successfully and has published assets, we trigger the Delivery pipeline.
 
+## Configuration
+
+Our deployment platform is Kubernetes and our applications' deployment and configuration is specified using [Helm]. Additionally we have the configuration for our infrastructure in AWS specified using [Terraform]. These two configuration sources are hosted in two separate git repositories with limited access.
+
+## Delivery pipeline
+
+We use [Spinnaker] as a deployment tool for Kubernetes. We have a few application pipelines that are identical for the most part. Each application defined as "emergency" has its own pipeline as well as the umbrella application containing the apps following the standard release cadence. 
+
+The pipelines are defined and versioned in Spinnaker. The input to the pipelines consists of two parts:
+ * Docker image tag - specifies which revision of the code/assets to be deployed
+ * Helm charts revision number - which revision of the Helm setup and configuration to be used
+  
+The CI process triggers the pipelines upon a successful build, which automatically deploys to our `Dev` and `Staging` environment.
+After manual approval, it is possible to deploy to `Prod` as well.
+
 [island.is]: https://github.com/island-is/island.is
 [ECR]: https://aws.amazon.com/ecr/
+[Helm]: https://helm.sh
+[Terraform]: https://www.terraform.io
+[Spinnaker]: https://spinnaker.io
 
 
