@@ -31,7 +31,7 @@ Applications are composed of services that are [packaged in Docker containers](#
 
 To contribute you need to follow the standard [GitHub Pull Request(PR)](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) workflow. When you open a PR, your code will be run through the [CI process](docs/adr/0002-continuous-integration.md) automatically. Ask for a [code-review](code-reviews.md) and when you get an approval, merge to master. Rinse and repeat.
 
-When a code change gets on `main`, that will create Docker containers for all services and everything will get deployed to `Dev` env. For more info please see the [Continuous Delivery process](continuous-delivery.md).
+When a code change gets on `master`, that will create Docker containers for all services and everything will get deployed to `Dev` env. For more info please see the [Continuous Delivery process](continuous-delivery.md).
 
 We expect contributors to deliver the following:
 

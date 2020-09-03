@@ -16,7 +16,7 @@ means your service will be packaged as a NextJS Docker container image. We also 
 
 That's it.
 
-When you push this change to `main` your Docker image will get built and pushed to our private central Docker registry
+When you push this change to `master` your Docker image will get built and pushed to our private central Docker registry
 
 ## Troubleshooting
 
