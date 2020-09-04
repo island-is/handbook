@@ -14,6 +14,9 @@ Top three reasons:
  * Faster time-to-market - We often have emergency applications that need to get deployed in production under quite tight deadlines. Having a safe delivery pipeline makes this possible.
  * Higher quality - by running our ever-growing regression test suites after every change in the code, we make sure we do not take a step backwards quality-wise.
 
+## Process overview
+
+![cd-overview](images/cd-overview.svg)
 
 ## Continuous Integration(CI)
 
@@ -29,7 +32,7 @@ When the CI process finishes successfully and has published assets, we trigger t
 
 ## Configuration
 
-Our deployment platform is Kubernetes and our applications' deployment and configuration is specified using [Helm]. Additionally we have the configuration for our infrastructure in AWS specified using [Terraform]. These two configuration sources are hosted in two separate git repositories with limited access.
+Our deployment platform is Kubernetes and our applications' deployment and configuration is specified using [Helm]. Additionally, we have the configuration for our infrastructure in AWS specified using [Terraform]. These two configuration sources are hosted in two separate git repositories with restricted access.
 
 ## Delivery pipeline
 
@@ -41,6 +44,8 @@ The pipelines are defined and versioned in Spinnaker. The input to the pipelines
   
 The CI process triggers the pipelines upon a successful build, which automatically deploys to our `Dev` and `Staging` environment.
 After manual approval, it is possible to deploy to `Prod` as well.
+
+Our Spinnaker is accessible [here](https://spinnaker.shared.devland.is).
 
 [island.is]: https://github.com/island-is/island.is
 [ECR]: https://aws.amazon.com/ecr/
