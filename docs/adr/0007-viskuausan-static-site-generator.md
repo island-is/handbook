@@ -1,8 +1,8 @@
 # Viskuausan Static Site Generator
 
-- Status: proposed
+- Status: accepted
 - Deciders: devs
-- Date: 2020-08-11
+- Date: 2020-09-07
 
 We're going to create a web app for Viskuausan (API Catalog).
 Viskuausan consists of three main components:
@@ -20,7 +20,8 @@ The two catalogue components require:
 
 - Data storage
 - API communication
-- Other custom implementations and integration
+- API GW and X-Road integration
+- Other custom implementations
 
 The design guidelines component require:
 
@@ -34,7 +35,7 @@ Which React framework provides the most out-of-the-box features that we need?
 
 ## Decision Drivers
 
-- Should conform to Stafrænt Íslands technical direction
+- Should use NodeJS and React as outlined in [SÍ technical direction]
 - Should be able to support markdown content rendered to HTML
 - Should be open source
 - Should be customizable to island.is UI design
@@ -43,18 +44,22 @@ Which React framework provides the most out-of-the-box features that we need?
 
 - [Docusaurus v2](https://v2.docusaurus.io/)
 - [GatsbyJS](https://www.gatsbyjs.org/)
-- [NextJS](https://github.com/vercel/next.js/)
+- NextJS + NestJS
 
 ## Decision Outcome
 
-Chosen option: NextJS
+Chosen option: NextJS + NestJS
 
-NextJS is the chosen web framework for all island.is websites.
-NextJS is more suitable for larger and more dynamic websites than
-Docusaurus. As Docusaurus is focused on doing only static
-markdown documentation really well, NextJS provides the tools
-(database ORM, unit testing, dependency injection) needed for building
-bigger platform. It is easy to add markdown support in NextJS using [Remark].
+NextJS is the chosen web framework for all island.is websites needing server side rendering.
+As Viskuausan will probably be merged with island.is main website, creating it using same
+frameworks makes it easy to merge later on.
+It is easier to reuse islandis-ui components using NextJS over Docusaurus.
+Docusaurus main advantage over Next is out-of-the-box markdown support but
+it is easy to add markdown support in NextJS using [Remark] library.
+
+NestJS is used to create backend services and Viskuausan needs
+few backend services related to the X-Road and API GW integrations.
+Provides functionalities like ORM, dependency injection, unit testing.
 
 ## Pros and Cons of the Options
 
@@ -85,16 +90,15 @@ and popular site generators.
 - Bad, because it has high learning curve
 - Bad, because it requires manual setup for TypeScript compile time type checking
 
-### NextJS + Remark
+### NextJS + NestJS
 
-- Good, because it is really flexible
+- Good, because it is flexible
 - Good, because it supports TypeScript
 - Good, because it is already in use in the monorepo
-- Good, because it provides out-of-the-box
-  - ORM for database connection
-  - Dependency injection for separation of concerns and easier unit testing
-  - Test suite
-- Bad, because it needs custom implementation for all components
+  - Will make it easier to move into the island.is web
+- Good, because it is easy to use islandis-ui components
+- Bad, because it requires customization to render markdown
+  - Is relatively easy using [Remark]
 
 ### Other honorable mentions
 
@@ -103,3 +107,4 @@ and popular site generators.
   unnecessary to list as an option
 
 [remark]: https://github.com/remarkjs/remark
+[sí technical direction]: ../../technical-direction.md
