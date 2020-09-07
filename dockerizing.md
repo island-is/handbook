@@ -12,7 +12,13 @@ You need to ask the [DevOps](personas.md#devops) team to create a Docker reposit
   "docker-next": {}
 ```
 
-means your service will be packaged as a NextJS Docker container image. We also have `docker-express`, which is suitable for [ExpressJS](https://expressjs.com) as well as [NestJS](https://nestjs.com) services. If you need help just search for "docker" in that file and you should find plenty of examples on how to do it.
+means your service will be packaged as a NextJS Docker container image. 
+We have the following of docker packages:
+`docker-next`: suitable for NextJS docker container Image
+`docker-express`, suitable for [ExpressJS](https://expressjs.com) as well as [NestJS](https://nestjs.com) services. 
+`docker-static`, suitable for React app and more static apps.
+
+If you need help just search for "docker" in that file and you should find plenty of examples on how to do it.
 
 That's it.
 
