@@ -2,7 +2,7 @@
 
 ## General
 
-The services that you are building need to be packaged as Docker containers. For that, you do not need to write a `Dockerfile` or anything like that. We already have pre-defined types of Docker image packaging that you should use.
+The services that you are building need to be packaged as Docker container images. For that, you do not need to write a `Dockerfile` or anything like that. We already have pre-defined types of Docker image packaging that you should use.
 
 ## What should I do then?
 
@@ -13,10 +13,10 @@ You need to ask the [DevOps](personas.md#devops) team to create a Docker reposit
 ```
 
 means your service will be packaged as a NextJS Docker container image. 
-We have the following of docker packages:
-`docker-next`: suitable for NextJS docker container Image
-`docker-express`, suitable for [ExpressJS](https://expressjs.com) as well as [NestJS](https://nestjs.com) services. 
-`docker-static`, suitable for React app and more static apps.
+We have support the following types of Docker containers:
+`docker-next`: suitable for [NextJS](https://nextjs.org/) services.
+`docker-express`, suitable for [ExpressJS](https://expressjs.com) as well as [NestJS](https://nestjs.com) services.
+`docker-static`, suitable for serving all types of static content. Suitable for pure HTML or React SPAs.
 
 If you need help just search for "docker" in that file and you should find plenty of examples on how to do it.
 
