@@ -2,7 +2,7 @@
 
 ## What is Continuous Delivery(CD)
 
-The first paragraph from [continuousdeliver.com](https://continuousdelivery.com/#main)
+The first paragraph from [continuousdelivery.com](https://continuousdelivery.com/#main)
 
 > Continuous Delivery is the ability to get changes of all types—including new features, configuration changes, bug fixes and experiments—into production, or into the hands of users, _safely_ and _quickly_ in a _sustainable_ way.
 
@@ -38,11 +38,7 @@ Our deployment platform is Kubernetes and our applications' deployment and confi
 
 We use [Spinnaker] as a deployment tool for Kubernetes. We have a few application pipelines that are identical for the most part. Each application defined as "emergency" has its own pipeline as well as the umbrella application containing the apps following the standard release cadence.
 
-The pipelines are defined and versioned in Spinnaker. The input to the pipelines consists of two parts:
-
-- Docker image tag - specifies which revision of the code/assets to be deployed
-- Helm charts revision number - which revision of the Helm setup and configuration to be used
-
+The pipelines are defined and versioned in Spinnaker. The input to the pipelines is a Docker image tag - specifies which revision of the code/assets to be deployed. For `Vidspyrna` we have an additional parameter - Helm chart revision number, describing which revision of the Helm setup and configuration to be used.
 The [Helm] chart stored in our [Charmuseum] comes in as an asset as well as value files containing environmental specific values. Docker tag, value files and helm chart are baked together creating Kubernetes manifest that can be deployed to a specific environment.
 
 The CI process triggers the pipelines upon a successful build, which automatically deploys to our `Dev` and `Staging` environment.
