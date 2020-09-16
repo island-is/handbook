@@ -28,7 +28,7 @@ We lint the code, check the formatting of the code, perform Node modules vulnera
 
 Code and assets from [island.is] are packaged in Docker containers and stored in a private Docker registry hosted in AWS [ECR]. The [ECR] is configured to perform [vulnerability scanning](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html) of all Docker images pushed to it.
 
-When the CI process finishes successfully and has published assets, we trigger the Delivery pipeline.
+When the CI process finishes successfully and has published assets, we trigger the Delivery pipeline to the Dev environment.
 
 ## Configuration
 
@@ -36,10 +36,13 @@ Our deployment platform is Kubernetes and our applications' deployment and confi
 
 ## Delivery pipeline
 
-We use [Spinnaker] as a deployment tool for Kubernetes. We have a few application pipelines that are identical for the most part. Each application defined as "emergency" has its own pipeline as well as the umbrella application containing the apps following the standard release cadence.
+We use [Spinnaker] as a deployment tool for Kubernetes. We have a few application pipelines that are identical for the most part. Each application defined as "emergency" has its own pipelines as well as the umbrella application containing the apps following the standard release cadence.
 
-The pipelines are defined and versioned in Spinnaker. The input to the pipelines is a Docker image tag - specifies which revision of the code/assets to be deployed. For `Vidspyrna` we have an additional parameter - Helm chart revision number, describing which revision of the Helm setup and configuration to be used.
-The [Helm] chart stored in our [Charmuseum] comes in as an asset as well as value files containing environmental specific values. Docker tag, value files and helm chart are baked together creating Kubernetes manifest that can be deployed to a specific environment.
+Each application has a pipeline per deployment environment. The pipeline prepares (aka `bakes`) the configuration for the concrete environment, waits for manual approval of the deployment and then performs the deployment with the freshly baked configuration.
+
+The pipelines are defined and versioned in [our Helm repo](https://github.com/island-is/helm). The input to the pipelines is a Docker image tag - specifies which revision of the code/assets to be deployed. For `Vidspyrna` we have an additional parameter - Helm chart revision number, describing which revision of the Helm setup and configuration to be used.
+
+The [Helm] chart stored in our [Charmuseum] comes in as an asset as well as value files containing environmental specific values. Docker tag, value files and helm chart are baked together creating Kubernetes manifest, that can be deployed to a specific environment.
 
 The CI process triggers the pipelines upon a successful build, which automatically deploys to our `Dev` and `Staging` environment.
 After manual approval, it is possible to deploy to `Prod` as well.
