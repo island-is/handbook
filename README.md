@@ -11,6 +11,7 @@ Digital Iceland.
 This handbook is designed to help new teams and open source contributors get
 into the project, as well as document project architecture and decisions.
 
+- [Welcome](./welcome.md)
 - [Technical direction](./technical-direction.md)
 - [Teamwork](./teamwork.md)
 - [Monorepo](./monorepo.md)
@@ -19,6 +20,6 @@ into the project, as well as document project architecture and decisions.
 - [Architecture Decision Record](./docs/adr/index.md)
 - [Glossary](./glossary.md)
 
-[Digital Iceland]: https://stafraent.island.is/
-[Ministry of Finance and Economic Affairs]: https://www.government.is/ministries/ministry-of-finance-and-economic-affairs/
-[FOSS]: https://en.wikipedia.org/wiki/Free_and_open-source_software
+[digital iceland]: https://stafraent.island.is/
+[ministry of finance and economic affairs]: https://www.government.is/ministries/ministry-of-finance-and-economic-affairs/
+[foss]: https://en.wikipedia.org/wiki/Free_and_open-source_software
