@@ -1,6 +1,6 @@
 # Digital Iceland Handbook
 
-This GitHub organisation is the center of development for digital government
+This GitHub organization is the center of development for digital government
 services on `island.is`. It is managed by the [Digital Iceland] department
 inside the [Ministry of Finance and Economic Affairs].
 
@@ -16,6 +16,7 @@ into the project, as well as document project architecture and decisions.
 - [Teamwork](./teamwork.md)
 - [Monorepo](./monorepo.md)
 - [Code standards](./code-standards.md)
+- [Design guide](./docs/api-design-guide/README.md)
 - [Code reviews](./code-reviews.md)
 - [Architecture Decision Record](./docs/adr/index.md)
 - [Glossary](./glossary.md)
