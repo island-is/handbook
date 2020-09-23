@@ -6,7 +6,7 @@ It makes it much easier for other developers to use services and significantly
 reduces implementation time for API consumers. The API developer is responsible
 for keeping the documentation up to date.
 
-To help with keeping documentation up to date consider using automatic 
+To help with keeping documentation up to date consider using automatic
 generation tools that during build time can, for example, gather comments in
 predefined syntax and generate the [Open API Specification] (OAS), this means that
 the OAS lives bundled with the code and should be easier for developers to maintain.
@@ -27,7 +27,7 @@ The following fields are required for services to be automatically imported to _
   - x-category — What kind of data does this service work with.
     - Possible values: `open`, `official`, `personal`, `health`, `financial`.
   - x-pricing — Cost of using this service.
-    - Possible values: `free`, `usage`, `daily`, `monthly`, `yearly`, `custom`.
+    - Possible values: `free`, `paid`.
   - x-links — Links regarding the service.
     - responsibleParty — a fully qualified url to an online page containing
       information about the responsible party/owner of the service.
