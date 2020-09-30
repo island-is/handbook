@@ -52,3 +52,6 @@ You simply need to add an NX target to your service to enable creating a Docker 
 ## Kubernetes
 
 We have a Helm chart template that should fit most services. You pretty much only need to add your ingress (optional), environment variables(optional) and secrets(optional) and your service can get deployed to Dev. For more info, please see [Helm charts](https://github.com/island-is/helm).
+For a read-only view of the Kubernetes cluster and the services running there head over to
+ * [Dev](https://kubenav.dev01.devland.is)
+ * [Staging](https://kubenav.staging01.devland.is)
