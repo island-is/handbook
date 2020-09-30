@@ -18,7 +18,7 @@ Example - [logging](https://github.com/island-is/island.is/blob/master/apps/refe
 
 ## Viewing logs
 
-You can search for and view the logs from all environments at [https://kibana.shared.devland.is](https://kibana.shared.devland.is).
+You can search for and view the logs from all environments at [https://app.datadoghq.eu/logs](https://app.datadoghq.eu/logs?env=dev).
 
 ## Best practices
 
