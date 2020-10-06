@@ -18,7 +18,7 @@ There are a few software architectural patterns that Digital Iceland embraces wh
 
 Teams should implement solutions as standalone frontend applications, e.g. single-page applications (SPA) or mobile applications, and integrate them with backend services through API interfaces.
 
-Having a clear separation between frontend and backend allows us to implement user interfaces (UI) that behave like applications with richer and faster user experience (UX). It also reduces coupling and scales up development, creating reusable backend services that support more veried presentation through different frontend applications.
+Having a clear separation between frontend and backend allows us to implement user interfaces (UI) that behave like applications with richer and faster user experience (UX). It also reduces coupling and scales up development, creating reusable backend services that support more varied presentation through different frontend applications.
 
 ### Shared code
 
@@ -26,23 +26,23 @@ A big focus in the technical direction for Ísland.is is to support the developm
 
 Code can be reused at all levels, e.g.:
 
-* UI Components like buttons, typography and forms.
-* Localisation utilities to support translations in multiple languages, date and number formatting, with specialised Icelandic support.
-* Authentication and authorisation logic that implements security best practices.
-* Operation monitoring with logging, metrics and tracing.
-* Microservices for handling PDF generation, electronic signatures, notifications, payments, audit and more.
-* Client code for external services.
-* Build and deployment pipelines.
+- UI Components like buttons, typography and forms.
+- Localisation utilities to support translations in multiple languages, date and number formatting, with specialised Icelandic support.
+- Authentication and authorisation logic that implements security best practices.
+- Operation monitoring with logging, metrics and tracing.
+- Microservices for handling PDF generation, electronic signatures, notifications, payments, audit and more.
+- Client code for external services.
+- Build and deployment pipelines.
 
 ### Modular solutions
 
 Instead of ending up with dozens, or even hundreds of solutions, Ísland.is wants to create a few monolithic, modular solutions which our teams can extend with new functionality. Examples of this include:
 
-* One information portal for any form of content that the government wants to publish.
-* One service portal, for individuals and companies to sign in and access self-service modules.
-* One admin interface, for government organisations, to serve their users.
-* One access control system, to authenticate users, authorize actions and delegate access.
-* One API gateway to all of our microservices. 
+- One information portal for any form of content that the government wants to publish.
+- One service portal, for individuals and companies to sign in and access self-service modules.
+- One admin interface, for government organisations, to serve their users.
+- One access control system, to authenticate users, authorize actions and delegate access.
+- One API gateway to all of our microservices.
 
 We design these solutions to give our users a consistent, high-quality UX while giving our teams the flexibility and power they need to implement their projects.
 
@@ -69,14 +69,14 @@ With continuous delivery, code changes are verified as follows to minimize the l
 
 For the development of centralized, open-source solutions, it is essential to have a shared place to store and collaborate on code.
 
-We will use [GitHub] for all development and teams must submit all code there. Github is the primary code hosting provider for open-sourced software development, owned by Microsoft, with an excellent feature-set and interface for code reviews and collaboration. Github is also integrated into many essential tools in the software development ecosystem.
+We will use [GitHub] for all development and teams must submit all code there. GitHub is the primary code hosting provider for open-sourced software development, owned by Microsoft, with an excellent feature-set and interface for code reviews and collaboration. GitHub is also integrated into many essential tools in the software development ecosystem.
 
 Digital Iceland has set up a monorepo, which contains the code for all of its solutions in one code repository with collaboration between all teams. There are many reasons we develop in a monorepo:
 
-* Reduce barriers for code reuse on all levels of the implementation.
-* Increase cooperation and consistency in implementation between projects.
-* Prevent solutions from being left and forgotten, with code rot and old dependencies.
-* Support organisation-wide improvements in developer experience, hosting, performance, accessibility, design and usability.
+- Reduce barriers for code reuse on all levels of the implementation.
+- Increase cooperation and consistency in implementation between projects.
+- Prevent solutions from being left and forgotten, with code rot and old dependencies.
+- Support organisation-wide improvements in developer experience, hosting, performance, accessibility, design and usability.
 
 ### Cloud hosting
 
@@ -84,7 +84,7 @@ We host our solutions in a containerised cloud environment, using [Docker] and [
 
 With Docker containers, services run independently of the hardware. They are easy to spin up, especially suitable for Agile development with continuous delivery and can handle increased load and hardware problems.
 
-We've configured our cloud environment with a secure virtual private network that limits external access to sensitive services as well as allowing us to set up VPN connections and fixed IP addresses to integrate with external services. We also have an [X-Road] Security Server to access other governmemnt organisations through [Straumurinn].
+We've configured our cloud environment with a secure virtual private network that limits external access to sensitive services as well as allowing us to set up VPN connections and fixed IP addresses to integrate with external services. We also have an [X-Road] Security Server to access other government organisations through [Straumurinn].
 
 ## Development tools
 
@@ -107,7 +107,7 @@ For interactive frontend applications, teams should use [Cypress] to perform aut
 
 ### Backend
 
-The backend is also implemented in **TypeScript**, using the [Node.JS] framework. By using the same programming language in the frontend and backend, we can share code, e.g. types and validation. The work becomes more efficient, with fewer developer roles since more developers can work on both sides.  Node.JS also has a large and active open-source community, with mature code libraries covering most needs.
+The backend is also implemented in **TypeScript**, using the [Node.JS] framework. By using the same programming language in the frontend and backend, we can share code, e.g. types and validation. The work becomes more efficient, with fewer developer roles since more developers can work on both sides. Node.JS also has a large and active open-source community, with mature code libraries covering most needs.
 
 Backend servers should provide a [GraphQL] interface for frontend clients. It defines a schema that describes all the available data and operations. Whenever possible, the schema should represent an idealised world independent of implementation details. When designed well, it is possible to replace backend systems without changing the schema or frontend.
 
@@ -123,7 +123,7 @@ These values apply to all of Digital Iceland's development under the Ísland.is 
 
 ## Accessibility
 
-All websites and digital government services need to be accessible to all users. Teams should be knowledgable about accessibility standards like the Web Content Accessibility Guidelines (WCAG) and should aim for Level AAA of WCAG version 2.1 when working on Ísland.is solutions.
+All websites and digital government services need to be accessible to all users. Teams should be knowledgeable about accessibility standards like the Web Content Accessibility Guidelines (WCAG) and should aim for Level AAA of WCAG version 2.1 when working on Ísland.is solutions.
 
 All solutions built for Ísland.is will be audited according to the [Commission Implementing Decision (EU) 2018/1524](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32018D1524&from=EN) (Accessibility of websites)<sup>1</sup>. The decision includes requirements to periodically test user interfaces with automatic accessibility tests and manual audits for critical interfaces. Additionally, it emphasizes an efficient reporting system where users can report accessibility issues which we address quickly and securely.
 
@@ -163,11 +163,11 @@ Digital Iceland will embrace cloud hosting for its solutions. Cloud hosting incr
 
 All of Digital Iceland's solutions should have localisation support built-in, with content available in Icelandic and other languages depending on the context.
 
-Digital Iceland looks to the European regulation [Single Digital Gateway](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1724)<sup>1</sup> when it comes to translating content and services. The directive declares services that are relevant to people crossing borders  should be available in languages that cover most of its users. In our case, these services will be at least available in Icelandic and English.
+Digital Iceland looks to the European regulation [Single Digital Gateway](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1724)<sup>1</sup> when it comes to translating content and services. The directive declares services that are relevant to people crossing borders should be available in languages that cover most of its users. In our case, these services will be at least available in Icelandic and English.
 
 ## Performance
 
-Research shows that performance is a critical factor for user experience in digital services. Users expect websites to load in two seconds, and after three seconds, [up to 40% of users will abandon the site](http://bit.ly/1ttKspI). As we develop more comprehensive solutions with more services, it is easy to end up with subpar performance. 
+Research shows that performance is a critical factor for user experience in digital services. Users expect websites to load in two seconds, and after three seconds, [up to 40% of users will abandon the site](http://bit.ly/1ttKspI). As we develop more comprehensive solutions with more services, it is easy to end up with subpar performance.
 
 Digital Iceland will set clear performance goals and encourage periodic performance tests to measure and improve overall performance. These goals apply to page load and interactions on desktop and mobile, API responses, X-Road and more.
 
@@ -175,10 +175,10 @@ Digital Iceland will set clear performance goals and encourage periodic performa
 
 Design solutions with a focus on user experience (UX). Digital Iceland plans to release a design guide that covers this in more detail. Until then, here are a few things to keep in mind:
 
-* Include designers, UX specialists and testers in the project from the beginning.
-* Consider the user in all parts of design and development with personas and user stories.
-* Create prototypes and perform user testing to verify the design.
-* Design the backend to serve the UX rather than the other way around. Try to overcome system limitation when they hurt the user experience.
+- Include designers, UX specialists and testers in the project from the beginning.
+- Consider the user in all parts of design and development with personas and user stories.
+- Create prototypes and perform user testing to verify the design.
+- Design the backend to serve the UX rather than the other way around. Try to overcome system limitation when they hurt the user experience.
 
 ## Security
 
@@ -193,16 +193,16 @@ Iceland will follow the latest security policies published by the Security Counc
 
 <sup>1</sup> The directive or regulation is not yet part of the EEA Agreement.
 
-[Technical Direction]: https://samradsgatt.island.is/oll-mal/$Cases/Details/?id=1536
-[TypeScript]: https://www.typescriptlang.org/
-[React]: https://reactjs.org/
-[Storybook]: https://storybook.js.org/
-[Cypress]: https://www.cypress.io/
-[Node.JS]: https://nodejs.org/en/about/
-[GraphQL]: https://graphql.org/
-[GitHub]: https://github.com/
-[Docker]: https://www.docker.com/resources/what-container
-[Kubernetes]: https://kubernetes.io/
-[X-Road]: https://x-road.global/
-[Straumurinn]: https://stafraent.island.is/verkefni/straumurinn/
-[Jest]: https://jestjs.io/
+[technical direction]: https://samradsgatt.island.is/oll-mal/$Cases/Details/?id=1536
+[typescript]: https://www.typescriptlang.org/
+[react]: https://reactjs.org/
+[storybook]: https://storybook.js.org/
+[cypress]: https://www.cypress.io/
+[node.js]: https://nodejs.org/en/about/
+[graphql]: https://graphql.org/
+[github]: https://github.com/
+[docker]: https://www.docker.com/resources/what-container
+[kubernetes]: https://kubernetes.io/
+[x-road]: https://x-road.global/
+[straumurinn]: https://stafraent.island.is/verkefni/straumurinn/
+[jest]: https://jestjs.io/
