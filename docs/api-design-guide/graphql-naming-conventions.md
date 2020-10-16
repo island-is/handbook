@@ -13,7 +13,7 @@ This document describes the GraphQL's Naming Conventions
 
 ```graphql
 type Dog {
-  id
+  id: String!
 }
 
 query DogQuery {
@@ -88,14 +88,24 @@ query {
 
 GraphQL queries look the same for both single items or lists of items,
 however we know which one to expect based on what is indicated in the schema,
-which will be denoted by a `plural` name:
+which will be denoted by a `plural` name.
+
+The mutation structure should follow the Relay's connection pattern (simplifying the
+relay pagination pattern):
 
 ```graphql
 query {
   dog {
     id
-    owners {
-      id
+    owners(first: 10, after: $endCursor) {
+      count
+      edges {
+        id
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
     }
   }
 }
@@ -134,17 +144,26 @@ Here the `ProjectY`'s user query will overwrite the `ProjectX`'s query and will 
 
 ### Solution
 
-We need to suffix all `Mutations`, `Queries`, `Types`, `Scalars`, etc with the name of the module that
+We need to prefix all `Mutations`, `Queries`, `Types`, `Scalars`, etc. with the name of the module that
 is merged into the `api`.
+
+Mutations should still follow the verb first rule. Then the module name, following the object, or “noun,” if applicable.
 
 #### Example
 
 ```graphql
-type User_ProjectX {
+type ProjectXUser {
+  id: String!
 }
 
 query {
-  user_ProjectX {
+  projectXUser {
+    id
+  }
+}
+
+mutation {
+  createProjectXUser {
     id
   }
 }
