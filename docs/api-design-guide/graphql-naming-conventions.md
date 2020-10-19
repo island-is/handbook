@@ -86,12 +86,12 @@ query {
 
 ### Fetching array of items
 
-GraphQL queries look the same for both single items or lists of items,
-however we know which one to expect based on what is indicated in the schema,
+GraphQL list queries work quite differently from single field queries.
+We know which one to expect based on what is indicated in the schema,
 which will be denoted by a `plural` name.
 
-The mutation structure should follow the Relay's connection pattern (simplifying the
-relay pagination pattern):
+The pagination structure should follow a simplified version of the
+Relay's connection pattern.
 
 ```graphql
 query {
@@ -99,7 +99,7 @@ query {
     id
     owners(first: 10, after: $endCursor) {
       count
-      edges {
+      items {
         id
       }
       pageInfo {
