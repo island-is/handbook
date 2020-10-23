@@ -307,7 +307,7 @@ Tibco products are not open source.
 ### [AWS](https://aws.amazon.com/api-gateway/api-management/) 
 
 Price: Needs request.
-Partners in Iceland: Unknown
+Partners in Iceland: Andes ehf., others
 Usage in Iceland: Unknown
 
 Full blown API Management Platform from AWS. 
