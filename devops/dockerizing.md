@@ -32,7 +32,7 @@ If you are having problems with your application running inside a Docker contain
 
 To do that you need to follow this process:
 
-1. Login to our AWS Shared account and get command line access settings
+1. Login to our **AWS Shared account** and get command line access settings
    ![Login](images/aws-login.png)
    ![Env copy](images/aws-env-setup.png)
 2. Open your terminal and paste the AWS creds from the clipboard
@@ -40,7 +40,7 @@ To do that you need to follow this process:
     ```
     aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 821090935708.dkr.ecr.eu-west-1.amazonaws.com
     ```
-4. Now you can poke around in the Docker container like this
+4. Now you can poke around in the Docker container like this (Docker image and tag can be retrieved from a few places, depending on where you are starting from - Spinnaker, GitHub CI, Kubenav/Kubernetes)
     ```
     docker run --rm -it --entrypoint=sh 821090935708.dkr.ecr.eu-west-1.amazonaws.com/<image>:<tag>
     ```
