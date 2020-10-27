@@ -25,21 +25,21 @@ You can find the latest and greatest in how we setup a backend in our [reference
 
 Applications are composed of services that are [packaged in Docker containers](#dockerizing) and then deployed in a Kubernetes cluster using Helm. You will hardly need to know about this if you follow the path everyone else in the organization is walking.
 
-[All our environments are hosted in AWS.](environment-setup.md)
+[All our environments are hosted in AWS.](devops/environment-setup.md)
 
 ## Practices
 
 To contribute you need to follow the standard [GitHub Pull Request(PR)](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) workflow. When you open a PR, your code will be run through the [CI process](docs/adr/0002-continuous-integration.md) automatically. Ask for a [code-review](code-reviews.md) and when you get an approval, merge to master. Rinse and repeat.
 
-When a code change gets on `master`, that will create Docker containers for all services and everything will get deployed to `Dev` env. For more info please see the [Continuous Delivery process](continuous-delivery.md).
+When a code change gets on `master`, that will create Docker containers for all services and everything will get deployed to `Dev` env. For more info please see the [Continuous Delivery process](devops/continuous-delivery.md).
 
 We expect contributors to deliver the following:
 
 - the business logic
 - the tests
 - documentation
-- [logs](logging.md)
-- [metrics](metrics.md)
+- [logs](devops/logging.md)
+- [metrics](devops/metrics.md)
 
 ## Starting a new project/application
 
@@ -47,11 +47,12 @@ If you are adding a new application, please follow the instructions in the [mono
 
 ## Dockerizing
 
-You simply need to add an NX target to your service to enable creating a Docker image for it. For more info see [dockerizing](dockerizing.md).
+You simply need to add an NX target to your service to enable creating a Docker image for it. For more info see [dockerizing](devops/dockerizing.md).
 
 ## Kubernetes
 
 We have a Helm chart template that should fit most services. You pretty much only need to add your ingress (optional), environment variables(optional) and secrets(optional) and your service can get deployed to Dev. For more info, please see [Helm charts](https://github.com/island-is/helm).
 For a read-only view of the Kubernetes cluster and the services running there head over to
- * [Dev](https://kubenav.dev01.devland.is)
- * [Staging](https://kubenav.staging01.devland.is)
+
+- [Dev](https://kubenav.dev01.devland.is)
+- [Staging](https://kubenav.staging01.devland.is)
