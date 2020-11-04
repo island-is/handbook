@@ -1,6 +1,4 @@
-# observability
-
-## Observability
+# Observability
 
 ## Intro
 
@@ -44,7 +42,7 @@ When it comes to metrics we need to baseline the correct behaviour. That usually
 
 ### Document applications' components and their maintenance operations
 
-[Ops](https://github.com/island-is/handbook/tree/2d1b3fb82b49f40a4ee6cee1d93a855e48bb3be2/devops/personas.md#ops) need to know each application's components, how they interact together as well as interaction with any external services. For example the following information would be really useful:
+[Ops](technical-overview/devops/personas.md#ops) need to know each application's components, how they interact together as well as interaction with any external services. For example the following information would be really useful:
 
 - component type - web service, web frontend, message processor, etc.
 - description - the purpose and responsibilities of this component.
@@ -69,4 +67,4 @@ Ops need to have access to the recent history of significant changes for each ap
 
 ### Contact information for dev team emergency contact
 
-In case Ops cannot resolve the issue in a timely manner with the available tools and information, they will seek for assistance from the development team that has worked on the application experiencing the issue. The process of handling an issue is described in [Handling production issues](https://github.com/island-is/handbook/tree/2d1b3fb82b49f40a4ee6cee1d93a855e48bb3be2/devops/handling-production-issues.md)
+In case Ops cannot resolve the issue in a timely manner with the available tools and information, they will seek for assistance from the development team that has worked on the application experiencing the issue. The process of handling an issue is described in Handling production issues (TODO missing document)

@@ -6,9 +6,9 @@ The services that you are building need to be packaged as Docker container image
 
 ## What should I do then?
 
-You need to ask the [DevOps](https://github.com/island-is/handbook/tree/2d1b3fb82b49f40a4ee6cee1d93a855e48bb3be2/devops/personas.md#devops) team to create a Docker repository for you, which has the same name your service has in NX. This is an important convention to make everyone's lives easier. Then you need to manually add to [workspace.json](https://github.com/island-is/island.is/blob/master/workspace.json) a target for your service that describes what kind of Docker packaging it needs. For example, adding this target
+You need to ask the [DevOps](technical-overview/devops/personas.md#devops) team to create a Docker repository for you, which has the same name your service has in NX. This is an important convention to make everyone's lives easier. Then you need to manually add to [workspace.json](https://github.com/island-is/island.is/blob/master/workspace.json) a target for your service that describes what kind of Docker packaging it needs. For example, adding this target
 
-```text
+```json
   "docker-next": {}
 ```
 
@@ -31,7 +31,6 @@ To do that you need to follow this process:
 1. Login to our **AWS Shared account** and get command line access settings
 
    ![Login](../.gitbook/assets/aws-login.png)
-
    ![Env copy](../.gitbook/assets/aws-env-setup.png)
 
 2. Open your terminal and paste the AWS creds from the clipboard

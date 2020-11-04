@@ -1,10 +1,10 @@
 # Architectural Decision Records
 
-This is the home of all the records for Architectural Decision.
+This log lists the architectural decisions for island.is.
+
+For new ADRs, please use [template.md](template.md) as basis. More information on MADR is available at [https://adr.github.io/madr/](https://adr.github.io/madr/). General information about architectural decision records is available at [https://adr.github.io/](https://adr.github.io/).
 
 ## Content
-
-This log lists the architectural decisions for island.is.
 
 - [ADR-0000](0000-use-markdown-architectural-decision-records.md) - Use Markdown Architectural Decision Records
 - [ADR-0001](0001-use-nx.md) - Use NX
@@ -17,5 +17,3 @@ This log lists the architectural decisions for island.is.
 - [ADR-0008](0008-use-oauth-and-openid-connect.md) - Use OAuth 2.0 and OpenID Connect as protocols for Authentication and Authorization
 - [ADR-0009](0009-naming-files-and-directories.md) - Unified naming strategy for files and directories
 - [ADR-0010](0010-cms.md) - CMS
-
-For new ADRs, please use [template.md](template.md) as basis. More information on MADR is available at [https://adr.github.io/madr/](https://adr.github.io/madr/). General information about architectural decision records is available at [https://adr.github.io/](https://adr.github.io/).

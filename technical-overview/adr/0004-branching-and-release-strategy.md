@@ -53,7 +53,7 @@ With time, we expect to build up better testing capabilities which gives us more
 We'll set up continuous delivery to different hosting environments:
 
 | Environment | Git source            | Databases/services | Features |
-| :---------- | :-------------------- | :----------------- | :------- |
+| ----------- | --------------------- | ------------------ | -------- |
 | sandbox     | feature branch        | Test               | All      |
 | dev         | master                | Test               | All      |
 | staging     | master                | Prod               | All      |

@@ -4,17 +4,13 @@ API documentation should be targeted towards the developer that will consume the
 
 To help with keeping documentation up to date consider using automatic generation tools that during build time can, for example, gather comments in predefined syntax and generate the [Open API Specification](https://swagger.io/specification/) (OAS), this means that the OAS lives bundled with the code and should be easier for developers to maintain.
 
-**Note** - To be able to register a **REST** service to _Viskuausan_ the service **MUST** provide an [OPENAPI 3] service description.
+**Note** - To be able to register a **REST** service to _Viskuausan_ the service **MUST** provide an **OPENAPI 3** service description.
 
 The following fields are required for services to be automatically imported to _Viskuausan_:
 
 - info
-
   - description — short but proper description of the API.
-  - version — to distinguish API versions following [semantic versioning](https://semver.org/)
-
-    specification.
-
+  - version — to distinguish API versions following [semantic versioning](https://semver.org/) specification.
   - title — descriptive name of the API.
   - contact — information on who to contact about an issue with the service.
     - name — of the person or a department.
@@ -24,22 +20,10 @@ The following fields are required for services to be automatically imported to _
   - x-pricing — Cost of using this service.
     - Possible values: `free`, `paid`.
   - x-links — Links regarding the service.
-
-    - responsibleParty — a fully qualified url to an online page containing
-
-      information about the responsible party/owner of the service.
-
-    - documentation — (_Optional_) a fully qualified url to the API
-
-      documentation page.
-
-    - bugReport (_Optional_) — a fully qualified url to an online page or
-
-      form a consumer can report bugs about the service.
-
-    - featureRequest (_Optional_) — a fully qualified url to an online page
-
-      or form a consumer can ask for a new feature in api service.
+    - responsibleParty — a fully qualified url to an online page containing information about the responsible party/owner of the service.
+    - documentation — (_Optional_) a fully qualified url to the API documentation page.
+    - bugReport (_Optional_) — a fully qualified url to an online page or form a consumer can report bugs about the service.
+    - featureRequest (_Optional_) — a fully qualified url to an online page or form a consumer can ask for a new feature in api service.
 
 Example can be found [here](documentation.md#example).
 

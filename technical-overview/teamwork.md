@@ -36,4 +36,4 @@ Responsible for the brand, design system, UX and consistent design across projec
 
 It is important to document all important decisions made in this project. This might, for instance, be a technology choice (e.g., PostgreSQL vs. MongoDB), a choice between a library (e.g., moment vs date-fns), or a decision on features (e.g., pagination vs infinite scroll). Design documentation is important to enable people understanding the decisions later on.
 
-Decisions should be documented using [MADR](https://github.com/adr/madr) formatting inside the `docs/adr` folder. Just copy `0000-template.md` to for example `0001-date-library.md` and fill in the details. Many sections can be skipped for smaller decisions.
+Decisions should be documented using [MADR](https://github.com/adr/madr) formatting inside the `adr` folder. Just copy `0000-template.md` to for example `0001-date-library.md` and fill in the details. Many sections can be skipped for smaller decisions.

@@ -66,43 +66,31 @@ scheme     authority       path        query   fragment
 
 When structuring resource URIs please follow the following rules:
 
-- [Resource names and collection IDs] must be the plural form of
-
-  the singular noun used for the resource.
-
-- Use lowercase letters for URI paths since capital
-
-  letters can sometimes cause problems.
-
+- [Resource names and collection IDs] must be the plural form of the singular noun used for the resource.
+- Use lowercase letters for URI paths since capital letters can sometimes cause problems.
 - Use hyphens (`-`) to improve readability of concatenated resource names.
-- Use the forward slash (`/`) in a path to indicate hierarchical relationship
-
-  between resources.
-
+- Use the forward slash (`/`) in a path to indicate hierarchical relationship between resources.
 - Do not end a path with a trailing forward slash (`/`).
-- Do not use underscores ( `_` ) as they can be partially obscured or hidden
-
-  in some browsers or screens.
-
+- Do not use underscores (`_`) as they can be partially obscured or hidden in some browsers or screens.
 - For naming query parameters please use the camelCase naming convention.
 
 Example URI of an authority and a path component
 
 ```text
-//example.com/v1/users/1/photos/121
-  \_________/ |  \___/   \____/ \_/
-      |       |    |        |    \
-      |       |    |        |      Resource ID
-      |       |    |        |         (type)
-      |       |    |         \
-      |       |    |           Collection ID
-      |       |    |              (type)
-      |       |     \
-      |       |      Resource name of parent resource
-      |        \
-      |          Major version
-       \
-         API service name
+example.com/v1/users/1/photos/121
+\_________/ |  \___/   \____/ \_/
+    |       |    |        |    \
+    |       |    |        |      Resource ID
+    |       |    |        |         (type)
+    |       |    |         \
+    |       |    |           Collection ID
+    |       |    |              (type)
+    |       |     \
+    |       |      Resource name of parent resource
+    |        \
+    |          Major version
+      \
+        API service name
 ```
 
 ## Fields

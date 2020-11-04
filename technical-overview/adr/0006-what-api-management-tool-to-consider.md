@@ -91,7 +91,7 @@ Functional ability to consider when evaluating the tool. The following list was 
 The following list checks out the options. The options were checked by looking into documentation and read reviews. A Gap in the matrix does not mean that the option does not exist, only that it was not noted in documentation.
 
 | API Management Tools                                 | Apigee Edge | Mulesoft Anypoint | Software AG | IBM | Axway | Tibco Mashery | AWS  | Akana | Sensedia | Kong | Red Hat 3Scale | WSO2        | Tyk          | Boomi | Azure | Nginx Plus | Broadcom | KrakenD | Netflix Zool | API Umbrella | Express Gateway | Gravitee.io    |
-| :--------------------------------------------------- | :---------- | :---------------- | :---------- | :-- | :---- | :------------ | :--- | :---- | :------- | :--- | :------------- | :---------- | :----------- | :---- | :---- | :--------- | :------- | :------ | :----------- | :----------- | :-------------- | :------------- |
+| ---------------------------------------------------- | ----------- | ----------------- | ----------- | --- | ----- | ------------- | ---- | ----- | -------- | ---- | -------------- | ----------- | ------------ | ----- | ----- | ---------- | -------- | ------- | ------------ | ------------ | --------------- | -------------- |
 | **Platform Information**                             |             |                   |             |     |       |               |      |       |          |      |                |             |              |       |       |            |          |         |              |              |                 |                |
 | On premise installation                              | Yes         | Yes               | Yes         | Yes | Yes   | Yes           |      | Yes   |          | Yes  | Yes            | Yes         | Yes          | Yes   | Yes   | Yes        | Yes      | Yes     | Yes          | Yes          | Yes             | Yes            |
 | Cloud Service                                        | Yes         | Yes               | Yes         | Yes | Yes   | Yes           | Yes  |       |          | Yes  | Yes            | Yes         | Yes          | Yes   | Yes   |            | Yes      |         |              |              |                 |                |
@@ -269,13 +269,7 @@ Full blown API Management Platform from AWS.
 - Good, in 2018, AWS’s revenue from Amazon API Gateway grew by a market-leading 160% year over year, far above the market average of 31%. `Gartner`
 - Average, considered challenger by Gartner
 - Consideration, AWS indicates that their product can be installed on premise, but most reviews point out that it is Cloud only offering.
-- Bad, AWS doesn’t offer a customer-managed gateway, which is critical technology for many
-
-  organizations operating in highly secured and restricted on-premises environments. However,
-
-  its AWS Outposts offering, which provides AWS services on-premises (managed, maintained
-
-  and supported by AWS), is in preview at the time of writing. `Gartner`
+- Bad, AWS doesn’t offer a customer-managed gateway, which is critical technology for many organizations operating in highly secured and restricted on-premises environments. However, its AWS Outposts offering, which provides AWS services on-premises (managed, maintained and supported by AWS), is in preview at the time of writing. `Gartner`
 
 ### [Akana by Perforce](https://www.akana.com/)
 
@@ -372,13 +366,7 @@ Api management platform from Microsoft. This platform is easy to install and ope
 
 - Good, considered leader by both Gartner and Forrester
 - Consideration, Microsoft indicates that their product can be installed on premise via VLAN, but most reviews point out that it is Cloud only offering.
-- Bad, Azure API Management is an Azure cloud service and will remain focused on developers’ and
-
-  IT professionals’ priorities to build, deploy and manage applications through Microsoft’s global
-
-  cloud. It’s unlikely to evolve in response to the main business drivers of digital transformations,
-
-  in contrast to most other offerings in this market. `Gartner`
+- Bad, Azure API Management is an Azure cloud service and will remain focused on developers’ and IT professionals’ priorities to build, deploy and manage applications through Microsoft’s global cloud. It’s unlikely to evolve in response to the main business drivers of digital transformations, in contrast to most other offerings in this market. `Gartner`
 
 ### [Nginx Plus](https://www.nginx.com/)
 

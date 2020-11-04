@@ -7,7 +7,7 @@ Most API services support the following 5 operations: `LIST`, `GET`, `CREATE`, `
 A photo album service, for example, may provide the following methods:
 
 | Method                          | Resource                                                  |                                    |
-| :------------------------------ | :-------------------------------------------------------- | :--------------------------------- |
+| ------------------------------- | --------------------------------------------------------- | ---------------------------------- |
 | `CREATE` _Creates a user_       | `//my-service.island.is/v1/users`                         | a collection of `User` resources   |
 | `GET` _Gets a user_             | `//my-service.island.is/v1/users/:userId`                 | a single `User` resource           |
 | `UPDATE` _Updates a user_       | `//my-service.island.is/v1/users/:userId`                 | a single `User` resource           |
@@ -24,7 +24,7 @@ In HTTP RESTful API services, each method must be mapped to an HTTP verb ([HTTP 
 The following table specifies the mappings between standard and custom methods and HTTP verbs:
 
 | Method   | HTTP Request Method (Verb) |
-| :------- | :------------------------- |
+| -------- | -------------------------- |
 | `LIST`   | `GET`                      |
 | `GET`    | `GET`                      |
 | `CREATE` | `POST`                     |

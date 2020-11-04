@@ -23,21 +23,14 @@ The Design Guide suggests taking the following steps when designing resource- or
 - Determine the relationships between resources.
 - Decide the resource name schemes based on types and relationships.
 - Decide the resource schemas.
-- Attach a minimum set of [methods](methods.md) to resources. Use the standard methods(verbs)
-
-  as much as possible.
+- Attach a minimum set of [methods](methods.md) to resources. Use the standard methods(verbs) as much as possible.
 
 ## Resources
 
 A resource-oriented API is generally modelled as a resource hierarchy, where each node is either a simple resource or a collection resource. For convenience, they are often called a resource and a collection, respectively.
 
-- A collection contains a list of resources of the same type. For example,
-
-  a user has a collection of photos.
-
-- A resource has some state and zero or more sub-resources. Each sub-resource
-
-  can be either a simple resource or a collection resource.
+- A collection contains a list of resources of the same type. For example, a user has a collection of photos.
+- A resource has some state and zero or more sub-resources. Each sub-resource can be either a simple resource or a collection resource.
 
 A resource name consists of the resource’s type, its identifier, the resource name of its parent and the name of the API service. The type is known as the **Collection ID**, and the identifier is known as the **Resource ID**. Resource IDs are usually random strings assigned by the API service, though it is also OK to accept custom resource IDs from clients. **Collection IDs must be the plural form of the noun used for the resource and Resource IDs should be immutable**.
 
@@ -46,36 +39,38 @@ Below are two examples of valid resource names:
 User
 
 ```text
-       //my-service.island.is / v1 / users / 1
-                  |             |      |     |
-                  |             |      |      \
-                  |             |      |       Resource ID
-                  |             |       \
-                  |             |        Collection ID
-                  |             |           (type)
-                  |              \
-                  |               Major version
-                   \
-                    API service name
+my-service.island.is/v1/users/1
+\__________________/ | \___/  |
+         |           |   |    |
+         |           |   |     \
+         |           |   |      Resource ID
+         |           |    \
+         |           |     Collection ID
+         |           |        (type)
+         |            \
+         |             Major version
+         \
+          API service name
 ```
 
 Photo
 
 ```text
-       //my-service.island.is / v1 / users / 1 / photos / 1
-                  |             |      |           |      |
-                  |             |      |           |       \
-                  |             |      |           |        Resource ID
-                  |             |      |           |          (type)
-                  |             |      |            \
-                  |             |      |             Collection ID
-                  |             |      |                (type)
-                  |             |       \
-                  |             |        Resource name of parent resource
-                  |              \
-                  |               Major version
-                   \
-                    API service name
+my-service.island.is/v1/users/1/photos/1
+\__________________/ | \____/  \_____/ |
+          |          |    |       |    |
+          |          |    |       |     \
+          |          |    |       |      Resource ID
+          |          |    |       |        (type)
+          |          |    |        \
+          |          |    |         Collection ID
+          |          |    |            (type)
+          |          |     \
+          |          |      Resource name of parent resource
+          |           \
+          |            Major version
+          \
+           API service name
 ```
 
 ## References

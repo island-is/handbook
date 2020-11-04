@@ -1,10 +1,12 @@
-# technical-direction
+# Technical Direction
 
-## Technical direction
+{% hint style="info" %}
+This document sets a high-level technical direction for Digital Iceland. It describes architectural patterns, development tools, workflows and values that should be adopted by teams building solutions for Ísland.is.
+{% endhint %}
 
-> This document sets a high-level technical direction for Digital Iceland. It describes architectural patterns, development tools, workflows and values that should be adopted by teams building solutions for Ísland.is.
->
-> As time goes by, this document will be updated to match evolving trends in Digital Iceland as well as the global developer community.
+{% hint style="info" %}
+As time goes by, this document will be updated to match evolving trends in Digital Iceland as well as the global developer community.
+{% endhint %}
 
 Digital Iceland is responsible for software solutions that relate to the Icelandic [central service portal](https://stafraent.island.is/verkefni/nytt-island-is/) under the brand Ísland.is. These solutions allow companies and individuals to access government services in a simple and efficient way. Meanwhile, government organisations are responsible for their content, data and service, some of which may end up on Ísland.is.
 
@@ -20,7 +22,7 @@ There are a few software architectural patterns that Digital Iceland embraces wh
 
 Teams should implement solutions as standalone frontend applications, e.g. single-page applications (SPA) or mobile applications, and integrate them with backend services through API interfaces.
 
-Having a clear separation between frontend and backend allows us to implement user interfaces (UI) that behave like applications with richer and faster user experience (UX). It also reduces coupling and scales up development, creating reusable backend services that support more varied presentation through different frontend applications.
+Having a clear separation between frontend and backend allows us to implement User Interfaces (UI) that behave like applications with richer and faster User Experience (UX). It also reduces coupling and scales up development, creating reusable backend services that support more varied presentation through different frontend applications.
 
 #### Shared code
 
@@ -141,7 +143,7 @@ Coding standards, automatic formatting and linting tools help developers write s
 
 The development environment should help new projects, and new developers get started, with clear documentation, setup guides and development servers (e.g. with [Docker](https://www.docker.com/resources/what-container)). It's essential to grant developers access to test services and data, but also a secure authorization system and workflows when it comes to more sensitive secrets and data.
 
-### Free and open-source software (FOSS)
+### Free and Open-Source Software (FOSS)
 
 Digital Iceland dedicates to develop new software in a free and open-source way, whenever possible. Building solutions using FOSS lowers the total cost of operations and gives more parties access to contribute to the project. That leaves vendors on equal footing when it comes to maintenance and further development.
 
@@ -175,7 +177,7 @@ Digital Iceland will set clear performance goals and encourage periodic performa
 
 ### User-centered design
 
-Design solutions with a focus on user experience (UX). Digital Iceland plans to release a design guide that covers this in more detail. Until then, here are a few things to keep in mind:
+Design solutions with a focus on User Experience (UX). Digital Iceland plans to release a design guide that covers this in more detail. Until then, here are a few things to keep in mind:
 
 - Include designers, UX specialists and testers in the project from the beginning.
 - Consider the user in all parts of design and development with personas and user stories.
@@ -184,7 +186,7 @@ Design solutions with a focus on user experience (UX). Digital Iceland plans to 
 
 ### Security
 
-Since Ísland.is solutions will process sensitive, personally identifiable information (PII), it is crucial to have security at the forefront at all stages of development.
+Since Ísland.is solutions will process sensitive, Personally Identifiable Information (PII), it is crucial to have security at the forefront at all stages of development.
 
 Teams should be familiar with the vulnerabilities and attacks documented in the Open Web Application Security Project (OWASP). Digital Iceland will look to the ISO 27001 family of standards when it comes to hosting and operations and requires vendors to perform in-house security assessments.
 

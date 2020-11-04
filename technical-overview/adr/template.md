@@ -1,6 +1,6 @@
 # ADR Template
 
-- Status: [proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](https://github.com/island-is/handbook/tree/2d1b3fb82b49f40a4ee6cee1d93a855e48bb3be2/docs/adr/0005-example.md)]
+- Status: [proposed | rejected | accepted | deprecated | … | superseded by ADR-0005 (add link)
 - Deciders: [list everyone involved in the decision]
 - Date: [YYYY-MM-DD when the decision was last updated]
 

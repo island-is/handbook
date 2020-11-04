@@ -1,10 +1,10 @@
-# Welcome
+# Overview
 
 Hi there, you are probably new to the project. Here you can find a quick overview of what you can expect and what is expected from you as a contributor.
 
 ## General info
 
-[island.is](https://github.com/island-is/island.is) is open-source software. The license is MIT. The project is a [monorepo](monorepo.md) which means the code for all custom-written services is stored in there.
+[island.is](https://github.com/island-is/island.is) is an open-source software. The license is MIT. The project is a [monorepo](monorepo.md) which means the code for all custom-written services is stored in there.
 
 ## Technology
 
@@ -14,11 +14,11 @@ The tool we use to manage the monorepo structure is called [NX](https://nx.dev).
 
 For the backend we use [NestJS](https://nestjs.com). Use the pre-packaged setup that we have and you will save us all some time.
 
-For the frontend we use [React](https://reactjs.org) or [NextJS](https://nextjs.org).
+For the frontend we use [React](https://reactjs.org) and [NextJS](https://nextjs.org).
 
 For testing we use [Jest](https://jestjs.io).
 
-For database access we use [Sequalize](https://sequelize.org).
+For database access we use [Sequelize](https://sequelize.org).
 
 You can find the latest and greatest in how we setup a backend in our [reference-backend](https://github.com/island-is/island.is/blob/master/apps/reference-backend)
 
@@ -28,7 +28,7 @@ Applications are composed of services that are [packaged in Docker containers](w
 
 ## Practices
 
-To contribute you need to follow the standard [GitHub Pull Request(PR)](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) workflow. When you open a PR, your code will be run through the [CI process](docs/adr/0002-continuous-integration.md) automatically. Ask for a [code-review](code-reviews.md) and when you get an approval, merge to master. Rinse and repeat.
+To contribute you need to follow the standard [GitHub Pull Request (PR)](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) workflow. When you open a PR, your code will be run through the [CI process](adr/0002-continuous-integration.md) automatically. Ask for a [code-review](code-reviews.md) and when you get an approval, merge to `master`. Rinse and repeat.
 
 When a code change gets on `master`, that will create Docker containers for all services and everything will get deployed to `Dev` env. For more info please see the [Continuous Delivery process](devops/continuous-delivery.md).
 
@@ -42,7 +42,7 @@ We expect contributors to deliver the following:
 
 ## Starting a new project/application
 
-If you are adding a new application, please follow the instructions in the [monorepo README](https://github.com/island-is/island.is/blob/master/README.md).
+If you are adding a new application, please follow the instructions [here](../island-is-repository/generate.md).
 
 ## Dockerizing
 

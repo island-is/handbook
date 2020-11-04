@@ -20,9 +20,9 @@ In a response body, you should return a JSON object, not an array, as a top leve
 
 ```text
 [
-    { "id": "1", "name": "Einar"   },
-    { "id": "2", "name": "Erlendur"},
-    { "id": "3", "name": "Valdimar"}
+  { "id": "1", "name": "Einar"   },
+  { "id": "2", "name": "Erlendur"},
+  { "id": "3", "name": "Valdimar"}
 ]
 ```
 
@@ -64,13 +64,8 @@ Optionally, an API can also provide the field `totalCount` to indicate to the cl
 
 For an API to support pagination it needs to support the following query parameters:
 
-- `cursor` - The client provides the value of `nextCursor` from the previous
-
-  response to set the start of next page of results.
-
-- `limit` - Limits the number of results in a request. The server should have
-
-  a default value for this field.
+- `cursor` - The client provides the value of `nextCursor` from the previous response to set the start of next page of results.
+- `limit` - Limits the number of results in a request. The server should have a default value for this field.
 
 ## National identifier
 
@@ -78,19 +73,9 @@ Icelandic individuals are uniquely identified by a national identifier called `k
 
 ## Language and currency
 
-- **Languages** - When specifying a language please use the [ISO-639-1](https://www.iso.org/standard/22109.html)
-
-  (two letter) standard. See: [639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
-
-- **Currencies** - When specifying currency codes please use the [ISO-4217](https://www.iso.org/iso-4217-currency-codes.html)
-
-  standard. See: [4217 codes](https://en.wikipedia.org/wiki/ISO_4217#Active_codes).
-
-  - **Amount** - Use the format `[0-9]+(.[0-9]+)?` to represent an amount.
-
-    Separate amount and currency in different fields. Example amount:
-
-    `1250.23`.
+- **Languages** - When specifying a language please use the [ISO-639-1](https://www.iso.org/standard/22109.html) (two letter) standard. See: [639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
+- **Currencies** - When specifying currency codes please use the [ISO-4217](https://www.iso.org/iso-4217-currency-codes.html) standard. See: [4217 codes](https://en.wikipedia.org/wiki/ISO_4217#Active_codes).
+  - **Amount** - Use the format `[0-9]+(.[0-9]+)?` to represent an amount. Separate amount and currency in different fields. Example amount: `1250.23`.
 
 ## Date and time
 
@@ -107,9 +92,7 @@ Date and time should be represented as a string using the format `yyyy-MM-ddThh:
 - **mm** represents minute, (two digits _00 - 59_).
 - **ss** represents second, (two digits _00 - 59_).
 - **sss** represents a decimal fraction of a second, (one or more digits).
-- **Z** represents a time zone offset specified as `Z` (for [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)) or either
-
-  `+` or `-` followed by a time expression `hh:mm`.
+- **Z** represents a time zone offset specified as `Z` (for [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)) or either `+` or `-` followed by a time expression `hh:mm`.
 
 Icelandic local time can be represented with `Z` because Iceland follows the [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) +00:00 all year round, which is the same as [GMT](https://en.wikipedia.org/wiki/Greenwich_Mean_Time).
 

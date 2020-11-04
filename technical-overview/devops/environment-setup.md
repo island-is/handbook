@@ -25,7 +25,10 @@ We provision all AWS resources in three Availability Zones so that failure in on
 
 This structure is based on the guidance coming from a service that helps us plan and control the AWS cloud structure - [AWS Control Tower](https://aws.amazon.com/controltower/).
 
-> If you’re an organization with multiple AWS accounts and teams, cloud setup and governance can be complex and time-consuming, slowing down the very innovation you’re trying to speed up. AWS Control Tower provides the easiest way to set up and govern a new, secure, multi-account AWS environment based on best practices established through AWS’ experience working with thousands of enterprises as they move to the cloud.
+{% hint style="info" %}
+If you’re an organization with multiple AWS accounts and teams, cloud setup and governance can be complex and time-consuming, slowing down the very innovation you’re trying to speed up. AWS Control Tower provides the easiest way to set up and govern a new, secure, multi-account AWS environment based on best practices established through AWS’ experience working with thousands of enterprises as they move to the cloud.
+
+> {% endhint %}
 
 A few notes about the diagram:
 
@@ -59,7 +62,7 @@ We use fully managed AWS database services. Although AWS offers a wide variety o
 We use the following databases as of this writing:
 
 | AWS service name  | OSS equivalent | Purpose                     | Application applicability  |
-| :---------------- | :------------- | :-------------------------- | :------------------------- |
+| ----------------- | -------------- | --------------------------- | -------------------------- |
 | AWS Aurora        | Postgres       | Relational DB               | `critical`, `non-critical` |
 | AWS ElastiCache   | Redis          | In-memory cache and pub/sub | `critical`, `non-critical` |
 | AWS Elasticsearch | ElasticSearch  | Document searching          | `critical`, `non-critical` |

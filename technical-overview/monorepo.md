@@ -52,7 +52,7 @@ The CI runs these tests on every change. By using a monorepo tool that provides 
 
 Across all of our projects we should strive to have as few dependencies as possible with as few versions as possible. This is important not only for consistency and security but also for performance, especially in web-apps where it's easy to end up with huge bundles of redundant dependencies. So we should try to end up with one ORM, one date manipulation library, one form library etc.
 
-These are [Architectural Decisions](https://github.com/island-is/handbook/tree/2d1b3fb82b49f40a4ee6cee1d93a855e48bb3be2/docs/adr/README.md) that need to be well documented. It's completely fine, and expected, that these decisions don't last forever. When we decide on a specific dependency, we'll have a migration period during which the monorepo is using different dependencies for the same task. The important thing is to have a direction and a plan.
+These are [Architectural Decisions](adr/README.md) that need to be well documented. It's completely fine, and expected, that these decisions don't last forever. When we decide on a specific dependency, we'll have a migration period during which the monorepo is using different dependencies for the same task. The important thing is to have a direction and a plan.
 
 To enforce this, we have a single package.json in the root of the monorepo, which lists all dependencies for all projects. Having a single package.json eliminates a lot of issues when multiple projects depend on different versions of the same package, including having redundant code in website bundles.
 
@@ -63,4 +63,3 @@ Even though all code is in the same repository, it is important to set virtual b
 Generally project code is owned by the teams working on the project while shared code is managed by specific teams or [Disciplines](teamwork.md#disciplines).
 
 Using [Protected Branch](https://help.github.com/en/github/administering-a-repository/about-protected-branches) and [Code Owner](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) features in GitHub, we can enforce code ownership on a file and folder level. Each pull request automatically notifies and requests reviews from the teams responsible for the changed code. These pull requests can not be merged unless they are reviewed by the respective parties.
-

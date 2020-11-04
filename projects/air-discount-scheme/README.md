@@ -6,17 +6,13 @@ Generates discount codes that can be used for booking domestic flights online.
 
 There are certain precondition to be eligible for a discount. They are:
 
-- The person's legal domicile needs to be in a predefined set of towns outside
-  the capital (We fetch postal codes from Þjóðskrá to validate if user is
-  eligible).
+- The person's legal domicile needs to be in a predefined set of towns outside the capital (We fetch postal codes from Þjóðskrá to validate if user is eligible).
 
 ## Project entrypoints
 
-Dev: [https://loftbru.dev01.devland.is](https://loftbru.dev01.devland.is)
-
-Staging: [https://loftbru.staging01.devland.is](https://loftbru.staging01.devland.is)
-
-Production: [https://loftbru.island.is](https://loftbru.island.is)
+- Dev: [https://loftbru.dev01.devland.is](https://loftbru.dev01.devland.is)
+- Staging: [https://loftbru.staging01.devland.is](https://loftbru.staging01.devland.is)
+- Production: [https://loftbru.island.is](https://loftbru.island.is)
 
 ### User Frontend
 
@@ -30,7 +26,7 @@ URL: [https://loftbru.dev01.devland.is](https://loftbru.dev01.devland.is)
 The admin frontend has a view over the bookings that have been registered in
 the system. This is mainly for Vegagerðin.
 
-URL: [https://loftbru.dev01.devland.is/admin](https://loftbru.dev01.devland.is/admin)
+- URL: [https://loftbru.dev01.devland.is/admin](https://loftbru.dev01.devland.is/admin)
 
 ### Public API
 
@@ -41,13 +37,11 @@ The airlines that have access to this api are `Air Iceland Connect` and `Ernir`.
 Though some flights created by `Air Iceland Connect` maybe booked for
 `Norlandair` as it uses the same booking site as `Air Iceland Connect`.
 
-URL: [https://loftbru.dev01.devland.is/api/swagger/](https://loftbru.dev01.devland.is/api/swagger/)
+- URL: [https://loftbru.dev01.devland.is/api/swagger/](https://loftbru.dev01.devland.is/api/swagger/)
 
 ## Integrations
 
-- [Þjóðskrá](https://skra.is): To be able to verify the persons legal domicile,
-  give the airlines basic information about the person and fetch a persons
-  relations to show the discount codes for related children.
+- [Þjóðskrá](https://skra.is): To be able to verify the persons legal domicile, give the airlines basic information about the person and fetch a persons relations to show the discount codes for related children.
 
 ## Development
 

@@ -2,15 +2,8 @@
 
 We use [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) to automatically enforce most of our Code Standards. Most of our rules follow recommendations from both project with these additions and changes:
 
-- Prettier is configured with single quotes, no semicolons, arrow parens and
-
-  all trailing commas.
-
-- ESLint is configured to catch likely errors but otherwise provide warnings to
-
-  encourage best practices without stopping the developer.The base configuration
-
-  comes from [NX](https://nx.dev/).
+- Prettier is configured with single quotes, no semicolons, arrow parens and all trailing commas.
+- ESLint is configured to catch likely errors but otherwise provide warnings to encourage best practices without stopping the developer.The base configuration comes from [NX](https://nx.dev/).
 
 Code standard changes can be proposed to the larger team in discipline meetings. For any new rule, we should try to enforce it automatically, even if it means creating a new ESLint rule from scratch.
 
