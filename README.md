@@ -1,4 +1,8 @@
-# Digital Iceland Handbook
+> ## Warning, the handbook has been moved inside the [island.is repository](https://github.com/island-is/island.is/tree/main/handbook) and is now hosted on [GitBook](https://www.gitbook.com) at [docs.devland.is](https://docs.devland.is).
+
+---
+
+## Digital Iceland Handbook
 
 This GitHub organization is the center of development for digital government
 services on `island.is`. It is managed by the [Digital Iceland] department
